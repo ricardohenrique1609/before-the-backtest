@@ -25,7 +25,7 @@ keywords:
   - research feasibility
 license: "MIT"   # code; see license-notes below
 license-url: "https://opensource.org/licenses/MIT"
-repository-code: "https://github.com/<owner>/before-the-backtest"
+repository-code: "https://github.com/ricardohenrique1609/before-the-backtest"
 doi: "PENDING — no DOI has been created"
 
 # Component licences differ and the boundary is deliberate:
@@ -35,5 +35,5 @@ doi: "PENDING — no DOI has been created"
 # The CC0 dedication applies ONLY to project-created derived artefacts and grants no rights over the
 # underlying exchange, regulatory, market-data or publication sources.
 #
-# doi remains PENDING: no DOI has been created. repository-code is filled in at publication.
+# doi remains PENDING: no DOI has been created, and none is planned without explicit approval.
 # No ORCID is recorded: none was provided, and none is invented.

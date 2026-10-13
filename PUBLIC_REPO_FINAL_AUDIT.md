@@ -1,11 +1,10 @@
 # PUBLIC REPOSITORY — FINAL AUDIT
 
-**Run against the exact directory that would be published**, not against the repository it was built
-from. What matters is what a stranger who clones `before-the-backtest` can read.
+**Run against the exact directory that was published**, not against the repository it was built from.
+What matters is what a stranger who clones `before-the-backtest` can read.
 
-> **Nothing has been pushed.** The package is built, audited, committed to a clean local history and
-> tagged `v1.0.0`. Creating the public repository requires GitHub authentication that does not exist
-> in this environment; see `GITHUB_PUBLIC_RELEASE.md`.
+> **Published** at <https://github.com/ricardohenrique1609/before-the-backtest>, tag `v1.0.0`. This audit ran on the
+> directory that became that repository, and was re-run against it before the push.
 
 **Package:** `before-the-backtest` · **Release:** v1.0.0 · **Date:** 2026-10-13
 **Built by:** `scripts/release_public_repo.py` · **Audited by:** `scripts/release_public_audit.py`

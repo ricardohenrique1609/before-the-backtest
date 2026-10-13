@@ -171,6 +171,8 @@ arXiv, and this work has not been submitted to a journal.
 `CITATION.cff` carries the same metadata in machine-readable form. There is no DOI to cite, and the
 `doi` field is deliberately left unset rather than filled with a placeholder.
 
+Repository: <https://github.com/ricardohenrique1609/before-the-backtest> · Release: <https://github.com/ricardohenrique1609/before-the-backtest/releases/tag/v1.0.0>
+
 **Author.** Ricardo H. Ramos Silva, Independent Researcher. No employer or university affiliation is
 stated and **no institutional endorsement is implied**. No ORCID is recorded, because none was
 provided and none is invented. No correspondence address is published; issues on this repository are

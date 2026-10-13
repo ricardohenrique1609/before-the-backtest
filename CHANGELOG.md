@@ -12,8 +12,8 @@ The authorised byline and the paper-only public package. **SCIENTIFIC CHANGES: 0
 `paper.tex` is byte-identical to RC3; the compiled PDF is still 24 pages, with zero margin ink and
 zero blank pages, so nothing reflowed.
 
-The package is built, audited, committed and tagged locally. **It has not been pushed**: no GitHub
-authentication exists in this environment and none was improvised. See `GITHUB_PUBLIC_RELEASE.md`.
+Published at <https://github.com/ricardohenrique1609/before-the-backtest>, tag `v1.0.0`, with `paper.pdf`
+attached to the release. See `GITHUB_PUBLIC_RELEASE.md`.
 
 ### RELEASE METADATA — blocker B7 closed
 
@@ -42,7 +42,7 @@ authentication exists in this environment and none was improvised. See `GITHUB_P
 |---|---|
 | 12 | the paper-only public package is built by `scripts/release_public_repo.py` and audited on the exact published directory in `PUBLIC_REPO_FINAL_AUDIT.md` |
 | 13 | `README.md` is publication-grade: byline, status, how to cite, licences, limitations |
-| 14 | **B3a** — the package is prepared, audited and tagged; the repository itself is **not** created, so B3a stays open. **B3b stays open by decision**: no DOI, no Zenodo deposition, no SSRN, no arXiv, no journal submission |
+| 14 | **B3a closed** — the public repository exists, tagged `v1.0.0`, with the PDF attached to the release. **B3b stays open by decision**: no DOI, no Zenodo deposition, no SSRN, no arXiv, no journal submission |
 
 ### NOT CHANGED
 

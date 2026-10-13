@@ -8,7 +8,7 @@
     "orcid": null,
     "correspondence": null
   },
-  "built_utc": "2026-10-13T17:29:00Z",
+  "built_utc": "2026-10-13T19:04:34Z",
   "note": "Integrity record for the published package. RELEASE_MANIFEST.json records the release package it is derived from; this file records what is actually published, and is not hashed here because a file cannot contain its own hash.",
   "files_hashed": 185,
   "files": {
@@ -25,12 +25,12 @@
       "bytes": 6896
     },
     "CHANGELOG.md": {
-      "sha256": "bdd87d91ee5b53318edaa5f8894c5136f0d4e5ba056cdec4cf9b6fccd0533a89",
-      "bytes": 12630
+      "sha256": "340c91e0473704a5939bfc5677cc745ab8609092ea32f4f0671ff03fe0a48406",
+      "bytes": 12581
     },
     "CITATION.cff": {
-      "sha256": "74a127aec127b7693aecf70bac4056e7077e332dfa1a7d3660d06f381624bf42",
-      "bytes": 1862
+      "sha256": "be0a9efc7ed40028ed33880e3a3d2391e1c7df4efdcd88bf43c7d51c54866da1",
+      "bytes": 1876
     },
     "CLAIM_EVIDENCE_MATRIX.csv": {
       "sha256": "88ea6fb0ae2f16398338aa4a5cc3170c62d821a9043f60dfe78f1bd107f9d464",
@@ -133,8 +133,8 @@
       "bytes": 2661
     },
     "GITHUB_PUBLIC_RELEASE.md": {
-      "sha256": "fa1c6bc8af41cc4cd1f573e1e983ae124714cb98b1b73ca7fb741a894fb23f14",
-      "bytes": 6020
+      "sha256": "e5f1aa3070b96348e434fc99a21658d99c6977bb5b540d83bdc3db2b3b68ed85",
+      "bytes": 4980
     },
     "HYPOTHESIS_LEDGER.md": {
       "sha256": "3d07fbf131ac3a17bec65d233b83f68b696831f50d1770d6061c07e8f3d072aa",
@@ -177,16 +177,16 @@
       "bytes": 5660
     },
     "PUBLIC_REPO_FINAL_AUDIT.md": {
-      "sha256": "e6dd3ae1b23f15148219591a9b9cfe3855b09f72b811674e6c9b7b9d56310c6d",
-      "bytes": 7987
+      "sha256": "ab037d21e79c82f797b1a461e3468907b32a144ee0265f8f42244b8fd1990a43",
+      "bytes": 7925
     },
     "PUBLICATION_PROOF_QA.md": {
       "sha256": "a7d4ec2fd2ea9511ceb451a136a39035566dc59da247fc38db526940cb793396",
       "bytes": 8807
     },
     "README.md": {
-      "sha256": "a70e4fba3905de148d0d7ce1b758c9b7a7423112324d5e3bb05db557250cc516",
-      "bytes": 10707
+      "sha256": "5c324a3a76c2082c46b134ee9e613b6199281b76c2e46c75cbc9faf40718e001",
+      "bytes": 10876
     },
     "references.bib": {
       "sha256": "dd98e55260855990a6e105a0ed125e3ed5a169bb02ca3cdccac345d73815c11f",
@@ -197,8 +197,8 @@
       "bytes": 3369
     },
     "RELEASE_BLOCKERS.md": {
-      "sha256": "2536842bfaffae376d39a2db881d3c88c090e537700ab2b5f115077d41e3293f",
-      "bytes": 13804
+      "sha256": "88bad84ff9637786a6e284a6980900bbb47b2df9250f68b28c67342419cc36f2",
+      "bytes": 13858
     },
     "RELEASE_CANDIDATE_FREEZE.md": {
       "sha256": "e210acd4cf08a4656fdcee9a2bdfce819faac93fc4e5bd263525c7394275b709",
@@ -213,7 +213,7 @@
       "bytes": 6767
     },
     "RELEASE_MANIFEST.json": {
-      "sha256": "d4fa96315d9c6197aac0ca9af1063b24f6489501509d4d0c3d65f3b32561c6f3",
+      "sha256": "4593f8354c9fa2a96028f412d438575adf698438069d5b3d65cba0a2983897ba",
       "bytes": 13088
     },
     "RELEASE_NOTES.md": {
@@ -221,8 +221,8 @@
       "bytes": 3975
     },
     "RELEASE_PROVENANCE.md": {
-      "sha256": "e129a468d5646ec0832cf8b2ca7f2c6b710988cd602f2dbfcb69dfe1e9ad5b8e",
-      "bytes": 6482
+      "sha256": "00e85cfe0ad2458a1bc448716040a10a94299eccb0bd8fbe137ab36bca13e9e1",
+      "bytes": 6479
     },
     "RELEASE_QA.md": {
       "sha256": "cacfe2b8c940e3d610464a54347c59b746098e3699e0b8bd6d0d677d66599485",
@@ -233,8 +233,8 @@
       "bytes": 8032
     },
     "RELEASE_v1.0.0_FREEZE.md": {
-      "sha256": "f987aed145c4e68cebc3e87989383ff37fcf04e546b9d91d6e3cbe18a502edb3",
-      "bytes": 5607
+      "sha256": "1d68ff7bfaa1566dd97484eaea258b29bb4bd2cdcf6b2a0be6fd7fd03611f312",
+      "bytes": 5439
     },
     "REPRODUCIBILITY_APPENDIX.md": {
       "sha256": "6ea8edaa0a94f9c989f206229ac386b47c548cbd61938a08ef70e291c72adcff",

@@ -10,7 +10,7 @@ open items is a scientific issue; the science is accepted and frozen (`SCIENTIFI
 | **B4** | personal email in tracked source files | privacy | **CLOSED at RC2** | — |
 | **B5** | licences undecided | release metadata | **CLOSED at RC2** | — |
 | **B7** | author / public identity metadata not approved | release metadata | **CLOSED at v1.0.0** | — |
-| **B3a** | no public repository | release metadata | **OPEN** — package ready, push blocked on authentication | user |
+| **B3a** | no public repository | release metadata | **CLOSED at v1.0.0** | — |
 | **B3b** | no DOI and no archival deposition | release metadata | **OPEN by decision** | user |
 | **B6** | no independent verification of any result | scientific, disclosed | **OPEN, non-blocking** | future work |
 
@@ -37,17 +37,17 @@ the name has a single canonical representation and cannot drift into a variant.
 ORCID or the old placeholder; `scripts/release_pdf_audit.py` asserts the exact byline against the
 extracted text of the compiled PDF and rejects all four at zero occurrences.
 
-## B3a — No public repository — **OPEN, package ready**
+## B3a — No public repository — **CLOSED at v1.0.0**
 
-The paper-only public package is built by `scripts/release_public_repo.py`, audited by
-`scripts/release_public_audit.py` on the exact directory that would be published, committed to a
-clean local history and tagged `v1.0.0`. State: **`PUBLIC_REPO_READY_FOR_PUSH`**.
+The paper-only package is built by `scripts/release_public_repo.py`, audited by
+`scripts/release_public_audit.py` on the exact directory that was published, and is live at
+<https://github.com/ricardohenrique1609/before-the-backtest>, tagged `v1.0.0`, with `paper.pdf` attached to the release at
+<https://github.com/ricardohenrique1609/before-the-backtest/releases/tag/v1.0.0>.
 
-**What blocks it.** No GitHub authentication exists in this environment: the `gh` CLI is not
-installed, no git remote is configured, there is no `gh` host configuration and no token is present
-in the environment. **No credential was improvised, written to disk, pasted into source or logged**,
-and no weaker route was taken to get around the absence. `GITHUB_PUBLIC_RELEASE.md` states the exact
-minimal action required.
+This blocker was held open through an earlier pass because no GitHub authentication existed in that
+environment. **No credential was improvised, written to disk, pasted into source or logged** then,
+and none was handled here either: the publication used an already-authenticated GitHub CLI whose
+token lives in the OS keyring. `GITHUB_PUBLIC_RELEASE.md` records the outcome.
 
 ## B3b — No DOI and no archival deposition — **OPEN by decision**
 
@@ -219,7 +219,8 @@ of this file and detailed in `RELEASE_QA_RC2.md` and `RELEASE_CANDIDATE_RC2_FREE
 blocker when it was first recorded, so each resolution can be checked against the problem as it was
 originally described.
 
-**B3a, B3b and B6 remain open.** B3a is ready and blocked only on authentication. B3b — a DOI or archival deposition — requires explicit approval for an
+**B3b and B6 remain open.** B3b — a DOI or archival deposition — is open **by decision**, not by
+omission. B3b — a DOI or archival deposition — requires explicit approval for an
 irreversible external action and was deliberately not taken. B6 is disclosed in the paper itself and
 is not a release gate at a methods venue; the cheapest viable external check is named in §8 of the
 manuscript and has not been performed.

@@ -1,11 +1,10 @@
 # RELEASE FREEZE — v1.0.0
 
-**Status: v1.0.0 built, audited, committed and tagged locally — `PUBLIC_REPO_READY_FOR_PUSH`.**
+**Status: PUBLISHED.** <https://github.com/ricardohenrique1609/before-the-backtest>, tag `v1.0.0`, commit
+`9aaaa6d`, with `paper.pdf` attached to the release.
 
-**The repository has not been created and nothing has been pushed.** No GitHub authentication exists
-in this environment and none was improvised; `GITHUB_PUBLIC_RELEASE.md` states the exact minimal
-step required. No DOI, no archival deposition, no preprint server, no journal submission: nothing was
-uploaded to Zenodo, SSRN or arXiv.
+**No DOI, no archival deposition, no preprint server, no journal submission.** Nothing was uploaded
+to Zenodo, SSRN or arXiv, and the work has not been sent to a journal.
 
 **Date:** 2026-10-13 · **Author:** Ricardo H. Ramos Silva · Independent Researcher
 
@@ -85,7 +84,7 @@ Full detail in `FINAL_PUBLICATION_QA.md` and `PUBLIC_REPO_FINAL_AUDIT.md`.
 | **B4** personal email | **CLOSED at RC2** |
 | **B5** licences undecided | **CLOSED at RC2** |
 | **B7** author metadata not approved | **CLOSED at v1.0.0** |
-| **B3a** no public repository | **OPEN — package ready, push blocked on authentication** |
+| **B3a** no public repository | **CLOSED at v1.0.0** |
 | **B3b** no DOI, no archival deposition | **OPEN by decision** |
 | **B6** no independent replication | **OPEN, disclosed, non-blocking** |
 
@@ -104,6 +103,5 @@ identified economic effect, **no** external peer review, **no** institutional en
 independent replication. The four referee reports are this project's own hostile-review process, and
 every document that mentions them says so.
 
-A GitHub tag is not an archival identifier. A repository can be renamed, made private or deleted, so
-this release will be less durable than a DOI would be even once it is pushed. That is recorded as
-**B3b**, open by decision.
+A GitHub tag is not an archival identifier. This repository can be renamed, made private or deleted,
+so this release is less durable than a DOI would be. That is recorded as **B3b**, open by decision.

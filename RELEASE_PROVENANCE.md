@@ -3,8 +3,7 @@
 > **This release candidate is derived from the scientifically accepted V4. All changes after V4 are
 > proof, production, formatting, metadata, or repository-hygiene changes only.**
 
-**Release:** v1.0.0 · **Date:** 2026-10-13 · **Status:** built, audited and tagged locally;
-**not pushed** — see `GITHUB_PUBLIC_RELEASE.md`
+**Release:** v1.0.0 · **Date:** 2026-10-13 · **Status:** published — <https://github.com/ricardohenrique1609/before-the-backtest>
 
 **Author:** Ricardo H. Ramos Silva · Independent Researcher
 
@@ -92,7 +91,7 @@ made precise.** Nothing was recomputed and no experiment was run to establish it
 | **RC1** | 2026-10-12 | the quantile-convention proof clause, Figure 4 layout, release metadata, repository hygiene | 0 |
 | **RC2** | 2026-10-12 | the compiled PDF, the evidence bundle, the three licences, the contact-address removal | 0 |
 | **RC3** | 2026-10-13 | mathematics and lists typeset correctly, a real References section, publication front matter | 0 |
-| **v1.0.0** | 2026-10-13 | the authorised byline, the public package, the local tag | 0 |
+| **v1.0.0** | 2026-10-13 | the authorised byline, the public repository, the tagged release | 0 |
 
 ### Author metadata — the authorisation record
 

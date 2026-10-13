@@ -17,8 +17,8 @@
     ],
     "note": "package_files_total = payload_files_hashed + the manifest itself. RELEASE_MANIFEST.json is not hashed here because a file cannot contain its own hash."
   },
-  "built_utc": "2026-10-13T17:28:57Z",
-  "source_commit": "73ba11bd59dc40e2cd62ea200e60d57e78d64362",
+  "built_utc": "2026-10-13T19:04:29Z",
+  "source_commit": "2bd8e987457f5604687974573bed035e3a4fa5b2",
   "scientific_source": {
     "version": "V4",
     "file": "v4/paper_v4.md",
@@ -65,20 +65,20 @@
       "bytes": 14559
     },
     "README.md": {
-      "sha256": "fa08c6a361af4be27f0ab7d3ad2809b90c125660586f2bc4e75ee1c72f105fca",
-      "bytes": 10728
+      "sha256": "d8fd491d5f3135513845ed132282c629bbc1967e2d733a228016581f5ee69a31",
+      "bytes": 10897
     },
     "BUILD.md": {
       "sha256": "062030cf6bea6dbd991e8ca67f686795cfc268319ac2ce84f3a6df951f14fffa",
       "bytes": 6896
     },
     "CHANGELOG.md": {
-      "sha256": "16552116eb1ff51c5542d79fd85131fcfc214541d1f686263746501bbaa7e6a4",
-      "bytes": 12624
+      "sha256": "9e8d7ace649d237d7501a0c5e3f6f9e804a624bd565857a1a1d6baa673a8b105",
+      "bytes": 12575
     },
     "RELEASE_PROVENANCE.md": {
-      "sha256": "829eac40dc862505c7426235fd1c53d2ee525de0539ed968e34db9ad5808a122",
-      "bytes": 6482
+      "sha256": "f78676bd1521da06cd5acb2eda4fe12b062d09f987a141693d336a61015c6626",
+      "bytes": 6479
     },
     "RELEASE_QA.md": {
       "sha256": "cacfe2b8c940e3d610464a54347c59b746098e3699e0b8bd6d0d677d66599485",
@@ -97,8 +97,8 @@
       "bytes": 5660
     },
     "RELEASE_BLOCKERS.md": {
-      "sha256": "014ec5dd4cd0bc64d55c0eb877c4a4510658bfad2ffa64d5ff591724c603f927",
-      "bytes": 13816
+      "sha256": "e69d3bdcf58e909657ea11958f019eddbb9dd7c0e2c0dc1edd75922f2d6e3870",
+      "bytes": 13870
     },
     "PDF_QA.md": {
       "sha256": "c22ecfbacfd4402d2b1d5baecc9d6f7f52107eed5ad2468740c424d638f39ae7",
@@ -133,8 +133,8 @@
       "bytes": 698
     },
     "CITATION.cff": {
-      "sha256": "74a127aec127b7693aecf70bac4056e7077e332dfa1a7d3660d06f381624bf42",
-      "bytes": 1862
+      "sha256": "be0a9efc7ed40028ed33880e3a3d2391e1c7df4efdcd88bf43c7d51c54866da1",
+      "bytes": 1876
     },
     "zenodo.json": {
       "sha256": "d0859e5ecfae9865c95df78a5f74d07555c3d6587fa00f92be438423a5443ea8",
