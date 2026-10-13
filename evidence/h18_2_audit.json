@@ -1,0 +1,235 @@
+{
+ "section_22_coverage": {
+  "asset_weeks_all": 144988,
+  "asset_weeks_in_risk_set": 134732,
+  "risk_set_rule": "an asset enters the risk set 90 days after its first served candle, because a trailing window shorter than the feature window does not exist. Chosen on a data-availability argument before any model exists, and both the restricted and unrestricted coverage numbers are reported.",
+  "unrestricted": {
+   "min_listing_age_days": 0,
+   "asset_weeks": 144988,
+   "market_baseline_availability": 0.9281,
+   "baseline_future_delisted": 0.9859,
+   "baseline_other": 0.9237,
+   "baseline_differential_pp": 6.22,
+   "route_state_future_delisted": 1.0,
+   "route_state_other": 0.999,
+   "route_state_differential_pp": 0.1
+  },
+  "risk_set": {
+   "min_listing_age_days": 90,
+   "asset_weeks": 134732,
+   "market_baseline_availability": 0.9987,
+   "baseline_future_delisted": 0.9996,
+   "baseline_other": 0.9987,
+   "baseline_differential_pp": 0.09,
+   "route_state_future_delisted": 1.0,
+   "route_state_other": 0.9991,
+   "route_state_differential_pp": 0.09
+  },
+  "identity_and_route_state": 0.9991,
+  "identity_and_route_state_bar": 0.95,
+  "market_baseline_availability": 0.9987,
+  "market_baseline_bar": 0.9,
+  "baseline_window_days": 90,
+  "baseline_availability_future_delisted": 0.9996,
+  "baseline_availability_other": 0.9987,
+  "baseline_differential_pp": 0.09,
+  "route_state_future_delisted": 1.0,
+  "route_state_other": 0.9991,
+  "route_state_differential_pp": 0.09,
+  "differential_bar_pp": 5.0,
+  "what_availability_means": "whether the venue serves candles spanning the trailing window - never what the candles say. No return, volatility or drawdown is computed (sections 11, 30)."
+ },
+ "section_10_lifecycle": {
+  "events_with_an_announcement": 201,
+  "events_with_at_least_one_prior_signal_removal": 169,
+  "share_with_prior_contraction": 0.8408,
+  "events_with_no_prior_contraction": 32,
+  "days_first_signal_removal_to_announcement": {
+   "n": 169,
+   "p10": 223.0,
+   "p25": 496.0,
+   "median": 854.0,
+   "p75": 1341.0,
+   "p90": 1721.8000000000006
+  },
+  "days_last_signal_removal_to_announcement": {
+   "n": 169,
+   "p10": 36.2,
+   "p25": 179.0,
+   "median": 411.0,
+   "p75": 669.0,
+   "p90": 922.2
+  },
+  "n_prior_signal_removals": {
+   "n": 169,
+   "p10": 1.0,
+   "p25": 1.0,
+   "median": 2.0,
+   "p75": 2.0,
+   "p90": 3.0
+  },
+  "by_candidate_horizon": {
+   "90": {
+    "events_with_a_signal_removal_within_h_days_of_announcement": 29,
+    "share_of_all_201_events": 0.1443,
+    "positive_asset_weeks": 2514,
+    "base_rate": 0.017339
+   },
+   "180": {
+    "events_with_a_signal_removal_within_h_days_of_announcement": 43,
+    "share_of_all_201_events": 0.2139,
+    "positive_asset_weeks": 5067,
+    "base_rate": 0.034948
+   },
+   "365": {
+    "events_with_a_signal_removal_within_h_days_of_announcement": 79,
+    "share_of_all_201_events": 0.393,
+    "positive_asset_weeks": 10153,
+    "base_rate": 0.070026
+   }
+  }
+ },
+ "section_21_pit": {
+  "asset_weeks_checked": 300,
+  "symbol_checks": 1709,
+  "primary_criterion": "the structural leakage test below; it is exact and window-free",
+  "venue_agreement_window_sweep": {
+   "7": {
+    "agreement": 0.97,
+    "panel_undercounts": 2,
+    "panel_overcounts": 7
+   },
+   "14": {
+    "agreement": 0.96,
+    "panel_undercounts": 5,
+    "panel_overcounts": 7
+   },
+   "30": {
+    "agreement": 0.9133,
+    "panel_undercounts": 19,
+    "panel_overcounts": 7
+   }
+  },
+  "route_count_matches_the_venue_tightest_window": 0.97,
+  "structural_leakage_pairs_first_candle_after_t": 0,
+  "structural_leakage_removals_dated_after_t": 0,
+  "leakage_tolerated": 0,
+  "venue_disagreement_panel_undercounts_tightest": 2,
+  "venue_disagreement_panel_overcounts_tightest": 7,
+  "method": "two tests. The structural one is exact and decisive: no counted pair may have a first candle after t and no removal dated after t may enter a trailing feature - the only two routes by which future information could reach a feature. The venue comparison then asks whether the route count matches what Binance serves with endTime = t, so the venue itself cannot return a post-t candle. Disagreements are classified by direction rather than called leakage: a pair that exists but has not traded for weeks makes the panel look high without any future information being used, and a pair whose window starts later in our table than at the venue makes it look low, which is conservative."
+ },
+ "section_23_balance": {
+  "asset_weeks": 144988,
+  "unique_asset_eras": 831,
+  "unique_tickers": 830,
+  "delisting_events": 201,
+  "events_by_announcement_year": {
+   "2018": 4,
+   "2019": 6,
+   "2020": 10,
+   "2021": 19,
+   "2022": 26,
+   "2023": 16,
+   "2024": 33,
+   "2025": 41,
+   "2026": 46
+  },
+  "by_year": {
+   "2017": {
+    "asset_weeks": 923,
+    "unique_assets": 93,
+    "positives_90d": 0,
+    "positives_180d": 0,
+    "positives_365d": 12
+   },
+   "2018": {
+    "asset_weeks": 7042,
+    "unique_assets": 158,
+    "positives_90d": 87,
+    "positives_180d": 207,
+    "positives_365d": 368
+   },
+   "2019": {
+    "asset_weeks": 8359,
+    "unique_assets": 191,
+    "positives_90d": 42,
+    "positives_180d": 44,
+    "positives_365d": 164
+   },
+   "2020": {
+    "asset_weeks": 11686,
+    "unique_assets": 338,
+    "positives_90d": 146,
+    "positives_180d": 315,
+    "positives_365d": 715
+   },
+   "2021": {
+    "asset_weeks": 18399,
+    "unique_assets": 424,
+    "positives_90d": 219,
+    "positives_180d": 502,
+    "positives_365d": 1173
+   },
+   "2022": {
+    "asset_weeks": 19674,
+    "unique_assets": 418,
+    "positives_90d": 344,
+    "positives_180d": 692,
+    "positives_365d": 1203
+   },
+   "2023": {
+    "asset_weeks": 19187,
+    "unique_assets": 404,
+    "positives_90d": 196,
+    "positives_180d": 383,
+    "positives_365d": 1034
+   },
+   "2024": {
+    "asset_weeks": 20192,
+    "unique_assets": 435,
+    "positives_90d": 399,
+    "positives_180d": 1042,
+    "positives_365d": 2268
+   },
+   "2025": {
+    "asset_weeks": 21419,
+    "unique_assets": 491,
+    "positives_90d": 559,
+    "positives_180d": 1111,
+    "positives_365d": 2384
+   },
+   "2026": {
+    "asset_weeks": 18107,
+    "unique_assets": 556,
+    "positives_90d": 522,
+    "positives_180d": 771,
+    "positives_365d": 832
+   }
+  },
+  "no_resampling_applied": "no oversampling, no SMOTE, no class weighting - section 23 measures only"
+ },
+ "section_24_split": {
+  "TRAIN 2018-2022": {
+   "events": 65,
+   "asset_weeks": 65160,
+   "unique_assets": 513,
+   "positive_asset_weeks_90d": 838,
+   "positive_asset_weeks_180d": 1760
+  },
+  "VALIDATION 2023-2024": {
+   "events": 49,
+   "asset_weeks": 39379,
+   "unique_assets": 468,
+   "positive_asset_weeks_90d": 595,
+   "positive_asset_weeks_180d": 1425
+  },
+  "HOLDOUT 2025-2026": {
+   "events": 87,
+   "asset_weeks": 39526,
+   "unique_assets": 607,
+   "positive_asset_weeks_90d": 1081,
+   "positive_asset_weeks_180d": 1882
+  }
+ },
+ "note": "No return of any kind is computed anywhere in H18.2 (section 30)."
+}

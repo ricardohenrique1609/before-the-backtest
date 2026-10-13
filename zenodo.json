@@ -1,0 +1,27 @@
+{
+  "title": "Before the Backtest: Pre-Freeze Common-Support Ceilings for Event-Driven Strategy Research",
+  "upload_type": "publication",
+  "publication_type": "workingpaper",
+  "description": "A pre-freeze common-support ceiling: compute the maximum attainable matched support on the complete point-in-time eligible population, before a matched event-study design is frozen and before any outcome column is opened; stop if the implied confirmatory sample falls below a pre-registered minimum. Demonstrated on 62 candidate cryptocurrency delisting events: implied confirmatory sample 10 against a required 40, with no price column loaded at any point. Scientific content accepted at version V4.",
+  "creators": [
+    {
+      "name": "Ramos Silva, Ricardo H.",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "keywords": [
+    "common support",
+    "positivity",
+    "outcome-free design",
+    "point-in-time data",
+    "event studies",
+    "pre-registration",
+    "research feasibility",
+    "cryptocurrency delisting"
+  ],
+  "version": "1.0.0",
+  "publication_date": "2026-10-13",
+  "license": "cc-by-4.0",
+  "related_identifiers": [],
+  "notes": "Component licences differ: code MIT; manuscript, figures and tables CC BY 4.0; project-created derived evidence artefacts CC0 1.0. The CC0 dedication applies only to those derived artefacts and grants no rights over the underlying exchange, regulatory, market-data or publication sources. No raw third-party corpus is redistributed. DOI is PENDING and has not been reserved; no deposition has been created. Release requires explicit approval; see PUBLIC_RELEASE_PLAN.md. No ORCID is recorded because none was provided, and none is invented. No correspondence email is published. No institutional endorsement is implied."
+}

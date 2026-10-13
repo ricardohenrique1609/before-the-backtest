@@ -1,0 +1,32 @@
+# Derived evidence artefacts — CC0 1.0
+
+**Covered by this dedication:** the nine files in `evidence/`, listed in `EVIDENCE_MANIFEST.csv`.
+These are summary statistics computed by this project — counts, quantiles, coverage rates, verdicts
+and audit records. Each row of the manifest is marked `derived`.
+
+To the extent possible under law, the author has waived all copyright and related or neighbouring
+rights to these derived artefacts, dedicating them to the public domain under CC0 1.0 Universal.
+
+- Human-readable summary: https://creativecommons.org/publicdomain/zero/1.0/
+- Full legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The purpose is friction-free verification: a reader checking a number in the paper should not have to
+consider licensing at all.
+
+## What this dedication does NOT cover
+
+> **The CC0 dedication applies only to project-created derived artefacts and does not grant rights
+> over the underlying exchange, regulatory, market-data, or publication sources.**
+
+Concretely, it confers no rights over:
+
+- the cryptocurrency venue's market-data archive, its announcement catalogue, or any document
+  published by that venue;
+- SEC EDGAR filings and datasets, Brazilian regulatory (CVM) filings, FDA datasets, or any other
+  regulator's published material;
+- third-party price data obtained through free APIs;
+- any academic publication cited in `references.bib`.
+
+**No raw corpus from any of those sources is included in this package.** `DATA_RELEASE_POLICY.md`
+classifies every source and documents how to retrieve it. Anyone redistributing source material
+obtained by following those instructions is responsible for the terms attached to it.

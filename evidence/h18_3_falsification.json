@@ -1,0 +1,82 @@
+{
+ "run_on": "DEVELOPMENT folds only - the holdout was opened once and is not re-scored",
+ "does_not_change_the_primary_verdict": true,
+ "reference_baseline": {
+  "mean_fold_pr_auc": 0.20346,
+  "pooled_pr_auc": 0.20038,
+  "mean_topdecile_lift": 3.9909,
+  "n_features": 18
+ },
+ "reference_challenger": {
+  "mean_fold_pr_auc": 0.24241,
+  "pooled_pr_auc": 0.22736,
+  "mean_topdecile_lift": 4.7899,
+  "n_features": 23
+ },
+ "checks": {
+  "A_calendar_regime_only": {
+   "mean_fold_pr_auc": 0.06197,
+   "pooled_pr_auc": 0.06623,
+   "mean_topdecile_lift": 0.9407,
+   "n_features": 3
+  },
+  "A_market_only_no_regime": {
+   "mean_fold_pr_auc": 0.22878,
+   "pooled_pr_auc": 0.2184,
+   "mean_topdecile_lift": 4.2987,
+   "n_features": 15
+  },
+  "B_market_only": {
+   "mean_fold_pr_auc": 0.18536,
+   "pooled_pr_auc": 0.16821,
+   "mean_topdecile_lift": 3.777,
+   "n_features": 8
+  },
+  "B_market_plus_current_route_state": {
+   "mean_fold_pr_auc": 0.22878,
+   "pooled_pr_auc": 0.2184,
+   "mean_topdecile_lift": 4.2987,
+   "n_features": 15
+  },
+  "B_market_plus_history_no_current_state": {
+   "mean_fold_pr_auc": 0.22859,
+   "pooled_pr_auc": 0.20574,
+   "mean_topdecile_lift": 4.548,
+   "n_features": 16
+  },
+  "C_challenger_without_batch_prune": {
+   "mean_fold_pr_auc": 0.25721,
+   "pooled_pr_auc": 0.24181,
+   "mean_topdecile_lift": 4.9588,
+   "n_features": 22
+  },
+  "D_challenger_asset_specific_count_only": {
+   "mean_fold_pr_auc": 0.21407,
+   "pooled_pr_auc": 0.19799,
+   "mean_topdecile_lift": 4.115,
+   "n_features": 19
+  },
+  "E1_time_shift_placebo": {
+   "mean_fold_pr_auc": 0.20503,
+   "pooled_pr_auc": 0.20339,
+   "mean_topdecile_lift": 3.958,
+   "n_features": 23
+  },
+  "E1_placebo_history_coverage": 0.2021,
+  "E2_within_week_permutation_placebo": {
+   "mean_fold_pr_auc": 0.20182,
+   "pooled_pr_auc": 0.19229,
+   "mean_topdecile_lift": 4.0533,
+   "n_features": 23
+  }
+ },
+ "reading": {
+  "A": "if the regime block alone reaches a large share of the challenger's PR-AUC, much of the apparent skill is calendar, not asset",
+  "B": "separates the LEVEL of route state from its HISTORY, which is the whole point of H18-P1",
+  "C": "if removing batch_prune collapses the gain, the result rests on that judgement call",
+  "D": "asset-specific removals only - the narrowest and least policy-contaminated signal",
+  "E1": "route history shifted 1092 days out of position; a surviving gain would mean the features are not carrying the asset's own contraction. Coverage is partial by construction and is reported",
+  "E2": "route history permuted across assets within the same week: the calendar distribution of contraction is preserved exactly and only the asset link is destroyed, so a surviving gain means the challenger is reading the period rather than the asset"
+ },
+ "note": "No return of any kind computed (B19)."
+}

@@ -1,0 +1,434 @@
+{
+ "administrative_censor_date": "2026-10-09",
+ "horizon_days": 365,
+ "estimand": "Y(i,t) = 1 if asset-era i has a full-asset delisting announcement in (t, t+365d]",
+ "risk_set_entry": "90 days after the asset-era's first served candle",
+ "panel_asset_weeks_after_risk_set_rule": 134732,
+ "eligible_landmarks": 112963,
+ "ineligible_landmarks_incomplete_followup": 21769,
+ "last_eligible_landmark": "2025-10-06",
+ "eligible_landmarks_by_year": {
+  "2017": 154,
+  "2018": 5822,
+  "2019": 7868,
+  "2020": 9940,
+  "2021": 16832,
+  "2022": 18978,
+  "2023": 18804,
+  "2024": 19394,
+  "2025": 15171
+ },
+ "landmarks_2017_excluded_from_primary": 154,
+ "FROZEN_DESIGN": {
+  "DEVELOPMENT 2018-01-01..2023-12-31": {
+   "landmark_weeks": 78244,
+   "unique_asset_eras": 522,
+   "positive_landmark_weeks": 4555,
+   "unique_positive_events": 110,
+   "base_rate": 0.05822,
+   "first_landmark": "2018-01-01",
+   "last_landmark": "2023-12-25"
+  },
+  "EMBARGO 2024-01-01..2024-12-31 (dropped)": {
+   "landmark_weeks": 19394,
+   "unique_asset_eras": 417,
+   "positive_landmark_weeks": 2251,
+   "unique_positive_events": 72,
+   "base_rate": 0.11607,
+   "first_landmark": "2024-01-01",
+   "last_landmark": "2024-12-30"
+  },
+  "HOLDOUT 2025-01-01..last eligible": {
+   "landmark_weeks": 15171,
+   "unique_asset_eras": 443,
+   "positive_landmark_weeks": 1789,
+   "unique_positive_events": 86,
+   "base_rate": 0.11792,
+   "first_landmark": "2025-01-06",
+   "last_landmark": "2025-10-06"
+  }
+ },
+ "FROZEN_event_sharing": {
+  "DEVELOPMENT <-> HOLDOUT": {
+   "shared_events": 0,
+   "shared_event_ids": []
+  }
+ },
+ "why_the_briefing_boundaries_were_not_kept": "measured as landmark dates they share events: TRAIN 2018-2022 <-> VALIDATION 2023-2024 share 16, and VALIDATION 2023-2024 <-> HOLDOUT 2025 share 41 of the holdout's 86 events. A one-horizon embargo fixes the first boundary but cannot fix the second, because validation outcomes reach 2025-12-31 while the last landmark with complete follow-up is 2025-10-06. Reporting a validation block would therefore half-preview the holdout, so the separate validation block is dropped and its role is served by the rolling-origin folds, which instruction 3 already made the only place lambda may be chosen.",
+ "splits_as_specified_in_the_briefing": {
+  "TRAIN 2018-2022": {
+   "landmark_weeks": 59440,
+   "unique_asset_eras": 493,
+   "positive_landmark_weeks": 3521,
+   "unique_positive_events": 79,
+   "base_rate": 0.05924,
+   "first_landmark": "2018-01-01",
+   "last_landmark": "2022-12-26"
+  },
+  "VALIDATION 2023-2024": {
+   "landmark_weeks": 38198,
+   "unique_asset_eras": 450,
+   "positive_landmark_weeks": 3285,
+   "unique_positive_events": 88,
+   "base_rate": 0.086,
+   "first_landmark": "2023-01-02",
+   "last_landmark": "2024-12-30"
+  },
+  "HOLDOUT 2025-01-01..last eligible": {
+   "landmark_weeks": 15171,
+   "unique_asset_eras": 443,
+   "positive_landmark_weeks": 1789,
+   "unique_positive_events": 86,
+   "base_rate": 0.11792,
+   "first_landmark": "2025-01-06",
+   "last_landmark": "2025-10-06"
+  }
+ },
+ "event_sharing_between_adjacent_splits": {
+  "TRAIN 2018-2022 <-> VALIDATION 2023-2024": {
+   "shared_events": 16,
+   "shared_event_ids": [
+    "AION#0",
+    "ANC#0",
+    "AUTO#0",
+    "BEAM#0",
+    "BTS#0",
+    "HNT#0",
+    "MIR#0",
+    "NEBL#0",
+    "PERL#0",
+    "QLC#0",
+    "SNM#0",
+    "SRM#0",
+    "TORN#0",
+    "WABI#0",
+    "WTC#0",
+    "YFII#0"
+   ]
+  },
+  "VALIDATION 2023-2024 <-> HOLDOUT 2025-01-01..last eligible": {
+   "shared_events": 41,
+   "shared_event_ids": [
+    "AERGO#0",
+    "ALPACA#0",
+    "ALPHA#0",
+    "AMB#0",
+    "AST#0",
+    "BADGER#0",
+    "BAKE#0",
+    "BAL#0",
+    "BETA#0",
+    "BSW#0",
+    "BURGER#0",
+    "CLV#0",
+    "COMBO#0",
+    "CREAM#0",
+    "CTXC#0",
+    "ELF#0",
+    "FIRO#0",
+    "FIS#0",
+    "FLM#0",
+    "HARD#0",
+    "HIFI#0",
+    "KDA#0",
+    "KMD#0",
+    "LEVER#0",
+    "LINA#0"
+   ]
+  }
+ },
+ "splits_with_a_one_horizon_embargo": {
+  "TRAIN 2018-01-01..2022-12-31": {
+   "landmark_weeks": 59440,
+   "unique_asset_eras": 493,
+   "positive_landmark_weeks": 3521,
+   "unique_positive_events": 79,
+   "base_rate": 0.05924,
+   "first_landmark": "2018-01-01",
+   "last_landmark": "2022-12-26"
+  },
+  "EMBARGO 2023-01-01..2023-12-31 (dropped)": {
+   "landmark_weeks": 18804,
+   "unique_asset_eras": 391,
+   "positive_landmark_weeks": 1034,
+   "unique_positive_events": 47,
+   "base_rate": 0.05499,
+   "first_landmark": "2023-01-02",
+   "last_landmark": "2023-12-25"
+  },
+  "VALIDATION 2024-01-01..2024-12-31": {
+   "landmark_weeks": 19394,
+   "unique_asset_eras": 417,
+   "positive_landmark_weeks": 2251,
+   "unique_positive_events": 72,
+   "base_rate": 0.11607,
+   "first_landmark": "2024-01-01",
+   "last_landmark": "2024-12-30"
+  },
+  "HOLDOUT 2025-01-01..2025-10-06": {
+   "landmark_weeks": 15171,
+   "unique_asset_eras": 443,
+   "positive_landmark_weeks": 1789,
+   "unique_positive_events": 86,
+   "base_rate": 0.11792,
+   "first_landmark": "2025-01-06",
+   "last_landmark": "2025-10-06"
+  }
+ },
+ "event_sharing_after_embargo": {
+  "TRAIN 2018-01-01..2022-12-31 <-> VALIDATION 2024-01-01..2024-12-31": {
+   "shared_events": 0,
+   "shared_event_ids": []
+  },
+  "VALIDATION 2024-01-01..2024-12-31 <-> HOLDOUT 2025-01-01..2025-10-06": {
+   "shared_events": 41,
+   "shared_event_ids": [
+    "AERGO#0",
+    "ALPACA#0",
+    "ALPHA#0",
+    "AMB#0",
+    "AST#0",
+    "BADGER#0",
+    "BAKE#0",
+    "BAL#0",
+    "BETA#0",
+    "BSW#0",
+    "BURGER#0",
+    "CLV#0",
+    "COMBO#0",
+    "CREAM#0",
+    "CTXC#0",
+    "ELF#0",
+    "FIRO#0",
+    "FIS#0",
+    "FLM#0",
+    "HARD#0",
+    "HIFI#0",
+    "KDA#0",
+    "KMD#0",
+    "LEVER#0",
+    "LINA#0"
+   ]
+  }
+ },
+ "rolling_origin_folds": [
+  {
+   "fold": 1,
+   "train_from": "2018-01-01",
+   "train_to": "2021-01-02",
+   "embargo_days": 365,
+   "test_from": "2022-01-03",
+   "test_to": "2022-04-03",
+   "train": {
+    "landmark_weeks": 23630,
+    "unique_asset_eras": 288,
+    "positive_landmark_weeks": 1163,
+    "unique_positive_events": 36,
+    "base_rate": 0.04922,
+    "first_landmark": "2018-01-01",
+    "last_landmark": "2020-12-28"
+   },
+   "test": {
+    "landmark_weeks": 4575,
+    "unique_asset_eras": 380,
+    "positive_landmark_weeks": 344,
+    "unique_positive_events": 31,
+    "base_rate": 0.07519,
+    "first_landmark": "2022-01-03",
+    "last_landmark": "2022-03-28"
+   },
+   "shared_events_train_test": 0
+  },
+  {
+   "fold": 2,
+   "train_from": "2018-01-01",
+   "train_to": "2021-04-03",
+   "embargo_days": 365,
+   "test_from": "2022-04-04",
+   "test_to": "2022-07-03",
+   "train": {
+    "landmark_weeks": 27281,
+    "unique_asset_eras": 345,
+    "positive_landmark_weeks": 1381,
+    "unique_positive_events": 42,
+    "base_rate": 0.05062,
+    "first_landmark": "2018-01-01",
+    "last_landmark": "2021-03-29"
+   },
+   "test": {
+    "landmark_weeks": 4781,
+    "unique_asset_eras": 381,
+    "positive_landmark_weeks": 345,
+    "unique_positive_events": 27,
+    "base_rate": 0.07216,
+    "first_landmark": "2022-04-04",
+    "last_landmark": "2022-06-27"
+   },
+   "shared_events_train_test": 0
+  },
+  {
+   "fold": 3,
+   "train_from": "2018-01-01",
+   "train_to": "2021-07-03",
+   "embargo_days": 365,
+   "test_from": "2022-07-04",
+   "test_to": "2022-10-02",
+   "train": {
+    "landmark_weeks": 31413,
+    "unique_asset_eras": 379,
+    "positive_landmark_weeks": 1667,
+    "unique_positive_events": 45,
+    "base_rate": 0.05307,
+    "first_landmark": "2018-01-01",
+    "last_landmark": "2021-06-28"
+   },
+   "test": {
+    "landmark_weeks": 4830,
+    "unique_asset_eras": 381,
+    "positive_landmark_weeks": 277,
+    "unique_positive_events": 27,
+    "base_rate": 0.05735,
+    "first_landmark": "2022-07-04",
+    "last_landmark": "2022-09-26"
+   },
+   "shared_events_train_test": 0
+  },
+  {
+   "fold": 4,
+   "train_from": "2018-01-01",
+   "train_to": "2021-10-02",
+   "embargo_days": 365,
+   "test_from": "2022-10-03",
+   "test_to": "2023-01-01",
+   "train": {
+    "landmark_weeks": 35869,
+    "unique_asset_eras": 405,
+    "positive_landmark_weeks": 1996,
+    "unique_positive_events": 55,
+    "base_rate": 0.05565,
+    "first_landmark": "2018-01-01",
+    "last_landmark": "2021-09-27"
+   },
+   "test": {
+    "landmark_weeks": 4792,
+    "unique_asset_eras": 375,
+    "positive_landmark_weeks": 228,
+    "unique_positive_events": 24,
+    "base_rate": 0.04758,
+    "first_landmark": "2022-10-03",
+    "last_landmark": "2022-12-26"
+   },
+   "shared_events_train_test": 0
+  },
+  {
+   "fold": 5,
+   "train_from": "2018-01-01",
+   "train_to": "2022-01-01",
+   "embargo_days": 365,
+   "test_from": "2023-01-02",
+   "test_to": "2023-04-02",
+   "train": {
+    "landmark_weeks": 40462,
+    "unique_asset_eras": 427,
+    "positive_landmark_weeks": 2327,
+    "unique_positive_events": 63,
+    "base_rate": 0.05751,
+    "first_landmark": "2018-01-01",
+    "last_landmark": "2021-12-27"
+   },
+   "test": {
+    "landmark_weeks": 4716,
+    "unique_asset_eras": 369,
+    "positive_landmark_weeks": 203,
+    "unique_positive_events": 22,
+    "base_rate": 0.04304,
+    "first_landmark": "2023-01-02",
+    "last_landmark": "2023-03-27"
+   },
+   "shared_events_train_test": 0
+  },
+  {
+   "fold": 6,
+   "train_from": "2018-01-01",
+   "train_to": "2022-04-02",
+   "embargo_days": 365,
+   "test_from": "2023-04-03",
+   "test_to": "2023-07-02",
+   "train": {
+    "landmark_weeks": 45037,
+    "unique_asset_eras": 462,
+    "positive_landmark_weeks": 2671,
+    "unique_positive_events": 68,
+    "base_rate": 0.05931,
+    "first_landmark": "2018-01-01",
+    "last_landmark": "2022-03-28"
+   },
+   "test": {
+    "landmark_weeks": 4666,
+    "unique_asset_eras": 369,
+    "positive_landmark_weeks": 191,
+    "unique_positive_events": 20,
+    "base_rate": 0.04093,
+    "first_landmark": "2023-04-03",
+    "last_landmark": "2023-06-26"
+   },
+   "shared_events_train_test": 0
+  },
+  {
+   "fold": 7,
+   "train_from": "2018-01-01",
+   "train_to": "2022-07-02",
+   "embargo_days": 365,
+   "test_from": "2023-07-03",
+   "test_to": "2023-10-01",
+   "train": {
+    "landmark_weeks": 49818,
+    "unique_asset_eras": 481,
+    "positive_landmark_weeks": 3016,
+    "unique_positive_events": 72,
+    "base_rate": 0.06054,
+    "first_landmark": "2018-01-01",
+    "last_landmark": "2022-06-27"
+   },
+   "test": {
+    "landmark_weeks": 4707,
+    "unique_asset_eras": 367,
+    "positive_landmark_weeks": 293,
+    "unique_positive_events": 27,
+    "base_rate": 0.06225,
+    "first_landmark": "2023-07-03",
+    "last_landmark": "2023-09-25"
+   },
+   "shared_events_train_test": 0
+  },
+  {
+   "fold": 8,
+   "train_from": "2018-01-01",
+   "train_to": "2022-10-01",
+   "embargo_days": 365,
+   "test_from": "2023-10-02",
+   "test_to": "2023-12-31",
+   "train": {
+    "landmark_weeks": 54648,
+    "unique_asset_eras": 491,
+    "positive_landmark_weeks": 3293,
+    "unique_positive_events": 75,
+    "base_rate": 0.06026,
+    "first_landmark": "2018-01-01",
+    "last_landmark": "2022-09-26"
+   },
+   "test": {
+    "landmark_weeks": 4715,
+    "unique_asset_eras": 368,
+    "positive_landmark_weeks": 347,
+    "unique_positive_events": 35,
+    "base_rate": 0.07359,
+    "first_landmark": "2023-10-02",
+    "last_landmark": "2023-12-25"
+   },
+   "shared_events_train_test": 0
+  }
+ ],
+ "n_rolling_origin_folds": 8,
+ "note": "No model is fitted and no predictor/outcome relationship is computed. The outcome appears only as sample accounting: counts of eligible landmarks and unique events per block, which the pre-registration must freeze before fitting."
+}

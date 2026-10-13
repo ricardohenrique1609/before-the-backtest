@@ -1,0 +1,12 @@
+# provenance: data/alpha_sprint/h19_2_prefreeze.json; N_min from H19_2_PREFREEZE_FEASIBILITY.md
+key,value
+p10,0.0
+p25,0.0
+median,1.0
+p75,2.0
+p90,57.3
+events_below_floor,52
+candidate_events,62
+floor_m,20
+N_star,10
+N_min,40

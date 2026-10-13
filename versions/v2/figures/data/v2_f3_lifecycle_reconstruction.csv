@@ -1,0 +1,14 @@
+# provenance: H18_1_GATE.json pair_event_categories / asset_episode_categories; H18_1B_GATE.json universe
+step,value
+MINOR_PAIR_REMOVAL,688
+QUOTE_MIGRATION,510
+ASSET_FULL_SPOT_DELISTING,102
+FIAT_PAIR_REMOVAL,95
+PARTIAL_ASSET_DELISTING,25
+UNKNOWN,2
+h18_1_held,84
+crosswalk_BOTH,82
+miss_DIFFERENT_CATEGORY,75
+miss_PRE_2022_CATALOG,39
+miss_PAIR_UNIVERSE,5
+full_delisting_events,201

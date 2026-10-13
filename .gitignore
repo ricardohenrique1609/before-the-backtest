@@ -1,0 +1,17 @@
+# Build output
+*.log
+*.aux
+*.out
+*.toc
+__pycache__/
+*.pyc
+
+# Never commit data, environments or toolchains to this repository. Every rule is anchored to the
+# repository root with a leading slash: an unanchored `data/` matches a directory of that name at
+# any depth, which silently excluded the per-figure source data in figures/data/ that the paper
+# cites. The nine derived artefacts the paper cites are tracked deliberately, under evidence/, and
+# are listed in EVIDENCE_MANIFEST.csv.
+/data/
+/.venv/
+/.tools/
+/.env

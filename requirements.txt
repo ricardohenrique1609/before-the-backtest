@@ -1,0 +1,21 @@
+# Pinned environment for regenerating the paper from committed artefacts.
+# Python 3.12.14
+#
+# This set reproduces the FIGURES, TABLES, LaTeX and AUDITS from artefacts already in the
+# repository. It is NOT the environment for reconstructing the raw data from public sources;
+# see DATA_RELEASE_POLICY.md for why that reconstruction is not deterministic.
+#
+# scikit-learn and statsmodels are deliberately absent: the historical estimators are implemented
+# directly in numpy and scipy and are inspectable in scripts/h18_3_*.py.
+
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+matplotlib==3.11.2
+pyarrow==25.0.1
+requests==2.34.2
+httpx==0.28.1
+
+# development / verification only
+ruff==0.16.8
+pytest==9.1.1

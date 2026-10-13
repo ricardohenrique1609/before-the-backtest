@@ -1,0 +1,142 @@
+{
+ "phase": "DEVELOPMENT only - the holdout has not been touched by this script",
+ "landmarks": 78244,
+ "positives": 4555,
+ "unique_events": 110,
+ "base_rate": 0.05822,
+ "lambda_grid_declared_before_results": [
+  0.01,
+  0.03,
+  0.1,
+  0.3,
+  1.0,
+  3.0,
+  10.0,
+  30.0,
+  100.0,
+  300.0
+ ],
+ "lambda_selection": [
+  {
+   "lambda": 0.01,
+   "mean_pr_auc_baseline": 0.2028082147860985,
+   "mean_pr_auc_challenger": 0.22154929965385342
+  },
+  {
+   "lambda": 0.03,
+   "mean_pr_auc_baseline": 0.2028965039641346,
+   "mean_pr_auc_challenger": 0.2216119764146556
+  },
+  {
+   "lambda": 0.1,
+   "mean_pr_auc_baseline": 0.2028975673652681,
+   "mean_pr_auc_challenger": 0.22174627138822037
+  },
+  {
+   "lambda": 0.3,
+   "mean_pr_auc_baseline": 0.20287376465428617,
+   "mean_pr_auc_challenger": 0.22197645007881295
+  },
+  {
+   "lambda": 1.0,
+   "mean_pr_auc_baseline": 0.20254254945436345,
+   "mean_pr_auc_challenger": 0.2224646402903867
+  },
+  {
+   "lambda": 3.0,
+   "mean_pr_auc_baseline": 0.20231822450804202,
+   "mean_pr_auc_challenger": 0.22352550688519987
+  },
+  {
+   "lambda": 10.0,
+   "mean_pr_auc_baseline": 0.20290736671975745,
+   "mean_pr_auc_challenger": 0.2274954534256115
+  },
+  {
+   "lambda": 30.0,
+   "mean_pr_auc_baseline": 0.2034622988271363,
+   "mean_pr_auc_challenger": 0.23365528909642191
+  },
+  {
+   "lambda": 100.0,
+   "mean_pr_auc_baseline": 0.20293533889285786,
+   "mean_pr_auc_challenger": 0.2374320246017099
+  },
+  {
+   "lambda": 300.0,
+   "mean_pr_auc_baseline": 0.20336293815395212,
+   "mean_pr_auc_challenger": 0.2424087005944111
+  }
+ ],
+ "lambda_baseline": 30.0,
+ "lambda_challenger": 300.0,
+ "n_baseline_features": 18,
+ "n_challenger_features": 23,
+ "pooled_out_of_fold": {
+  "pr_auc_baseline": 0.20038,
+  "pr_auc_challenger": 0.22736,
+  "delta_abs": 0.02698,
+  "delta_rel": 0.13462,
+  "landmarks": 37782,
+  "unique_eras": 440
+ },
+ "cluster_bootstrap": {
+  "unit": "asset-era",
+  "n_boot": 2000,
+  "seed": 20261010,
+  "point_estimate": 0.02698,
+  "ci95_low": -0.00743,
+  "ci95_high": 0.06279,
+  "share_positive": 0.9345
+ },
+ "folds_with_positive_delta": 8,
+ "folds_total": 8,
+ "median_fold_delta": 0.03925,
+ "scientific_support_criteria": {
+  "1_aggregate_delta_gt_0": true,
+  "2_bootstrap_ci_excludes_zero": false,
+  "3_median_fold_delta_gt_0": true,
+  "4_clear_majority_positive_folds": true
+ },
+ "scientific_support_PASS": false,
+ "materiality": {
+  "relative_delta": 0.13462,
+  "absolute_delta": 0.02698,
+  "mean_topdecile_lift_baseline": 3.9909,
+  "mean_topdecile_lift_challenger": 4.7899,
+  "topdecile_lift_improvement": 0.2002,
+  "mean_brier_baseline": 0.053316,
+  "mean_brier_challenger": 0.051379,
+  "calibration_slope_shift": 0.1948,
+  "criteria": {
+   "1_relative_delta_ge_10pct": true,
+   "2_absolute_delta_ge_0.01": true,
+   "3_topdecile_lift_improvement_ge_15pct": true,
+   "4_brier_does_not_worsen": true,
+   "5_calibration_slope_shift_lt_0.10": false
+  }
+ },
+ "materiality_PASS": false,
+ "monotonic_buckets": {
+  "cutoffs": "frozen ex ante: 0 / 1 / >=2 signal removals in 365d",
+  "table": {
+   "no_contraction": {
+    "landmarks": 56962,
+    "positives": 2647,
+    "incidence": 0.04647
+   },
+   "mild": {
+    "landmarks": 15342,
+    "positives": 1366,
+    "incidence": 0.08904
+   },
+   "strong": {
+    "landmarks": 5940,
+    "positives": 542,
+    "incidence": 0.09125
+   }
+  },
+  "strictly_increasing": true
+ },
+ "note": "No return, alpha, Sharpe, CAGR or P&L computed (B19). Trailing return, volatility and drawdown are predictors required by B3."
+}

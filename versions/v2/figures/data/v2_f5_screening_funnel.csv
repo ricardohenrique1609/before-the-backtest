@@ -1,0 +1,7 @@
+# provenance: H19_0_GATE.json: input_events, tier1_usdm_at_T0, shortable_at_T0, clean_events, clean_events x small_order_1k_share_of_median_hourly['<=1.00%']
+stage,events
+documented full-delisting events,201
+Tier-1 USD-M perpetual live at T0,75
+materially shortable at T0,64
+clean public-information event,63
+passes coarse volume-based liquidity screen,32

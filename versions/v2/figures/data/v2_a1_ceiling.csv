@@ -1,0 +1,10 @@
+# provenance: H19_2_PREFREEZE_FEASIBILITY.md Check 3 table; 8 of 25 dates are recorded there, the remaining 17 were summarised to a median and not persisted
+date,eligible_pool,warned_in_pool
+2023-03-17,150,0
+2024-02-06,208,3
+2024-08-12,229,5
+2025-04-08,288,6
+2025-12-03,352,9
+2026-03-18,364,14
+2026-06-26,366,20
+2026-08-20,367,27

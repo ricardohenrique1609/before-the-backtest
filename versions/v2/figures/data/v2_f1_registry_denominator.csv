@@ -1,0 +1,15 @@
+# provenance: docs/alpha_sprint/HYPOTHESIS_LEDGER.md, mapped to the paper taxonomy in section 4.3
+terminal_state,entries
+economic reject (economic quantity computed),9
+data-gate fail / untested,5
+construction or substrate pass,3
+watch / research (inconclusive),3
+infrastructure blocked,2
+hypothesis selection (not a verdict),2
+promoted,1
+implementation reject; economics unresolved,1
+pre-registered null,1
+identification blocked,1
+execution / capacity fail,1
+open,1
+falsification of alternatives,1

@@ -1,0 +1,26 @@
+# Manuscript, figures and tables — CC BY 4.0
+
+Copyright (c) 2026 the author.
+
+**Covered by this licence:** `paper.md`, `paper.tex`, `paper.pdf`, everything in `figures/` and
+`tables/`, and the release documentation in this directory (`README.md`, `BUILD.md`, `CHANGELOG.md`,
+the audit and provenance records).
+
+**Not covered:** the code (MIT, see `LICENSE`) and the derived evidence artefacts (CC0 1.0, see
+`LICENSE-evidence`).
+
+Licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+- Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+- Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to share and adapt this material for any purpose, including commercially, provided you
+give appropriate credit, link to the licence, and indicate if changes were made.
+
+## Third-party material
+
+Quotations from, and descriptions of, published academic work are used under normal scholarly
+citation practice and remain the property of their copyright holders. The bibliography in
+`references.bib` records, for each entry, the level at which it was accessed; several entries were
+read only at abstract or metadata level and say so. **No third-party publication is redistributed
+here.**

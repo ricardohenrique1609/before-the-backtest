@@ -1,0 +1,29 @@
+{
+ "catalogs": {
+  "48": {
+   "reported_total": 2279,
+   "harvested": 2279,
+   "pages": 46,
+   "coverage": 1.0,
+   "blocked_or_empty_pages": []
+  },
+  "49": {
+   "reported_total": 4442,
+   "harvested": 4392,
+   "pages": 89,
+   "coverage": 0.9887,
+   "blocked_or_empty_pages": [
+    32
+   ]
+  },
+  "161": {
+   "reported_total": 440,
+   "harvested": 440,
+   "pages": 9,
+   "coverage": 1.0,
+   "blocked_or_empty_pages": []
+  }
+ },
+ "blocked_pages": 1,
+ "access_blocked_responses": 0
+}

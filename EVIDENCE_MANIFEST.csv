@@ -1,0 +1,10 @@
+release_path,original_path,family,source_commit,bytes,sha256,evidence_role,raw_or_derived
+evidence/h13_results.json,data/alpha_sprint/h13_results.json,H13,9e73558,48317,e14960c1594b26a0c051c2d34bc114bc63571859260b574a708aae28c581fdfd,survivorship audit and bias bounds for the micro-cap screen,derived
+evidence/h18_1b_discover_incomplete.json,data/alpha_sprint/h18_1b_discover_incomplete.json,H18.1b,27c3283,509,a3bd0aa76ac2c299980012b662dbabac8ac4a4776e8023a0a25ac12052c97165,refusal record of the catalog coverage guard,derived
+evidence/h18_2_audit.json,data/alpha_sprint/h18_2_audit.json,H18.2,45d575d,7204,f3916c4e048f0f0ee6f0433c5eb3bd7980c8d2b7340b52c207aeadb2f19cd58a,"risk-set entry diagnostics, including the baseline coverage differential",derived
+evidence/h18_2_universe.json,data/alpha_sprint/h18_2_universe.json,H18.2,45d575d,653,7de0d03fd5daba3ce85c2cee0d9a0e6623a6753ea302e16c1fabc568d00063b2,instrument universe reconstructed from the venue archive,derived
+evidence/h18_3_development.json,data/alpha_sprint/h18_3_development.json,H18.3,4aa4180,3629,dfd187d931b08a1124c2be220ad301f2d7f5ea20cdf7f6b539e0196fe42ffcd1,"development-block results, pooled metrics and cluster bootstrap",derived
+evidence/h18_3_eligibility.json,data/alpha_sprint/h18_3_eligibility.json,H18.3,522bafb,11862,731ae83c89981d14bd32beba91af24b076c7257ef1c2c0b9ffbb7170e555eecd,"frozen splits, censoring and event-sharing check",derived
+evidence/h18_3_falsification.json,data/alpha_sprint/h18_3_falsification.json,H18.3,4aa4180,2895,19d3db642368de5a8310e5508729557fab131ac45412405db3f49139838cf882,"falsification suite, including placebo variants",derived
+evidence/h18_3_pit_audit.json,data/alpha_sprint/h18_3_pit_audit.json,H18.3,203390b,2488,8f07023f58cc618c7b13e52abea48bbe1a4e18ea9e010d522ad36be742253517,point-in-time classification audit,derived
+evidence/h19_2_prefreeze.json,data/alpha_sprint/h19_2_prefreeze.json,H19.2,42f35df,1237,99d1b0e34ef646e6935e010be5129467e52beb8402ae5dfc8939dfb4a292f48d,"the support audit: quantiles, exclusions and the stop rule",derived

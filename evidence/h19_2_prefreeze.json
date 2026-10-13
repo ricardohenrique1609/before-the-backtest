@@ -1,0 +1,52 @@
+{
+ "no_price_field_loaded": "usecols=[0,5,7,8] = open time, base volume, quote volume, trade count; OHLC columns 1-4 were never read",
+ "frozen_bars": {
+  "MIN_CONTROLS": 20,
+  "MIN_TRANSITIONS": 73,
+  "AVAILABILITY": 0.95,
+  "SEED": 20261010,
+  "candidates_evaluated_per_date": 120
+ },
+ "1_final_candidate_n": 10,
+ "2_controls_per_event": {
+  "p10": 0.0,
+  "p25": 0.0,
+  "median": 1.0,
+  "p75": 2.0,
+  "p90": 57.3
+ },
+ "3_events_with_fewer_than_20_controls": 52,
+ "4_valid_transition_count": {
+  "p10": 88.0,
+  "p25": 91.0,
+  "median": 92.0,
+  "p75": 92.0,
+  "p90": 92.0
+ },
+ "5_events_below_73_transitions": 1,
+ "6_vwap_field_availability": {
+  "events_with_both_legs_fully_populated": 62,
+  "share": 1.0
+ },
+ "7_development_holdout_after_exclusions": {
+  "DEVELOPMENT_2023_2025": 9,
+  "HOLDOUT_2026": 1,
+  "by_year": {
+   "2023": 1,
+   "2024": 5,
+   "2025": 3,
+   "2026": 1
+  }
+ },
+ "8_exclusions": {
+  "CONTROLS": 51,
+  "TRANSITIONS": 1
+ },
+ "metadata_eligible_pool_per_date": {
+  "min": 177,
+  "median": 327,
+  "max": 380
+ },
+ "hard_sample_rule_A7": "STOP",
+ "note": "Control eligibility is strictly point-in-time; a control delisted AFTER T0 remains a valid control (\u00a7A5)."
+}

@@ -1,0 +1,93 @@
+{
+ "amendment": "H18_3_PREREG_AMENDMENT_01",
+ "no_model_fitted": true,
+ "holdout_opened": false,
+ "A1_batch_prune_rule": "distinct assets losing the same quote in [d-90d, d], threshold >= 15; class fixed at d, never reclassified",
+ "A2_quote_retirement_rule": "only if an official venue-level Binance retirement notice was published on or before the removal date; single-product notices (Futures multi-assets mode, P2P, Loans, Earn, margin pair lists) are not evidence",
+ "quotes_with_a_retirement_notice": {
+  "ZAR": "2021-03-31",
+  "BUSD": "2023-11-29",
+  "VAI": "2024-02-06",
+  "NGN": "2024-03-05",
+  "BIDR": "2024-05-17",
+  "IDRT": "2024-10-23",
+  "AEUR": "2026-07-30",
+  "USDP": "2026-09-10"
+ },
+ "quotes_without_one": [
+  "ARS",
+  "AUD",
+  "BKRW",
+  "BNB",
+  "BRL",
+  "BTC",
+  "BVND",
+  "CZK",
+  "DAI",
+  "DOGE",
+  "DOT",
+  "ETH",
+  "EUR",
+  "EURI",
+  "FDUSD",
+  "GBP",
+  "IDR",
+  "JPY",
+  "MXN",
+  "PAX",
+  "PLN",
+  "RON",
+  "RUB",
+  "TRX",
+  "TRY",
+  "TUSD",
+  "U",
+  "UAH",
+  "USD1",
+  "USDC",
+  "USDSOLD",
+  "USDT",
+  "UST",
+  "XRP"
+ ],
+ "removal_class_h18_2": {
+  "ASSET_SPECIFIC_REMOVAL": 1032,
+  "BATCH_PRUNE": 930,
+  "QUOTE_RETIREMENT": 390
+ },
+ "removal_class_pit": {
+  "ASSET_SPECIFIC_REMOVAL": 1179,
+  "BATCH_PRUNE": 1132,
+  "QUOTE_RETIREMENT": 41
+ },
+ "classifications_changed": 676,
+ "classifications_changed_share": 0.2874,
+ "transition_matrix": {
+  "ASSET_SPECIFIC_REMOVAL": {
+   "ASSET_SPECIFIC_REMOVAL": 909,
+   "BATCH_PRUNE": 119,
+   "QUOTE_RETIREMENT": 4
+  },
+  "BATCH_PRUNE": {
+   "ASSET_SPECIFIC_REMOVAL": 200,
+   "BATCH_PRUNE": 730,
+   "QUOTE_RETIREMENT": 0
+  },
+  "QUOTE_RETIREMENT": {
+   "ASSET_SPECIFIC_REMOVAL": 70,
+   "BATCH_PRUNE": 283,
+   "QUOTE_RETIREMENT": 37
+  }
+ },
+ "structural_leakage_checks": {
+  "1_active_pair_first_candle_after_t": 0,
+  "2_future_removal_in_trailing_feature": 0,
+  "3_removal_class_uses_info_after_t": 0,
+  "4_batch_prune_uses_event_after_removal_date": 0,
+  "5_quote_retirement_uses_later_knowledge": 0
+ },
+ "structural_leakage_total": 0,
+ "audited_landmarks": 500,
+ "HARD_GATE": "PASS",
+ "note": "The amendment supersedes the draft pre-registration's speculation that a removal's class would have to be recomputed per landmark. A1 fixes the class at the removal date using only information available then, which is both stricter and simpler: the class is a static attribute of the removal and cannot be rewritten by later events."
+}

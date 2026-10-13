@@ -1,0 +1,17 @@
+{
+ "archive_symbol_dirs": 3745,
+ "live_trading_symbols": 1375,
+ "symbols_total": 3749,
+ "symbols_with_base_quote_resolved": 3747,
+ "split_resolution_rate": 0.9995,
+ "unresolved_symbols": [
+  "BTCGYEN",
+  "USDTGYEN"
+ ],
+ "n_unresolved": 2,
+ "unique_base_assets": 835,
+ "unique_quote_assets": 50,
+ "h18_1_state_table_symbols": 2965,
+ "h18_1_state_table_base_assets": 536,
+ "note": "The symbol universe comes from Binance's own archive directory listing plus live exchangeInfo, so it owes nothing to any announcement - seeding the risk set from the announcement universe would seed it from the outcome. No return of any kind is computed."
+}
