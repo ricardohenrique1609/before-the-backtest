@@ -1,0 +1,177 @@
+{
+ "method": "pyarrow schema, num_rows and row-group null_count statistics only; no row value read",
+ "tables": {
+  "events": {
+   "path": "H18_1B_FULL_DELIST_EVENTS.parquet",
+   "sha256": "c501b5ff3b1c15060328fd38e3d3bd82f2a1407a96f509dbb0a47e1156ba91e7",
+   "num_rows": 201,
+   "columns": {
+    "full_delisting_event_id": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "symbol": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "announcement_public_time": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "announcement_precision": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "trading_end": {
+     "present": true,
+     "type": "timestamp[us]",
+     "null_count": 0
+    }
+   }
+  },
+  "symbol_windows": {
+   "path": "data/raw/h18_2/symbol_windows.parquet",
+   "sha256": "39610a9d39ededaf6366dc2383fdd57f0ffb44fd46a41aba688683ba0f8a2146",
+   "num_rows": 3749,
+   "columns": {
+    "symbol": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "base_asset": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 2
+    },
+    "quote_asset": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 2
+    },
+    "first_candle": {
+     "present": true,
+     "type": "timestamp[us]",
+     "null_count": 22
+    },
+    "last_candle": {
+     "present": true,
+     "type": "timestamp[us]",
+     "null_count": 22
+    },
+    "window_known": {
+     "present": true,
+     "type": "bool",
+     "null_count": 0
+    }
+   }
+  },
+  "pair_removals_pit": {
+   "path": "data/raw/h18_3/pair_removals_pit.parquet",
+   "sha256": "90be862aa2da84106672f1f5a523b63025931e3fc2acf75f8c83988222120ce3",
+   "num_rows": 2352,
+   "columns": {
+    "symbol": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "base_asset": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "quote_asset": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "removal_date": {
+     "present": true,
+     "type": "timestamp[us]",
+     "null_count": 0
+    },
+    "assets_losing_this_quote_prior_90d": {
+     "present": true,
+     "type": "int64",
+     "null_count": 0
+    }
+   }
+  },
+  "asset_daily": {
+   "path": "data/raw/h18_3/asset_daily.parquet",
+   "sha256": "a4adf13cfa5838293ff29aba595319aa34e6ecb9e20eceb64e1cc051f56ffbf3",
+   "num_rows": 984954,
+   "columns": {
+    "date": {
+     "present": true,
+     "type": "timestamp[ms]",
+     "null_count": 0
+    },
+    "base_asset": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "usd_volume": {
+     "present": true,
+     "type": "double",
+     "null_count": 0
+    },
+    "trades": {
+     "present": true,
+     "type": "int64",
+     "null_count": 0
+    },
+    "hhi_trades": {
+     "present": true,
+     "type": "double",
+     "null_count": 112
+    },
+    "usd_close": {
+     "present": true,
+     "type": "double",
+     "null_count": 1190
+    }
+   }
+  },
+  "landmarks_pit": {
+   "path": "data/raw/h18_3/landmarks_pit.parquet",
+   "sha256": "b7f6fec0d5fc378a565fc382e59279b006ee08f563942dd42efa82baef8d9ce6",
+   "num_rows": 112963,
+   "columns": {
+    "asset_era_id": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "base_asset": {
+     "present": true,
+     "type": "large_string",
+     "null_count": 0
+    },
+    "week": {
+     "present": true,
+     "type": "timestamp[us]",
+     "null_count": 0
+    }
+   }
+  }
+ },
+ "all_required_columns_present": true,
+ "target_reconstructibility": {
+  "verdict": "RECONSTRUCTIBLE (CONDITIONAL ON TWO SEALED VALUE CHECKS)",
+  "schema_level": "event id, ticker, announcement time and trading end present with 0 nulls; era inputs (symbol windows) present; the join and window rule are deterministic (h20_2_spec.TARGET)",
+  "announcement_time_type": "large_string",
+  "deferred_value_checks": [
+   "every announcement_public_time parses under the strict ISO rule (else STOP: DATA / DESIGN FAILURE)",
+   "every event matches at most one asset-era (else STOP)"
+  ],
+  "why_deferred": "both checks need row values of the lifecycle table, which H20.2 may not read; they run in the H20.3 sealed target stage after X is hashed and before any fit",
+  "stop_now": false
+ }
+}

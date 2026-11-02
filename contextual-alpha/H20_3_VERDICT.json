@@ -1,0 +1,115 @@
+{
+ "experiment": "H20.3 Incremental Context Information Test",
+ "computed_utc": "2026-10-19T19:55:04.319160Z",
+ "verdict": "PRE-REGISTERED NULL",
+ "criteria": {
+  "S1": {
+   "value": -0.009476455870517014,
+   "PASS": false
+  },
+  "S2": {
+   "value": 2,
+   "bar": ">= 5 of 8",
+   "PASS": false
+  },
+  "S3": {
+   "value": [
+    -0.062050227180945314,
+    0.040463864007122104
+   ],
+   "PASS": false
+  },
+  "S4": {
+   "value": -0.024045024150748995,
+   "PASS": false
+  },
+  "S5": {
+   "value": {
+    "brier_ratio": 1.0328533762954912,
+    "slope_M0": 1.050320007130018,
+    "slope_M2": 0.9936330084458078,
+    "slope_excess": -0.04395301557582587
+   },
+   "rule": [
+    {
+     "quantity": "brier_ratio",
+     "expr": "Brier(M2) / Brier(M0)",
+     "op": "<=",
+     "value": 1.05
+    },
+    {
+     "quantity": "slope_excess",
+     "expr": "abs(slope(M2) - 1) - abs(slope(M0) - 1)",
+     "op": "<=",
+     "value": 0.2
+    }
+   ],
+   "PASS": true
+  },
+  "S6": {
+   "value": "H20_3_PIT_AUDIT.json",
+   "PASS": true
+  },
+  "S7": {
+   "value": {
+    "era_deltas": {
+     "2022": -0.007260557266967893,
+     "2023": 0.008016143863272068,
+     "2025 LOCKED_CONTEXT_UNSEEN_VALIDATION": -0.024045024150748995
+    },
+    "positive_era_blocks": 1,
+    "lofo_min_delta": -0.014257950402711106
+   },
+   "PASS": false
+  }
+ },
+ "design_failures": [],
+ "annotations": {
+  "materiality": "SMALL",
+  "classifier_free_robustness": {
+   "dev_delta_M2core_M0": 0.00029919928387223127,
+   "lcuv_delta_M2core_M0": -0.015782549228576692,
+   "two_way_ci": [
+    -0.041919583311215286,
+    0.04453935171907354
+   ],
+   "positive_folds": 3
+  },
+  "model_class_and_tuning_robustness": {
+   "logistic_selected_lambda": {
+    "dev_delta": 0.02733941440306803,
+    "lcuv_delta": -0.01667604848155496
+   },
+   "lightgbm_default": {
+    "dev_delta": 0.02853081848839431,
+    "lcuv_delta": -0.007965383251011537
+   },
+   "lightgbm_selected": {
+    "dev_delta": 0.02713446973143918,
+    "lcuv_delta": -0.003018973171943218
+   }
+  }
+ },
+ "claim": "no incremental context signal is claimed",
+ "claim_scope_rules": {
+  "if_supported": "incremental context signal supported in the locked retrospective / context-unseen evaluation",
+  "always_append": "prospective confirmation pending (PROSPECTIVE_CONFIRMATION block, not scorable before its 365-day outcomes mature after 2027-09-28)",
+  "never_say": [
+   "untouched holdout",
+   "out-of-sample external confirmation",
+   "prospective confirmation",
+   "fully prospective"
+  ],
+  "why": "no H20 or context model has seen the 2025 block and the H20.2 rules are frozen before H20 scoring, but the research programme previously observed market-model behaviour in that calendar period (H18.3 holdout)"
+ },
+ "economic_claims": "none (predictive information only; no trading, cost or P&L analysis)",
+ "prospective_confirmation": "PROSPECTIVE_CONFIRMATION unopened",
+ "inputs_sha256": {
+  "H20_3_PIT_AUDIT.json": "7b58e6d00a9f82b722fd43718d32d78ea35338f5f772e8ccfa9ca71ada4ff7fc",
+  "H20_3_TARGET_AUDIT.json": "c63b0e1a3fb54a883ae35a395f643dc68fbdbe2cdcecd562ad1e7ad1ab64fc58",
+  "H20_3_DEVELOPMENT_RESULTS.json": "9eb6d74950204805f53f6b2cc678c42a4181436104e218e8a175e085463aa48d",
+  "H20_3_BOOTSTRAP_RESULTS.json": "357644c5c70922f1ad5d3db9798555bd2a39c10afe9134d2155dbd64ca20f356",
+  "H20_3_PRE_LCUV_FREEZE.json": "dc9f5829a22c0207a85e30415da36e5908940d947c8d9827144a27acf9ae4494",
+  "H20_3_LCUV_RESULTS.json": "25c8a3f72152c7ddc52e9f911267ff6f3205fe965d0528c3fb9e9da35aa86aca"
+ }
+}

@@ -1,0 +1,41 @@
+dictionary,term,matches_in_corpus,earliest_attestation_utc,attested_by_first_sample_t,named_entity
+K_CRYPTO,crypto,183,2018-02-01T05:00:00Z,False,False
+K_CRYPTO,digital asset,69,2018-06-04T15:15:00Z,False,False
+K_CRYPTO,virtual currenc,15,2017-12-14T05:00:00Z,True,False
+K_CRYPTO,bitcoin,399,2017-12-27T05:00:00Z,True,False
+K_CRYPTO,stablecoin,25,2020-02-12T05:00:00Z,False,False
+K_CRYPTO,blockchain,21,2017-12-14T05:00:00Z,True,False
+K_CRYPTO,token,65,2018-11-16T10:15:49Z,False,False
+K_CRYPTO,coin offering,4,2018-01-30T09:35:00Z,False,False
+K_CRYPTO,binance,3,2023-06-05T11:00:00Z,False,True
+K_CRYPTO,\bether\b,72,2017-12-16T05:00:00Z,True,False
+K_GDELT_CRYPTO,bitcoin,8683,2018-01-12T01:30:00Z,True,False
+K_GDELT_CRYPTO,cryptocurrenc,770,2018-01-12T01:30:00Z,True,False
+K_GDELT_CRYPTO,crypto,2468,2018-01-12T01:30:00Z,True,False
+K_GDELT_CRYPTO,blockchain,810,2018-01-12T01:30:00Z,True,False
+K_GDELT_CRYPTO,binance,198,2018-03-22T22:00:00Z,False,True
+K_GDELT_CRYPTO,stablecoin,74,2019-09-12T05:00:00Z,False,False
+K_SEC_ENFORCEMENT,\bcharg(?:e|es|ed|ing)\b,828,2017-12-04T16:00:00Z,True,False
+K_SEC_ENFORCEMENT,\bsettle(?:s|d|ment|ments)?\b,73,2018-03-08T16:25:00Z,False,False
+K_SEC_ENFORCEMENT,\bto pay\b,84,2018-02-02T10:12:00Z,False,False
+K_SEC_ENFORCEMENT,\bpenalt,31,2018-03-06T13:30:00Z,False,False
+K_SEC_ENFORCEMENT,\bjudgment,5,2019-01-28T14:33:00Z,False,False
+K_SEC_ENFORCEMENT,asset freeze,18,2018-03-08T15:10:10Z,False,False
+K_SEC_ENFORCEMENT,\bhalts?\b,27,2017-12-04T08:57:00Z,True,False
+K_SEC_ENFORCEMENT,\bfraud,269,2017-12-04T16:00:00Z,True,False
+K_SEC_ENFORCEMENT,trading suspension,0,,False,False
+K_SEC_ENFORCEMENT,suspends trading,4,2018-02-16T09:35:00Z,False,False
+K_SEC_ENFORCEMENT,\bbar(?:s|red)?\b,8,2018-02-16T13:35:05Z,False,False
+K_SEC_ENFORCEMENT,\bsanction,0,,False,False
+K_CRYPTO_STRESS,\bhack,11,2018-03-24T21:20:49Z,False,False
+K_CRYPTO_STRESS,\bstolen\b,12,2018-09-05T21:11:01Z,False,False
+K_CRYPTO_STRESS,\btheft\b,2,2022-03-14T22:04:06Z,False,False
+K_CRYPTO_STRESS,\bexploit,6,2019-02-12T19:12:27Z,False,False
+K_CRYPTO_STRESS,insolven,1,2022-12-10T11:02:11Z,False,False
+K_CRYPTO_STRESS,bankrupt,23,2018-03-21T01:16:02Z,False,False
+K_CRYPTO_STRESS,\bcollaps,132,2018-01-18T01:41:20Z,True,False
+K_CRYPTO_STRESS,de-?peg,0,,False,False
+K_CRYPTO_STRESS,(?:halt|suspend|freez)\w* (?:all )?withdrawals,0,,False,False
+K_CRYPTO_STRESS,\bfraud,39,2018-02-16T18:53:20Z,False,False
+K_CRYPTO_STRESS,\bponzi\b,0,,False,False
+K_CRYPTO_STRESS,\bcrash,309,2018-01-17T23:36:23Z,True,False

@@ -1,0 +1,35 @@
+{
+ "experiment": "H20.2 Prospective Historical Decision Design (pre-registration of H20.3)",
+ "frozen_utc": "2026-10-19T16:44:03.877156Z",
+ "spec_version": "h20_2_v1",
+ "files": {
+  "H20_2_EXPERIMENT_PLAN.md": "7713f4aa05e1e9b62197128b561d413aa8a4cfbaa9c9c08da1eca878baefb1ab",
+  "H20_2_PREREG.md": "478a079de39fbd6d3228f9e27dc80cb1db38fc77117e839f8f3f71ff2d810648",
+  "MARKET_FEATURE_REGISTRY.csv": "36ea200f6c921a501b0a86a9123ca0a2a8ad69ddfbf9821b79410d0589c8f1e8",
+  "H20_2_CONTEXT_SETS.json": "b946889ed5fde9e8b0e0f1f40393ac69c2468ae449990b0107094852d539b119",
+  "H20_2_MODEL_SPEC.json": "15a2d877a605fe413322e74de2cae5c41415dcd00f3d640ea87b7fd25679a3e9",
+  "H20_2_TEMPORAL_SPLIT.json": "446c4e343f985473b814ce7c12c62b45631821af1f9abbe441bf94c93c9f367e",
+  "H20_2_METRICS_SPEC.json": "be595a1299b3c93e726b609c4c961c6a1dc086bec008f0bf6c727c974d41c654",
+  "H20_2_INFERENCE_SPEC.md": "944ed2a825e31152922cda0c82da6ce8c8d0596936053d7216801e8e3cafbd79",
+  "H20_2_VERDICT_RULES.json": "13425df4e7ff9cc010dbe69168034ef9f05e1a62ebc7afa582fcdfd2d8fb6112",
+  "H20_2_PIT_AUDIT_PLAN.md": "a9d2a72bd0e1eb04c134eb89d6884f4890ede1b5f23fd10835efd337255247c5",
+  "evidence/H20_2_TARGET_SCHEMA_CHECK.json": "35045e87b04f4894f952c34433851a5d43a7f6249af164d800d240d32b95cf97",
+  "scripts/h20_2_spec.py": "328d0dba8c43740b160ba952cd68b82f62409b0dbf5de74595bc8f7886096244",
+  "scripts/h20_2_freeze.py": "6eb2c00320adf0bd14b84b9e71a6d8a783bf8138e5e3b4b2d07ecc27ce00f532"
+ },
+ "upstream": {
+  "H20_1_GATE.json": "43e7eeddefcdb309941faf460e60bab9942cd4e16469ace494712c39dc8538c6",
+  "H20_1_REPRESENTATION_FREEZE.json": "2f8f42ba739bafe0cd14a130dbcec2c81a4e8304d95e0ad5e80d97bf7dd49c3b",
+  "scripts/h20_1_rep.py": "c1e60626e46e34502537a9351d472bde00550558afd407c33b01078d99832abf",
+  "CONTEXT_FEATURE_REGISTRY.csv": "748299f17583e893b9838adc75346b9c1bf7b1620893dff1293fa80c215c5792"
+ },
+ "state_at_freeze": {
+  "outcome_tables_read": false,
+  "rows_of_lifecycle_tables_read": false,
+  "returns_after_t_computed": false,
+  "models_fitted": false,
+  "metrics_computed": false,
+  "h18_3_results_files_read": false
+ },
+ "authorises": "nothing; H20.3 requires sponsor authorisation"
+}

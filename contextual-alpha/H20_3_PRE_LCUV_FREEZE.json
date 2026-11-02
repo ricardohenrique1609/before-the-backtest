@@ -1,0 +1,72 @@
+{
+ "stage": "PRE-LCUV FREEZE",
+ "frozen_utc": "2026-10-19T19:41:47.727652Z",
+ "lambda": 10.0,
+ "primary_configuration": "L2 logistic, lambda = 10, frozen preprocessing (A02)",
+ "code": {
+  "scripts/h20_3_model.py": "0d923c673f2aa3546fb8cd8cc0fce68ace5df2920f077b0c21d677ad64fceca7",
+  "scripts/h20_3_common.py": "1946ee909d3ba7f083722dce81dba7b08ae0fd3d3ccade88b92c7b3b96b8078c",
+  "scripts/h20_3_seal_target.py": "82abfcd35f9c11416d66f6819f396c113187b9712086e59c2a2353e2ccb09c5e",
+  "scripts/h20_3_market.py": "b5fc4dc3f4931002f2a6a0d4b884a91c0e3850bb6c0e9a752740b8f04cc606f2",
+  "scripts/h20_3_context.py": "59e888f44aa91d369638e3f5cdbcf894b4f4f5e6105f2289ff85fbbf0e9d94ff"
+ },
+ "x_seal_sha256": "673a720f1017f9464a5fe261f324742403924d3b853c90e0b1184f59c5645301",
+ "y_seal_sha256": "6cd758b1f29138045c3563c62d6324ecaf8173f7a430bafd7287a10f97b02506",
+ "X_parquet_sha256": "2298c2d6507d14d4b52865b688b928275ac1bf462a0539e9eb17063a0f867685",
+ "y_parquet_sha256": "a34d085b703d97485546fc8e87ada42431c6d62dc879512c0bf4d157172ace8b",
+ "oof_predictions_sha256": "5fad1f0c5a3f028d4ce87d2e8f97e207e5df631a16f56fa496acf593c8d40a08",
+ "development_results_sha256": "9eb6d74950204805f53f6b2cc678c42a4181436104e218e8a175e085463aa48d",
+ "bootstrap_results_sha256": "357644c5c70922f1ad5d3db9798555bd2a39c10afe9134d2155dbd64ca20f356",
+ "final_models_sha256": "783c368d95dfb617fd84105b754a3558f6519b2ea7fb7beff3c4567240c83bad",
+ "final_fit_convergence": {
+  "M0": {
+   "success": true,
+   "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+   "nit": 47,
+   "maxiter": 5000,
+   "fun": 13078.618566362162
+  },
+  "M1": {
+   "success": true,
+   "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+   "nit": 15,
+   "maxiter": 5000,
+   "fun": 17272.31164788402
+  },
+  "M2": {
+   "success": true,
+   "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+   "nit": 68,
+   "maxiter": 5000,
+   "fun": 12967.97413684449
+  },
+  "M1_core": {
+   "success": true,
+   "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+   "nit": 12,
+   "maxiter": 5000,
+   "fun": 17304.75619694429
+  },
+  "M2_core": {
+   "success": true,
+   "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+   "nit": 67,
+   "maxiter": 5000,
+   "fun": 12990.356062667875
+  }
+ },
+ "pending_criteria": [
+  "S4 (LCUV Delta > 0)",
+  "S5 (LCUV calibration)",
+  "S7 (needs the LCUV era block)"
+ ],
+ "development_criteria_computed": {
+  "S1_delta": -0.009476455870517014,
+  "S2_positive_folds": 2,
+  "S3_ci95": [
+   -0.062050227180945314,
+   0.040463864007122104
+  ]
+ },
+ "lcuv_rows_scored_before_freeze": 0
+}

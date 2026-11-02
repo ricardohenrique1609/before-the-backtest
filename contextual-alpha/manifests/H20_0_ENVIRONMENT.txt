@@ -1,0 +1,6 @@
+generated_utc=2026-10-18T20:06:33.305791Z
+repo_head=8e57bf113a5a50f236ffb98d37c0c13cd39b7809
+python=3.12.14
+pandas=3.0.6
+platform=Windows-11-10.0.26200-SP0
+raw_data=Contextual Alpha/data/raw (gitignored by repo rule 'data/')

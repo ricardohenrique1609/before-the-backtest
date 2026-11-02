@@ -1,0 +1,78 @@
+path,sha256,bytes,rows,evidence_label,stage,produced_by,git_tracked_by_repo_rules
+CONTEXT_DATA_MODEL.md,612e44d6cfaa3bd16d87ea47eb955482d65418b8911efe0e98b9ded083befce2,4601,,DESIGN / REPORT,3-4-9,authored,True
+CONTEXT_RETRIEVAL_GOVERNANCE.md,adb3cd0523d47419b696c3aedf91682231f55d3c88f57d096b28517ae3714230,5336,,DESIGN / REPORT,3-4-9,authored,True
+CONTEXT_SOURCE_REGISTRY.csv,b3829f2d7fb9408d338701ecf1c678a92661499f7ca29b40e3846db049827d70,13808,32,DESIGN / REPORT,3-4-9,authored,True
+CONTEXT_TAXONOMY.md,1c329e1e2938c74c0bc443331a140baafd0287b23a2937aca60b6ff5090a1344,2908,,DESIGN / REPORT,3-4-9,authored,True
+CONTEXT_TIMESTAMP_SCHEMA.md,050a67b163adfa7ffc2d3ab8a02c68a0de466020059a51c713a05ba1b62edc3b,5358,,DESIGN / REPORT,3-4-9,authored,True
+data/derived/context_documents.parquet,c32153c7f7a1e2600535f05ab3073dcd674974cf82eb296685fc2fe3695da55c,5391165,141751,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,False
+data/interim/alfred_vintages.parquet,bc94448df23adbc9ed5e16aef785992d2d06d535ccf87b5d6dfda3e2cefc4f8f,7088,105,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_official.py,False
+data/interim/archive_checks.parquet,35490068e40bdd72f840211cbdb06f9ba667ee034d3273755a47b8217a6a1338,66720,667,NEW H20 EVIDENCE,6-7-collect,h20_0_archive_refetch.py,False
+data/interim/binance_catalog.parquet,a3bcc72da4efcf8c7f5b2cd6a1f2460c8625cf09fa60231a4d5e332ba2fc7cc3,891516,10503,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_binance.py,False
+data/interim/binance_catalog_memberships.parquet,ecd01842d98810b56c7859b5cb0941dd722007da8fd37e7179d6b477339925de,871553,10503,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_binance.py,False
+data/interim/binance_detail.parquet,f6859396ef2583e075045cb31fd5aed161f2019f7f985ec355790204a22005c6,1320140,801,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_binance.py,False
+data/interim/binance_harvest_summary.json,484573e1d64bcacf1f35842dc50f994aa95561318f6cf9a7cf712ec3c6dacaab,1122,,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_binance.py,False
+data/interim/binance_snapshot_absent_now.csv,df26e90ac755823e9f77cbac35a23fd25ebeea411bc08138af6028f149ca1a24,39,0,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_binance.py,False
+data/interim/binance_snapshot_diff.json,7ad43532ade448e634b6685686588ecca93d58a9a8d604f99a66b7461e2c5a4a,656,,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_binance.py,False
+data/interim/cftc_listing.parquet,c5e14c2dc50f3e8ba9986c43ad81130a006d78b2c355bcbf913bbbdb439eef90,53451,707,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_official.py,False
+data/interim/cftc_w7.parquet,e7d0d2d7c98cf2771ba08073290f190dbd152601c3538d2528e7aa4dfafc319c,2135,50,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_official.py,False
+data/interim/entity_resolution.parquet,f5f9ea531f1bf676d50fab0a53d75aa215c25d37e384db972ebd426e1dd0ee9e,20482,105,NEW H20 EVIDENCE,6-7-collect,h20_0_entities.py / h20_0_entity_validation.py,False
+data/interim/entity_resolution_validation.parquet,d8e4d08fa83d6c2d1620ed9d20916f4f514d8ae0d9900b542dabe56ca61dbd6b,20582,105,NEW H20 EVIDENCE,6-7-collect,h20_0_entities.py / h20_0_entity_validation.py,False
+data/interim/fed_feed.parquet,fc6237894dd9f8567b68f82c8a2dbeef4fc59f404d6e285f00e8621f8bffc65e,355202,4647,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_official.py,False
+data/interim/fed_w7.parquet,5b4c4a8194e31d1e3f640d3214f895c4979404387dcc26862d67e2245d919d12,2966,103,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_official.py,False
+data/interim/fr_windows.parquet,d83f0ea630fede030d043c89671838eb6448ed755b2398743a6714693767f07d,18918,86,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_official.py,False
+data/interim/gdelt_files.parquet,d412c121eaa06b90ef3d4e9eceff1c95056a8b90177d725d32b4204840049ea2,5355,70,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_gdelt.py,False
+data/interim/gdelt_records.parquet,c8536669590b932c2e92999820529e1531daa428c07a35ac2c8e267a33427078,30463412,140099,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_gdelt.py,False
+data/interim/refetch_checks.parquet,b607993916a1fb36e690b1ef22e60c0dcb580f824a1243e87cad466674f49a6c,32325,194,NEW H20 EVIDENCE,6-7-collect,h20_0_archive_refetch.py,False
+data/interim/sec_listing.parquet,9dacc0e5ab6e26049f9e8ded91772aae35d5019c1dcfed66954da92d935cb50c,75971,962,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_official.py,False
+data/interim/sec_w7.parquet,564e647d6c9cca80063d857d43253dfb58a3c2a32dc9f70253cfde8af4add5a5,4488,199,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_official.py,False
+data/interim/wiki_assets.parquet,f48cad1c53568d4242a0c6da24b57f69990bf38f56de9b966620890b7f204394,12459,105,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_wiki.py,False
+data/interim/wiki_portal.parquet,a196ed0d1c9d02fda2fc5d765ebb017f84f3022f3c0e92f486245b642721c68d,56457,280,NEW H20 EVIDENCE,6-7-collect,h20_0_collect_wiki.py,False
+data/raw/inherited/asset_daily_usd_volume.parquet,c618f5398d0d3a6235c9eb11af098cc86bb066570b7e997031fe76f478a1ff65,9144158,984954,INHERITED EVIDENCE (snapshot copy),5-sample,h20_0_sample_freeze.py,False
+data/raw/inherited/asset_daily_usd_volume.parquet.lineage.json,f4a05a72a70da260d8d07367ce49fc2aaf10e7041100880e8478afdf13f72401,395,,INHERITED EVIDENCE (snapshot copy),5-sample,h20_0_sample_freeze.py,False
+data/raw/inherited/symbol_windows_whitelist.parquet,a1506baac05dfbe52f6e8a0d85820e11d665aec4ddba54736074831240e2fd5c,59006,3749,INHERITED EVIDENCE (snapshot copy),5-sample,h20_0_sample_freeze.py,False
+data/raw/inherited/symbol_windows_whitelist.parquet.lineage.json,a8e46dd4aeb5c08347f1cfb2904b7057d175cf9f1052792869af55c945a54371,457,,INHERITED EVIDENCE (snapshot copy),5-sample,h20_0_sample_freeze.py,False
+evidence/H20_0_ALFRED_REVISIONS.csv,d3a8dc2a3afab56f6f92655b4b8124d080c297e74de0168fbf7eeecde3e2c671,147,3,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_ARCHIVE_PERSISTENCE.csv,77df84b4faac0fb3ba4d700219280a3d95a8fe8eb7b250b4427f3bfa58244625,1278,13,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_BIAS_AUDITS.csv,7ecc55fed64d993583263a2356c98d8e1dc30de34ed4d74e57ebc427dac53073,2454,20,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_C4_TICKER_RESOLUTION.csv,af0e847c887c9426c7b2acb59e0444b7fda161b098b28385a190c28330d11333,10263,161,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_C5_ASSET_COVERAGE.csv,88786b3a83c62f2a87387657679537fc3876a0d2c8d6c7ed496a7b5a1938b31f,8925,105,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_COVERAGE_BY_SOURCE_YEAR.csv,dd64c4094b3c7bc40c422114c060318187339ec825c611062efbd3f40d42dced,2383,72,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_ENTITY_GOLD_VALIDATION.csv,9f8839653411d10fba0ede4e7c09aae17f9d0d2bf75c907b8bcbd136e63705b0,9512,61,NEW H20 EVIDENCE,8-9-audit,hand check (researcher) of h20_0_entity_validation.py output,True
+evidence/H20_0_ENTITY_RESOLUTION.csv,f856314d6e7b218fd4e2225bbbb60b80dffac7aff5b8fbd1f40375dc8b865d35,627,4,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_GDELT_LINK_ROT.csv,5e67800b0de2e42db339c4b10e77999777460753071dbcbcc23028c4ab093d83,498,6,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_METRICS.json,658d23ffe6095a370e0307b5ac47f0922eca7761f547215da3b7be556cb9694f,3198,,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_MISSINGNESS.csv,d6328edff1e98381d91c51eb9ab61f2f0fb50ef2a6061d2a873bc9a7d7dbfb36,4721,91,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_REPRODUCIBILITY.csv,ced436ae83a06bd93562c8f5003958fd5d4a429dfd0ac54534c1da99aa47016e,267,7,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_REQUEST_OUTCOMES.csv,7c83d5b5007aa3229554864dcc956ccd3279dc21ced050dfb9c515ccd9c8d823,269,11,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_SEALED_SURVIVORSHIP.json,90ac0d894376f6b9e6ccacb20e2c5534d0ada490708b2e62461c697e7c40ef05,1601,,NEW H20 EVIDENCE,8-9-audit,h20_0_sealed_survivorship.py,True
+evidence/H20_0_SOURCE_TIMESTAMP_STATUS.csv,870796df3c69649b30b749dd5b182bdfbd48fc2f641eb98282bd20bfb5f71412,21085,280,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_TIMESTAMP_QUALITY_BY_SOURCE.csv,d62e8d2ba0eebb16402dcd9bb46d2957cb898d66f08d3fdb6562ebc6175f3920,265,9,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_TIMESTAMP_QUALITY_BY_YEAR.csv,88b1286d2e3652d5630ed7be10690c6ef39471419902489e48bfa1b6c33e1262,563,9,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+evidence/H20_0_VALIDATION_SAMPLE.json,659a56d373eb0626bfcfbea480ac612847117248a681bb57924e43709d6e7e46,12161,,NEW H20 EVIDENCE,8-9-audit,h20_0_entity_validation.py,True
+evidence/H20_0_VERSION_QUALITY_BY_SOURCE.csv,40f3c53dcc746b81b8ff2c39ca6a15d9997c02fb51015cd48fd00d05ce1d8480,508,9,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+H20_0_CONTEXT_FEASIBILITY_PLAN.md,5da67c69d447a3be46113a8cb20e325b99c58cd426f5792e649010769b9b0fa7,8831,,DESIGN / REPORT,3-4-9,authored,True
+H20_0_EXECUTION_DEVIATION.md,50ee192397f78787e4945c906eadf8f95fdf35f3a8276a6065cb04598e303445,5327,,DESIGN / REPORT,3-4-9,authored,True
+H20_0_FEASIBILITY_REPORT.md,240d1a03ba2f73b3155fd3a6eb8d10255cc0804930508d3d37802bcf3d9b9690,17035,,DESIGN / REPORT,3-4-9,authored,True
+H20_0_GATE.json,b3d366a44926fb2c215af8e0eebefc43483812c3247a72b8cf7923855f8bc8f9,8575,,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py + h20_0_sealed_survivorship.py,True
+H20_0_INHERITANCE_MAP.md,448ae1563533f4233113ab9b80f64b836332b24d4611bf07ab1875b45ca6fb01,17017,,DESIGN / REPORT,3-4-9,authored,True
+H20_0_SAMPLE_FREEZE.json,13048dffbfbf9d9066651101a54998b0c365faaab0eca79374d68f4f01c5a953,25165,,NEW H20 EVIDENCE,8-9-audit,h20_0_sample_freeze.py,True
+H20_0_SAMPLE_FREEZE.json.sha256,9e50bfa3b8d52d7bf3f787a7caa91fe784c0cc9651b17bb0594781cd44fe283b,91,,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+manifests/H20_0_ENVIRONMENT.txt,ff00d3b54ce372460ae5a75a94ce034bff9454c74ca5e8cb21361bb71e40999b,225,,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+manifests/H20_0_INHERITED_LINEAGE.csv,ec90ea1a31c9e38adba8430f850d93f16fbcd206837d8a8dd1cf696bb22d98bf,15854,45,INHERITED EVIDENCE (lineage),1-3,h20_0_lineage.py,True
+manifests/H20_0_PRE_SEAL_HASHES.json,2d9cb2f6f1aab2426935a00157c343b9d522e166bb13ade638d6cba4e452c85e,4321,,NEW H20 EVIDENCE,8-9-audit,h20_0_audit.py,True
+README.md,34d4f3cfbba1ba5ebcc268c1dafe06168c7d0dc27f19787dbff66eecbb690317,3952,,DESIGN / REPORT,3-4-9,authored,True
+registries/CONTEXT_SOURCE_REGISTRY.csv,b3829f2d7fb9408d338701ecf1c678a92661499f7ca29b40e3846db049827d70,13808,32,DESIGN / REPORT,3-4-9,authored,True
+scripts/h20_0_archive_refetch.py,b4f2806860ac4e1934493e82d44fcf104f7413aacd6bfe571a6775451de0b661,12587,,CODE,all,,True
+scripts/h20_0_audit.py,93a83e814bec5f3fca3fbe1391842b289bcf0d5aba974bc890c6cd9319d1aad9,37516,,CODE,all,,True
+scripts/h20_0_collect_binance.py,4d84fb4907e9f81f62c93b6e62273688c8524b84219c5560b782475d4097020e,12438,,CODE,all,,True
+scripts/h20_0_collect_gdelt.py,57fb943e18cc1430f7a8018e8104d2ba1a97df0e95075e591dce50c5c60ca5a5,3737,,CODE,all,,True
+scripts/h20_0_collect_official.py,1812b754156ce2bbe496e636bddd648db684f57b57d79ebe2189ec1477a49e32,13260,,CODE,all,,True
+scripts/h20_0_collect_wiki.py,1f830327ddbe49349712f7c52066a2c5bb78160e21473622cb3c93ab6e9435a5,7707,,CODE,all,,True
+scripts/h20_0_entities.py,0fc3a2c3744c878cc24b38ecb395751e8baa132871926b0f35321533a0f0c6a1,7481,,CODE,all,,True
+scripts/h20_0_entity_validation.py,2ca3ff5a44e12adf756932ac820564e0d2a697b49b67ed2655fe2bd68fec3f7e,3404,,CODE,all,,True
+scripts/h20_0_lineage.py,643941edd037d00469458357de933b00d7fa3d458865bda14adc172e60016214,4197,,CODE,all,,True
+scripts/h20_0_manifest.py,3eb218e4197c61fba9ab44bdc315287c59368a46c9f52f6bcdf41fe64560dc1e,4586,,CODE,all,,True
+scripts/h20_0_sample_freeze.py,a453c795af1bdba6e04ae3c0f4a3972847217ff5603ec439a15c1fb6ce68a3e7,7498,,CODE,all,,True
+scripts/h20_0_sealed_survivorship.py,4284a7583dfa89759830a0fba696e8596d77971fa19244aea3d381c5562f1ac0,4502,,CODE,all,,True
+scripts/h20_common.py,c1a123bfd6b9e88edcb52338a6cce44835c1f894b77cf88699f03d7c5dada1ea,7216,,CODE,all,,True
+tests/test_h20_0.py,b66041598b9b727b08853aeab1817d7b9a438290e48bd06c2d8bded0abe6ddc1,6856,,CODE,all,,True

@@ -1,0 +1,37 @@
+feature_id,feature_name,block,source,definition,logistic_transform,pit_status,audit_note,h18_3_equivalent,in_market_arm
+M01,dollar_volume_90d,market_liquidity,asset_daily(usd_volume),sum of USD volume over the 90 days ending at w (min 10 obs),log1p,ADMISSIBLE,,dollar_volume_90d,True
+M02,volume_trend,market_liquidity,asset_daily(usd_volume),log1p(30d mean USD volume) - log1p(90d mean),none,ADMISSIBLE,,volume_trend,True
+M03,zero_low_volume_freq_90d,market_liquidity,asset_daily(trades),share of days with zero trades in the 90 days ending at w,none,ADMISSIBLE,,zero_low_volume_freq_90d,True
+M04,realized_vol_90d,market_liquidity,asset_daily(usd_close),std of daily log returns over the 90 days ending at w (min 20),none,ADMISSIBLE,past returns as predictor only,realized_vol_90d,True
+M05,trailing_return_90d,market_liquidity,asset_daily(usd_close),close(w) / close(w - 90 d) - 1,none,ADMISSIBLE,past return as predictor only; no return after t anywhere,trailing_return_90d,True
+M06,drawdown_365d,market_liquidity,asset_daily(usd_close),close(w) / max close over the 365 days ending at w - 1,none,ADMISSIBLE,,drawdown_365d,True
+M07,liquidity_concentration_90d,market_liquidity,asset_daily(hhi_trades),90-day mean of the daily trade-share HHI across routes,none,ADMISSIBLE,,liquidity_concentration_90d,True
+M08,asset_age_days,market_liquidity,symbol_windows / era,days from the era's first served candle to w,log1p,ADMISSIBLE,era start is backward-determined,asset_age_days,True
+M09,n_active_spot_pairs,route_state,symbol_windows,pairs of the era with first_candle <= w <= last_candle,log1p,ADMISSIBLE_WITH_AUDIT,window-based activity ignores intra-window gaps; audit P2.3 with frozen candle-based fallback,n_active_spot_pairs,True
+M10,n_quote_assets,route_state,symbol_windows,distinct quote assets among M09 pairs,log1p,ADMISSIBLE_WITH_AUDIT,as M09,n_quote_assets,True
+M11,has_USDT,route_state,symbol_windows,1 if an M09 pair has quote USDT,none,ADMISSIBLE_WITH_AUDIT,as M09,has_USDT,True
+M12,has_USDC,route_state,symbol_windows,1 if an M09 pair has quote USDC,none,ADMISSIBLE_WITH_AUDIT,as M09,has_USDC,True
+M13,has_BTC,route_state,symbol_windows,1 if an M09 pair has quote BTC,none,ADMISSIBLE_WITH_AUDIT,as M09,has_BTC,True
+M14,has_BNB,route_state,symbol_windows,1 if an M09 pair has quote BNB,none,ADMISSIBLE_WITH_AUDIT,as M09,has_BNB,True
+M15,has_FDUSD,route_state,symbol_windows,"1 if an M09 pair has quote FDUSD (0 before FDUSD existed: a real absence, not missing)",none,ADMISSIBLE_WITH_AUDIT,as M09,has_FDUSD,True
+M16,venue_listed_assets,regime,symbol_windows,asset-eras with >= 1 active route at w,log1p,ADMISSIBLE_WITH_AUDIT,as M09,venue_listed_assets,True
+M17,venue_removal_intensity_90d,regime,pair_removals_pit(removal_date),"venue-wide pair removals in (w - 90 d, w] / venue_listed_assets",none,ADMISSIBLE_WITH_AUDIT,class-free count; removal-permanence caveat (audit P2.4),venue_removal_intensity_90d,True
+M18,time_index_years,regime,calendar,(w - 2017-07-03) in years,none,ADMISSIBLE,deterministic calendar trend,time_index_years,True
+M19,route_ratio_to_peak,route_history,symbol_windows,M09 / running peak of M09 within the era up to w,none,ADMISSIBLE_WITH_AUDIT,as M09,route_ratio_to_peak,True
+M20,days_since_last_pair_removal,route_history,pair_removals_pit(removal_date),days from the era's last pair removal <= w to w; capped at 3650; never -> 3650 with indicator M22,log1p,ADMISSIBLE_WITH_AUDIT,class-free replacement for H18.3 days_since_last_signal_removal; removal-permanence caveat (P2.4),(replaces days_since_last_signal_removal),True
+M21a,asset_specific_removals_365d_mkt,route_history,"pair_removals_pit(removal_date, assets_losing_this_quote_prior_90d)","era's pair removals in (w - 365 d, w] whose backward 90-day same-quote asset count < 15",log1p,ADMISSIBLE_WITH_AUDIT,notice-free class: H18.3 A1 count rule without the QUOTE_RETIREMENT override,(replaces asset_specific_removals_365d),True
+M21b,batch_prune_removals_365d_mkt,route_history,"pair_removals_pit(removal_date, assets_losing_this_quote_prior_90d)","era's pair removals in (w - 365 d, w] whose backward 90-day same-quote asset count >= 15",log1p,ADMISSIBLE_WITH_AUDIT,notice-free class (A1 rule only),(replaces batch_prune_removals_365d),True
+M22,never_had_pair_removal,route_history,pair_removals_pit,1 if the era had no pair removal <= w,none,ADMISSIBLE,,(replaces never_had_signal_removal),True
+X01,days_since_last_signal_removal,route_history,pair_removals_pit(removal_class_pit),,,EXCLUDED,"depends on QUOTE_RETIREMENT, which is classified from Binance CMS notice titles (a C4 venue-notice input, from the truncated H18.1b snapshot; the BTT-airdrop TRX false positive); M0 must be market data only",days_since_last_signal_removal,False
+X02,asset_specific_removals_365d,route_history,pair_removals_pit(removal_class_pit),,,EXCLUDED,as X01,asset_specific_removals_365d,False
+X03,batch_prune_removals_365d,route_history,pair_removals_pit(removal_class_pit),,,EXCLUDED,as X01 (the QUOTE_RETIREMENT override removes removals from this class),batch_prune_removals_365d,False
+X04,never_had_signal_removal,route_history,features,,,EXCLUDED,as X01,never_had_signal_removal,False
+X05,quote_retirement_removals_365d,route_history,asset_weeks,,,EXCLUDED,notice-derived (C4),quote_retirement_removals_365d,False
+X06,signal_removals_90d / signal_removals_365d / fraction_routes_lost_*,route_history,asset_weeks,,,EXCLUDED,"notice-derived class and, in asset_weeks, the H18.2 non-PIT +/-45-day class",,False
+X07,asset_specific_removals_90d (asset_weeks),route_history,asset_weeks,,,EXCLUDED,H18.2 class uses up to 45 days after the removal (post-t classification),,False
+X08,"pair_removals_30d/90d/180d, route_count_peak (level)",route_history,asset_weeks,,,EXCLUDED,admissible in principle but not added: redundant with M19-M21 (compact set; not chosen by outcome),,False
+X09,monitoring tag (any),venue_notice,h18_2/monitoring_tag_events,,,EXCLUDED,Binance notice-derived (C4) and exists only from 2023-07-26,,False
+X10,is_live_now / any_live / known_to_exchange_info,status,symbol_windows / eras,,,EXCLUDED,current listing status (2026-10 harvest): future information,,False
+X11,era_end / n_pairs_ever / last_candle as a level,status,eras / symbol_windows,,,EXCLUDED,"uses the whole era, including after t",,False
+X12,event_delist_announced_within_* / y_365 / days_to_delist_announcement / ever_delisted / followup_end / eligible_365,outcome,asset_weeks / landmarks / features,,,EXCLUDED,outcome or outcome-derived,,False
+X13,split / date / vdate,bookkeeping,features,,,EXCLUDED,"bookkeeping columns, not predictors",,False

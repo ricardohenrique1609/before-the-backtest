@@ -1,0 +1,212 @@
+[
+ {
+  "id": "N01",
+  "section": "Abstract",
+  "old": "23-feature market baseline did not raise out-of-time precision–recall performance:",
+  "new": "23-feature market baseline did not improve out-of-time precision–recall performance:",
+  "kind": "null-language"
+ },
+ {
+  "id": "N02",
+  "section": "Abstract",
+  "old": "The pre-registered verdict is **PRE-REGISTERED NULL**. Under a strictly point-in-time reconstruction,\nthe context that survived the data and representation gates added no incremental out-of-time\npredictive information about Binance full-asset delisting beyond the market baseline. The result\nconcerns that surviving representation, not public context in general.",
+  "new": "The pre-registered verdict is **PRE-REGISTERED NULL**. Under the frozen point-in-time\nspecification, the surviving public-context feature set did not provide evidence of incremental\nout-of-time predictive information about Binance full-asset delisting beyond the structured market\nbaseline. Both point estimates were negative, and the development interval included zero. The\nresult concerns that surviving representation, not public context in general.",
+  "kind": "null-language"
+ },
+ {
+  "id": "N03",
+  "section": "2",
+  "old": "3. **An empirical case study** in which additional public context, reconstructed strictly\n   point-in-time, did not add out-of-time predictive information to a market baseline.",
+  "new": "3. **An empirical case study** in which additional public context, reconstructed strictly\n   point-in-time, did not provide evidence of incremental out-of-time predictive value over a market\n   baseline.",
+  "kind": "null-language"
+ },
+ {
+  "id": "N04",
+  "section": "9",
+  "old": "The primary null is therefore not produced by the agent-audited classifiers.",
+  "new": "The null pattern persists in the classifier-free robustness specification. This shows that the pattern is robust to removing those classifiers; it does not show that the classifiers had no influence on the expanded-set result.",
+  "kind": "null-language"
+ },
+ {
+  "id": "N05",
+  "section": "9",
+  "old": "Each fold-selected configuration was chosen on the same folds that score it. That is the optimism\nthe a-priori primary penalty was frozen to remove, and none of these gains survived on the LCUV\nblock.",
+  "new": "More flexible or selected specifications produced apparent development improvements that did not\npersist in the locked context-unseen block. Each fold-selected configuration was chosen on the same\nfolds that score it, so the pattern is consistent with selection optimism, which the a-priori\nprimary penalty was frozen to avoid. It does not, by itself, identify overfitting.",
+  "kind": "null-language"
+ },
+ {
+  "id": "N06",
+  "section": "9",
+  "old": "**Context-only arms.** Context-only models (M1, M1_core) were close to uninformative: development",
+  "new": "**Context-only arms.** Context-only models (M1, M1_core) showed little discrimination: development",
+  "kind": "null-language"
+ },
+ {
+  "id": "N07",
+  "section": "10",
+  "old": "The result says that this context representation, built and audited as it was, carried no\nincremental out-of-time information for this target beyond this baseline. Several interpretations\nare compatible with that finding.",
+  "new": "The study did not support the incremental-context hypothesis. The surviving representation, built\nand audited as it was, did not improve out-of-time predictive performance for this target beyond\nthis baseline. The point estimates were negative, but the development interval included zero, so\nneither a small positive nor a small negative increment is excluded. Several interpretations are\ncompatible with this finding.",
+  "kind": "null-language"
+ },
+ {
+  "id": "N08",
+  "section": "10",
+  "old": "3. **Cross-sectional limitation.** Context is identical for every asset at a given week. In a linear\n   model it can only shift week-level risk; it cannot reorder assets within a week.",
+  "new": "3. **Cross-sectional limitation.** Context is identical for every asset at a given week. In a linear\n   model it adds the same shift to every asset's score in that week, so it cannot by itself reorder\n   assets within a week.",
+  "kind": "null-language"
+ },
+ {
+  "id": "N09",
+  "section": "12",
+  "old": "5. Report nulls with their scope. \"This representation did not add information here\" is a result\n   that a broader claim must not overwrite.",
+  "new": "5. Report nulls with their scope. \"This representation did not show incremental value here\" is a\n   result that a broader claim must not overwrite, and it is not evidence that no effect exists.",
+  "kind": "null-language"
+ },
+ {
+  "id": "N10",
+  "section": "13",
+  "old": "Under a rigorously point-in-time reconstruction, the public-context feature set that survived the\ndata and representation gates did not add incremental out-of-time predictive information about\nBinance full-asset delisting beyond the structured market baseline. The pre-registered verdict is\nPRE-REGISTERED NULL. The finding is bounded by what survived the gates. Exchange-specific and\nasset-specific context, the most plausible carriers of asset-level signal, could not be reconstructed\npoint-in-time here and remain untested. Prospective confirmation is pending.",
+  "new": "Under the frozen point-in-time specification, the surviving public-context feature set did not\nprovide evidence of incremental out-of-time predictive information about Binance full-asset delisting\nbeyond the structured market baseline. The pre-registered verdict is PRE-REGISTERED NULL. This is\nan absence of evidence of incremental value, not evidence that context has no effect: the point\nestimates were negative and the development interval included zero. The finding is bounded by what\nsurvived the gates. Exchange-specific and asset-specific context could not be reconstructed\npoint-in-time here and remain untested. Prospective confirmation is pending.",
+  "kind": "null-language"
+ },
+ {
+  "id": "L01",
+  "section": "1",
+  "old": "plausible role for context: regulatory pressure, macro conditions and crypto-market stress could\nprecede venue decisions.",
+  "new": "plausible role for context: regulatory pressure, macro conditions and crypto-market stress could\nprecede venue decisions. Binance's current delisting FAQ lists legal/compliance, project\ngoing-concern, market and ethical risk among the factors it considers [@binance_delisting_faq]. That\npage is current documentation; it does not establish which criteria applied in each year of the\nsample.",
+  "kind": "literature"
+ },
+ {
+  "id": "L02",
+  "section": "2",
+  "old": "**Contributions**, stated conservatively (see `REFERENCE_GAPS.md` for the literature still to be\nchecked before any stronger novelty statement):\n\n1. **Two kinds of point-in-time validity.** We distinguish *document-time* PIT (the source record was\n   public by *t*) from *transform-time* PIT (the transformation injects no knowledge unavailable at\n   *t*). We operationalise the second as a classification of every candidate transform before use.\n2. **A staged feasibility-to-prediction framework** (source reconstruction → representation audit →\n   pre-registration → outcome opening), with closed verdict lists, frozen bars and hash-chained\n   freezes at each stage.",
+  "new": "**Contributions.** They are stated conservatively, and none is claimed as new (see §2.1):\n\n1. **Two kinds of point-in-time validity.** We distinguish *document-time* PIT (the source record was\n   public by *t*) from *transform-time* PIT (the transformation injects no knowledge unavailable at\n   *t*). We operationalise the second as a classification of every candidate transform before use.\n   The underlying risk, that a model trained on later text carries later knowledge into historical\n   features, is established in the literature on look-ahead bias in language models\n   [@glasserman2023lookahead; @kelly2026pit].\n2. **A staged design** (source reconstruction → representation audit → pre-registration → outcome\n   opening), with closed verdict lists, frozen bars and hash-chained freezes at each stage. It applies\n   the principle that a design is fixed before outcomes are examined [@rubin2008design;\n   @jbef_registered_reports].",
+  "kind": "literature"
+ },
+ {
+  "id": "L03",
+  "section": "2;2.1",
+  "old": "4. **A demonstration of the small effective sample of shared context.** Context that is identical\n   for every asset in a week is informed by the number of distinct weeks, not by the number of\n   asset-week rows.",
+  "new": "4. **A documentation of the small effective sample of shared context.** Context that is identical\n   for every asset in a week is informed by the number of distinct weeks, not by the number of\n   asset-week rows.\n\n### 2.1 Related work\n\n**Public context and crypto outcomes.** The evidence is mixed and mostly concerns returns, volume or\nvolatility over horizons of hours to days, not 365-day delisting:\n- Regulatory news moves crypto prices, most strongly news about legal status, while unspecific\n  official warnings had no measurable effect [@auer2018regulating]. That study measures\n  contemporaneous market reactions, not prediction.\n- Tweet counts predicted next-day trading volume and realised volatility, with weaker and mixed\n  evidence for returns [@shen2019twitter].\n- Twitter activity and sentiment predicted short-horizon altcoin returns in a short sample, for a\n  selected subset of coins, with low out-of-sample fit [@steinert2018altcoin].\n- The closest delisting study builds Binance delisting models whose predictors include news counts\n  and topics and social-media metrics [@yang2026delistings]. Related distress and dead-coin\n  prediction work uses market and activity variables [@bedowska2025zombie; @fantazzini2022creditrisk;\n  @aldhahi2026regime].\n\n**Look-ahead in text representations.** Language models trained on unrestricted corpora can embed\ninformation from after a document's date. This look-ahead bias has been assessed for LLM sentiment\nscores of news headlines [@glasserman2023lookahead]. It is the motivation for point-in-time language\nmodels trained only on text available up to each date [@kelly2026pit]. Our transform-time\nclassification applies the same concern to every representation, including fitted statistics such\nas TF-IDF, before any feature is used.\n\n**Real-time information sets.** Using the data vintage available at the decision date, rather than\nlater revised data, is standard in real-time macroeconomics [@croushore1999realtime] and is what the\nALFRED archive supports [@alfred_help].\n\n**Design discipline.** Fixing the design before outcomes [@rubin2008design;\n@jbef_registered_reports] and accounting for selection across specifications [@bailey2014deflated]\ninform the pre-registration. Our previous paper applied an outcome-free feasibility stop to a related\ndelisting event set [@ramossilva2026beforebacktest].",
+  "kind": "literature"
+ },
+ {
+  "id": "L04",
+  "section": "4",
+  "old": "- Macro data vintages are admitted from the end of their vintage date in US Eastern time.\n- A GDELT 15-minute file is admitted 15 minutes after its stamp.",
+  "new": "- Macro data vintages are admitted from the end of their vintage date in US Eastern time, so a model\n  sees only the vintage available at *t* [@croushore1999realtime; @alfred_help].\n- GDELT GKG records are produced in 15-minute update batches, with themes and tone assigned by\n  GDELT's own processing [@gdelt_gkg_codebook_v21]. As our own conservative rule, a GDELT 15-minute\n  file is admitted 15 minutes after its stamp.",
+  "kind": "literature"
+ },
+ {
+  "id": "L05",
+  "section": "4",
+  "old": "- **NON_PIT:** any model or statistic fitted on a corpus that includes post-*t* documents.",
+  "new": "- **NON_PIT:** any model or statistic fitted on a corpus that includes post-*t* documents. For\n  language models this is the look-ahead risk documented by [@glasserman2023lookahead] and\n  [@kelly2026pit].",
+  "kind": "literature"
+ },
+ {
+  "id": "L06",
+  "section": "6",
+  "old": "None was built. The only R3 feature\nbuilt was a tone score computed by GDELT at ingest time.",
+  "new": "None was built. The only R3 feature\nbuilt was a tone score computed by GDELT at ingest time. Point-in-time language models trained only\non earlier text [@kelly2026pit] are a possible future route for R3; none was evaluated here.",
+  "kind": "literature"
+ },
+ {
+  "id": "L07",
+  "section": "7",
+  "old": "The decision time is **Tuesday 00:00 UTC after the landmark Monday**, so the landmark day's daily\ncandle is complete at *t*.",
+  "new": "The decision time is **Tuesday 00:00 UTC after the landmark Monday**, so the landmark day's daily\ncandle is complete at *t*. The design is landmark-style: at each landmark, the risk set is the assets\nstill at risk, and predictors use only information available at the landmark, as in landmarking for\ndynamic prediction [@putter2017landmarking]. We model a binary 365-day outcome with logistic\nregression; no survival model is fitted.",
+  "kind": "literature"
+ },
+ {
+  "id": "L08",
+  "section": "7",
+  "old": "- **Development:** landmarks 2018-01-01 to 2023-12-25, with eight rolling-origin folds. Each fold\n  has an expanding training window, a 365-day embargo and a quarterly test window in 2022–2023.",
+  "new": "- **Development:** landmarks 2018-01-01 to 2023-12-25, with eight rolling-origin folds\n  [@hyndman2021fpp3]. Each fold has an expanding training window, a 365-day embargo and a quarterly\n  test window in 2022–2023. The embargo follows from the label: a training landmark's 365-day\n  outcome window must end before its fold's test window begins, so no delisting event can label both\n  a training row and a test row.",
+  "kind": "literature"
+ },
+ {
+  "id": "L09",
+  "section": "7",
+  "old": "- **Primary:** PR-AUC (average precision), because the positive class is rare.",
+  "new": "- **Primary:** PR-AUC (average precision), because the positive class is rare and ROC-based\n  summaries can be misleading under heavy class imbalance [@saito2015precision].",
+  "kind": "literature"
+ },
+ {
+  "id": "L10",
+  "section": "7",
+  "old": "- **Uncertainty:** a 2,000-replicate pigeonhole two-way cluster bootstrap on the fixed out-of-fold\n  predictions, resampling asset-eras and calendar blocks independently.",
+  "new": "- **Uncertainty:** a 2,000-replicate two-way bootstrap on the fixed out-of-fold predictions.\n  - It adapts the pigeonhole bootstrap [@owen2007pigeonhole], which resamples the row entities and\n    the column entities of a crossed design independently, with replacement. Here the rows are\n    asset-eras and the columns are the eight fold test windows (quarterly calendar blocks), not\n    individual weeks. Each landmark row is weighted by the product of its asset-era and block\n    multiplicities, and the statistic is a weighted PR-AUC difference.\n  - Owen's consistency results concern means, and Owen describes the procedure as mildly\n    conservative there. For a rank-based statistic such as PR-AUC they are an approximation, not a\n    guarantee.\n  - Rows are clustered because observations of one asset and of one period are correlated, and\n    ignoring that correlation biases conventional standard errors [@petersen2006standard].",
+  "kind": "literature"
+ },
+ {
+  "id": "L11",
+  "section": "References",
+  "old": "The reference list is `paper/references.bib`. Its entries are reused from the author's previous\npaper in the same repository, with the access level of each source recorded in the entry's note.\nThat previous paper is cited as [@ramossilva2026beforebacktest]. Claims still needing literature\nsupport are listed in `paper/REFERENCE_GAPS.md` and carry no citation here.",
+  "new": "The reference list is `paper/references.bib`.\n- Eleven entries are reused unchanged from the author's previous paper in the same repository, which\n  is itself cited as [@ramossilva2026beforebacktest].\n- Fourteen entries were added in a verification pass. Each was read at the level recorded in\n  `paper/REFERENCE_VERIFICATION.md`.\n- Remaining gaps are recorded in `paper/REFERENCE_GAPS.md`.",
+  "kind": "literature"
+ },
+ {
+  "id": "L12",
+  "section": "App. C",
+  "old": "- ALFRED real-time data vintages for CPIAUCSL, UNRATE and DFF;",
+  "new": "- ALFRED real-time data vintages for CPIAUCSL, UNRATE and DFF [@alfred_help];",
+  "kind": "literature"
+ },
+ {
+  "id": "L13",
+  "section": "App. C",
+  "old": "- GDELT 2.0 GKG 15-minute files (H20.1 only; no GDELT feature was eligible);",
+  "new": "- GDELT 2.0 GKG 15-minute files (H20.1 only; no GDELT feature was eligible) [@gdelt_gkg_codebook_v21];",
+  "kind": "literature"
+ },
+ {
+  "id": "R01",
+  "section": "Abstract",
+  "old": "Event-driven research routinely adds news, regulatory and macroeconomic context to market data on\nthe premise that public information known at decision time is predictive. Two conditions are rarely\nestablished before that premise is tested. Context must be reconstructed as it was available at each\nhistorical decision time, and it must be transformed into features without importing later\nknowledge.",
+  "new": "A common proposal in event-driven research is to add news, regulatory and macroeconomic context to\nmarket data, on the premise that public information known at decision time is predictive. Testing\nthat premise requires two conditions that are easy to violate. Context must be reconstructed as it\nwas available at each historical decision time, and it must be transformed into features without\nimporting later knowledge.",
+  "kind": "referee-pass"
+ },
+ {
+  "id": "R02",
+  "section": "Abstract",
+  "old": "the representation gate. No text model qualified as transform-time PIT.",
+  "new": "the representation gate. No model-based text representation qualified as transform-time PIT.",
+  "kind": "referee-pass"
+ },
+ {
+  "id": "R03",
+  "section": "1",
+  "old": "Both\nrequirements fail silently.",
+  "new": "Both\nrequirements can fail silently.",
+  "kind": "referee-pass"
+ },
+ {
+  "id": "R04",
+  "section": "1",
+  "old": "universe and a strong market baseline from prior work in the same repository.",
+  "new": "universe and an established market baseline from prior work in the same repository.",
+  "kind": "referee-pass"
+ },
+ {
+  "id": "R05",
+  "section": "1",
+  "old": "The context layers closest to the outcome,\nexchange-specific and asset-specific information, failed",
+  "new": "The context layers arguably closest to the\noutcome, exchange-specific and asset-specific information, failed",
+  "kind": "referee-pass"
+ },
+ {
+  "id": "R06",
+  "section": "10",
+  "old": "this baseline. The point estimates were negative, but the development interval included zero, so\nneither a small positive nor a small negative increment is excluded.",
+  "new": "this baseline. The point estimates were negative, but the development interval included zero and is\nwide enough that neither a negative nor a moderate positive increment is excluded.",
+  "kind": "referee-pass"
+ },
+ {
+  "id": "R07",
+  "section": "11",
+  "old": "by the AI research agent. The classifier-free robustness set gives the same null.",
+  "new": "by the AI research agent. The null pattern persists in the classifier-free robustness specification.",
+  "kind": "referee-pass"
+ }
+]

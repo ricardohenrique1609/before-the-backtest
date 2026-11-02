@@ -1,0 +1,142 @@
+{
+ "spec_version": "h20_2_v1+A02",
+ "landmark_rule": {
+  "landmark": "ISO week, identified by its Monday date w (inherited H18.2/H18.3 weekly grid, freq W-MON from 2017-07-03)",
+  "decision_time_t": "t = w + 1 day at 00:00:00 UTC, i.e. the end of the landmark Monday. Every daily market row dated w is complete at t; nothing dated after w may enter X",
+  "unit": "(asset-era, landmark t); asset-era per inherited rule A7 (a new era starts only after > 365 days with no served route)",
+  "risk_set": [
+   "asset-era week inside the inherited H18.2 exposure window (first served candle .. min(era end + 7 d, first delisting announcement))",
+   "asset age at w >= 90 days since the era's first served candle (inherited)",
+   "NEW in H20: landmark excluded if the era's delisting announcement time <= t (already public at t)",
+   "t + 365 d <= administrative censor 2026-10-09 (inherited), so the last landmark is w = 2025-10-06"
+  ]
+ },
+ "target": {
+  "name": "y_365",
+  "definition": "y(t, a) = 1 if asset-era a has its validated full-asset delisting ANNOUNCEMENT at time A with t < A <= t + 365 d; else 0",
+  "event_source": "H18_1B_FULL_DELIST_EVENTS.parquet (frozen H18.1b lifecycle universe, 201 events); columns symbol, announcement_public_time",
+  "event_time": "announcement_public_time (Binance CMS releaseDate, epoch ms -> naive UTC string, per scripts/h18_1b_discover.py); never trading_end",
+  "date_only_rule": "a value without a time component denotes a UTC date D and is set to D 23:59:59 UTC (public by the end of D); with t at a UTC midnight this makes the start boundary unambiguous",
+  "parse_rule": "strict: pandas.to_datetime(value, format='ISO8601'); timezone-naive values are UTC; any value that does not parse STOPS H20.3 as DATA / DESIGN FAILURE (no coercion to NaT, unlike H18.2)",
+  "era_join": "event attaches to the asset-era of the same ticker with era_start <= A <= era_end + 30 d (inherited H18.2 rule); more than one matching era for any event STOPS H20.3 as DATA / DESIGN FAILURE; events matching no era are counted and reported as unmodellable (known: IDRT, VAI have no candles)",
+  "competing_exits": "an era ending without an announcement (rebrand, merge, pair-removal-only exit) is a negative (inherited H18.3 definition)",
+  "not_used": [
+   "y_365 / event_* / days_to_delist_announcement / ever_delisted columns of H18 panels (rebuilt instead, compared only as a reconstruction check after X is hashed)"
+  ]
+ },
+ "administrative_censor": "2026-10-09",
+ "horizon_days": 365,
+ "blocks": {
+  "DEVELOPMENT": {
+   "first_landmark_monday": "2018-01-01",
+   "last_landmark_monday": "2023-12-25",
+   "n_weeks": 313
+  },
+  "EMBARGO_DROPPED": {
+   "first_landmark_monday": "2024-01-01",
+   "last_landmark_monday": "2024-12-30",
+   "n_weeks": 53
+  },
+  "PROSPECTIVE_CONFIRMATION": {
+   "first_landmark_monday": "2025-10-13",
+   "last_landmark_monday": "2026-09-28",
+   "n_weeks": 51
+  },
+  "LOCKED_CONTEXT_UNSEEN_VALIDATION": {
+   "first_landmark_monday": "2025-01-06",
+   "last_landmark_monday": "2025-10-06",
+   "n_weeks": 40
+  }
+ },
+ "block_roles": {
+  "DEVELOPMENT": "all fitting, selection and the 8 folds; 2018-01-01 .. 2023-12-25 (inherited H18.3 boundaries, chosen on calendar and follow-up grounds)",
+  "EMBARGO_DROPPED": "one horizon between development labels (mature by 2024-12-24) and the holdout; not used",
+  "PROSPECTIVE_CONFIRMATION": "landmarks whose outcomes are not yet observable (follow-up ends 2027-09-28); frozen now as the only block untouched by the whole research programme; evaluable only after a lifecycle refresh past 2027-09-28; not part of the H20.3 verdict; the only programme-untouched block. The H20.3 primary models are hashed so it can be scored unchanged once its outcomes mature; its scoring rule is to be frozen before then",
+  "LOCKED_CONTEXT_UNSEEN_VALIDATION": "2025-01-06 .. 2025-10-06 (dates unchanged). Locked: opened exactly once, after the pre-LCUV freeze; no H20 or context model has seen it and every H20.2 rule is frozen before H20 scoring. NOT an untouched holdout: the research programme observed market-only model behaviour in this calendar period (H18.3 holdout)"
+ },
+ "folds": [
+  {
+   "fold": 1,
+   "train_from": "2018-01-01",
+   "train_to": "2021-01-02",
+   "test_from": "2022-01-03",
+   "test_to": "2022-04-03",
+   "test_era": "2022"
+  },
+  {
+   "fold": 2,
+   "train_from": "2018-01-01",
+   "train_to": "2021-04-03",
+   "test_from": "2022-04-04",
+   "test_to": "2022-07-03",
+   "test_era": "2022"
+  },
+  {
+   "fold": 3,
+   "train_from": "2018-01-01",
+   "train_to": "2021-07-03",
+   "test_from": "2022-07-04",
+   "test_to": "2022-10-02",
+   "test_era": "2022"
+  },
+  {
+   "fold": 4,
+   "train_from": "2018-01-01",
+   "train_to": "2021-10-02",
+   "test_from": "2022-10-03",
+   "test_to": "2023-01-01",
+   "test_era": "2022"
+  },
+  {
+   "fold": 5,
+   "train_from": "2018-01-01",
+   "train_to": "2022-01-01",
+   "test_from": "2023-01-02",
+   "test_to": "2023-04-02",
+   "test_era": "2023"
+  },
+  {
+   "fold": 6,
+   "train_from": "2018-01-01",
+   "train_to": "2022-04-02",
+   "test_from": "2023-04-03",
+   "test_to": "2023-07-02",
+   "test_era": "2023"
+  },
+  {
+   "fold": 7,
+   "train_from": "2018-01-01",
+   "train_to": "2022-07-02",
+   "test_from": "2023-07-03",
+   "test_to": "2023-10-01",
+   "test_era": "2023"
+  },
+  {
+   "fold": 8,
+   "train_from": "2018-01-01",
+   "train_to": "2022-10-01",
+   "test_from": "2023-10-02",
+   "test_to": "2023-12-31",
+   "test_era": "2023"
+  }
+ ],
+ "fold_embargo_days": 365,
+ "selection_basis": "calendar and follow-up completeness only; no performance figure was read in choosing any date",
+ "label_overlap": "a positive event at A is the label of every landmark t in [A - 365 d, A): up to 52 consecutive positive weeks per event; the folds' 365-day embargo removes train/test label overlap",
+ "claim_scope": {
+  "if_supported": "incremental context signal supported in the locked retrospective / context-unseen evaluation",
+  "always_append": "prospective confirmation pending (PROSPECTIVE_CONFIRMATION block, not scorable before its 365-day outcomes mature after 2027-09-28)",
+  "never_say": [
+   "untouched holdout",
+   "out-of-sample external confirmation",
+   "prospective confirmation",
+   "fully prospective"
+  ],
+  "why": "no H20 or context model has seen the 2025 block and the H20.2 rules are frozen before H20 scoring, but the research programme previously observed market-model behaviour in that calendar period (H18.3 holdout)"
+ },
+ "terminology_map": {
+  "HOLDOUT_H20": "LOCKED_CONTEXT_UNSEEN_VALIDATION",
+  "holdout (any v1 use, incl. 'pre-holdout freeze', 'holdout scored once', '2025 holdout')": "LOCKED_CONTEXT_UNSEEN_VALIDATION ('pre-LCUV freeze', 'LCUV scored once', '2025 LCUV block')"
+ },
+ "amendment": "A02.2 (terminology and claim scope only; no date changed)"
+}

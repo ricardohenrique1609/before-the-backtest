@@ -1,0 +1,1010 @@
+{
+ "experiment": "H20.0 Context Data Feasibility",
+ "created_utc": "2026-10-18T05:30:21.124081Z",
+ "plan_file": "H20_0_CONTEXT_FEASIBILITY_PLAN.md",
+ "plan_sha256": "5da67c69d447a3be46113a8cb20e325b99c58cd426f5792e649010769b9b0fa7",
+ "selection_rule": {
+  "timestamps": "one per calendar quarter 2018-Q1..2026-Q3; uniform minute within quarter; numpy default_rng(seed) draws all timestamps first, in quarter order",
+  "asset_universe": "base assets with >=1 Binance spot symbol window first_candle <= t-30d and last_candle >= t (window_known only); last_candle used only as the 'trading at t' predicate",
+  "asset_draw": "terciles of median daily usd_volume over [t-30d, t) (rows with date < t); one asset uniformly per tercile from the alphabetically sorted pool, tercile order LOW, MID, HIGH",
+  "windows": {
+   "W7": "(t-7d, t]",
+   "W30": "(t-30d, t]"
+  },
+  "outcome_inputs": "none; no lifecycle, delisting, return or price column is read"
+ },
+ "rng": {
+  "generator": "numpy.random.default_rng",
+  "seed": 20261018
+ },
+ "generation_script": "scripts/h20_0_sample_freeze.py",
+ "generation_script_sha256": "a453c795af1bdba6e04ae3c0f4a3972847217ff5603ec439a15c1fb6ce68a3e7",
+ "common_module_sha256": "2d123bbe07044318e3e6f0cd69b29f8a56b84dfa0037924daab1df73241854ab",
+ "inputs": [
+  {
+   "source_path": "data/raw/h18_2/symbol_windows.parquet",
+   "source_sha256": "39610a9d39ededaf6366dc2383fdd57f0ffb44fd46a41aba688683ba0f8a2146",
+   "columns_copied": [
+    "symbol",
+    "base_asset",
+    "quote_asset",
+    "first_candle",
+    "last_candle",
+    "window_known"
+   ],
+   "rows": 3749,
+   "snapshot_path": "data/raw/inherited/symbol_windows_whitelist.parquet",
+   "snapshot_sha256": "a1506baac05dfbe52f6e8a0d85820e11d665aec4ddba54736074831240e2fd5c"
+  },
+  {
+   "source_path": "data/raw/h18_3/asset_daily.parquet",
+   "source_sha256": "a4adf13cfa5838293ff29aba595319aa34e6ecb9e20eceb64e1cc051f56ffbf3",
+   "columns_copied": [
+    "date",
+    "base_asset",
+    "usd_volume"
+   ],
+   "rows": 984954,
+   "snapshot_path": "data/raw/inherited/asset_daily_usd_volume.parquet",
+   "snapshot_sha256": "c618f5398d0d3a6235c9eb11af098cc86bb066570b7e997031fe76f478a1ff65"
+  }
+ ],
+ "environment": {
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "pyarrow": "25.0.1",
+  "platform": "Windows-11-10.0.26200-SP0"
+ },
+ "n_timestamps": 35,
+ "n_asset_time_units": 105,
+ "sample": [
+  {
+   "sample_id": "S01",
+   "quarter": "2018-Q1",
+   "t_utc": "2018-03-04T11:41:00Z",
+   "universe_size": 106,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "DNT",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 967237.6588858727,
+     "pool_size": 36
+    },
+    {
+     "asset_ticker": "BTG",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2251810.276897385,
+     "pool_size": 35
+    },
+    {
+     "asset_ticker": "ADA",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 29623580.252026,
+     "pool_size": 35
+    }
+   ]
+  },
+  {
+   "sample_id": "S02",
+   "quarter": "2018-Q2",
+   "t_utc": "2018-06-19T14:11:00Z",
+   "universe_size": 126,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "VIBE",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 422169.0272340818,
+     "pool_size": 42
+    },
+    {
+     "asset_ticker": "SALT",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2797806.778330059,
+     "pool_size": 42
+    },
+    {
+     "asset_ticker": "MTL",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 9053521.7093058,
+     "pool_size": 42
+    }
+   ]
+  },
+  {
+   "sample_id": "S03",
+   "quarter": "2018-Q3",
+   "t_utc": "2018-09-16T05:40:00Z",
+   "universe_size": 148,
+   "universe_without_volume": 3,
+   "assets": [
+    {
+     "asset_ticker": "BNT",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 86225.67640901546,
+     "pool_size": 49
+    },
+    {
+     "asset_ticker": "YOYO",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 453318.1666270981,
+     "pool_size": 48
+    },
+    {
+     "asset_ticker": "BCC",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 35537907.30861772,
+     "pool_size": 48
+    }
+   ]
+  },
+  {
+   "sample_id": "S04",
+   "quarter": "2018-Q4",
+   "t_utc": "2018-11-05T12:31:00Z",
+   "universe_size": 144,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "NXS",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 512257.6142127622,
+     "pool_size": 48
+    },
+    {
+     "asset_ticker": "BQX",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 1281925.8652696013,
+     "pool_size": 48
+    },
+    {
+     "asset_ticker": "NCASH",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 1782786.2866661018,
+     "pool_size": 48
+    }
+   ]
+  },
+  {
+   "sample_id": "S05",
+   "quarter": "2019-Q1",
+   "t_utc": "2019-02-22T11:56:00Z",
+   "universe_size": 145,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "BTS",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 194474.1310276615,
+     "pool_size": 49
+    },
+    {
+     "asset_ticker": "MANA",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 375528.41933474445,
+     "pool_size": 48
+    },
+    {
+     "asset_ticker": "LTC",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 20693003.513511132,
+     "pool_size": 48
+    }
+   ]
+  },
+  {
+   "sample_id": "S06",
+   "quarter": "2019-Q2",
+   "t_utc": "2019-04-04T02:22:00Z",
+   "universe_size": 149,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "CDT",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 529787.8325292913,
+     "pool_size": 50
+    },
+    {
+     "asset_ticker": "STEEM",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 1052201.7035162752,
+     "pool_size": 49
+    },
+    {
+     "asset_ticker": "ARN",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 3257418.104761868,
+     "pool_size": 50
+    }
+   ]
+  },
+  {
+   "sample_id": "S07",
+   "quarter": "2019-Q3",
+   "t_utc": "2019-09-03T15:42:00Z",
+   "universe_size": 164,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "NEBL",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 155125.61027054832,
+     "pool_size": 55
+    },
+    {
+     "asset_ticker": "APPC",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 198855.55512616137,
+     "pool_size": 54
+    },
+    {
+     "asset_ticker": "WAVES",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 2450220.106024676,
+     "pool_size": 55
+    }
+   ]
+  },
+  {
+   "sample_id": "S08",
+   "quarter": "2019-Q4",
+   "t_utc": "2019-12-07T12:51:00Z",
+   "universe_size": 174,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "GRS",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 136932.71623391093,
+     "pool_size": 58
+    },
+    {
+     "asset_ticker": "DCR",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 348045.18228360126,
+     "pool_size": 58
+    },
+    {
+     "asset_ticker": "ONE",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 2482454.7098464286,
+     "pool_size": 58
+    }
+   ]
+  },
+  {
+   "sample_id": "S09",
+   "quarter": "2020-Q1",
+   "t_utc": "2020-01-03T18:28:00Z",
+   "universe_size": 176,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "AE",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 130430.29534704835,
+     "pool_size": 59
+    },
+    {
+     "asset_ticker": "NKN",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 308298.16342878615,
+     "pool_size": 58
+    },
+    {
+     "asset_ticker": "REN",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 577792.5588325856,
+     "pool_size": 59
+    }
+   ]
+  },
+  {
+   "sample_id": "S10",
+   "quarter": "2020-Q2",
+   "t_utc": "2020-06-18T04:06:00Z",
+   "universe_size": 192,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "CMT",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 270691.71348966367,
+     "pool_size": 64
+    },
+    {
+     "asset_ticker": "AST",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 1046449.3655574142,
+     "pool_size": 64
+    },
+    {
+     "asset_ticker": "QTUM",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 3835355.647597321,
+     "pool_size": 64
+    }
+   ]
+  },
+  {
+   "sample_id": "S11",
+   "quarter": "2020-Q3",
+   "t_utc": "2020-08-11T16:25:00Z",
+   "universe_size": 197,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "LOOM",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 648256.9987805684,
+     "pool_size": 66
+    },
+    {
+     "asset_ticker": "STX",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2416969.2866798425,
+     "pool_size": 65
+    },
+    {
+     "asset_ticker": "NEO",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 11519534.333866226,
+     "pool_size": 66
+    }
+   ]
+  },
+  {
+   "sample_id": "S12",
+   "quarter": "2020-Q4",
+   "t_utc": "2020-12-10T20:03:00Z",
+   "universe_size": 284,
+   "universe_without_volume": 2,
+   "assets": [
+    {
+     "asset_ticker": "YOYO",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 102992.1772516188,
+     "pool_size": 94
+    },
+    {
+     "asset_ticker": "ONE",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2108472.200923524,
+     "pool_size": 94
+    },
+    {
+     "asset_ticker": "UNI",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 51639141.49233085,
+     "pool_size": 94
+    }
+   ]
+  },
+  {
+   "sample_id": "S13",
+   "quarter": "2021-Q1",
+   "t_utc": "2021-03-04T07:53:00Z",
+   "universe_size": 314,
+   "universe_without_volume": 2,
+   "assets": [
+    {
+     "asset_ticker": "POA",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 1211459.60807916,
+     "pool_size": 104
+    },
+    {
+     "asset_ticker": "GHST",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 5348982.833823228,
+     "pool_size": 104
+    },
+    {
+     "asset_ticker": "NPXS",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 18762840.25020375,
+     "pool_size": 104
+    }
+   ]
+  },
+  {
+   "sample_id": "S14",
+   "quarter": "2021-Q2",
+   "t_utc": "2021-05-31T15:13:00Z",
+   "universe_size": 344,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "QSP",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 1000712.6196576412,
+     "pool_size": 115
+    },
+    {
+     "asset_ticker": "TROY",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 6680538.470866774,
+     "pool_size": 114
+    },
+    {
+     "asset_ticker": "BURGER",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 35375634.65541233,
+     "pool_size": 115
+    }
+   ]
+  },
+  {
+   "sample_id": "S15",
+   "quarter": "2021-Q3",
+   "t_utc": "2021-09-18T15:54:00Z",
+   "universe_size": 364,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "MDT",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 2785177.9390619174,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "AKRO",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 10210212.719417784,
+     "pool_size": 121
+    },
+    {
+     "asset_ticker": "SNX",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 36119444.189548,
+     "pool_size": 121
+    }
+   ]
+  },
+  {
+   "sample_id": "S16",
+   "quarter": "2021-Q4",
+   "t_utc": "2021-10-02T16:58:00Z",
+   "universe_size": 365,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "LTCUP",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 1552893.6826,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "BEL",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 7857236.988614963,
+     "pool_size": 121
+    },
+    {
+     "asset_ticker": "ATA",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 39891184.00688589,
+     "pool_size": 122
+    }
+   ]
+  },
+  {
+   "sample_id": "S17",
+   "quarter": "2022-Q1",
+   "t_utc": "2022-02-11T15:23:00Z",
+   "universe_size": 373,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "AMB",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 118742.30082540565,
+     "pool_size": 125
+    },
+    {
+     "asset_ticker": "HIVE",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2815176.0240579713,
+     "pool_size": 124
+    },
+    {
+     "asset_ticker": "WBTC",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 12137024.867300227,
+     "pool_size": 124
+    }
+   ]
+  },
+  {
+   "sample_id": "S18",
+   "quarter": "2022-Q2",
+   "t_utc": "2022-04-01T05:04:00Z",
+   "universe_size": 375,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "ALPACA",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 2540241.64953521,
+     "pool_size": 125
+    },
+    {
+     "asset_ticker": "ETHUP",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 4672016.69307,
+     "pool_size": 125
+    },
+    {
+     "asset_ticker": "ALICE",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 34086975.16938956,
+     "pool_size": 125
+    }
+   ]
+  },
+  {
+   "sample_id": "S19",
+   "quarter": "2022-Q3",
+   "t_utc": "2022-09-24T03:16:00Z",
+   "universe_size": 375,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "POWR",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 751119.8381761606,
+     "pool_size": 125
+    },
+    {
+     "asset_ticker": "AUCTION",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2503780.673199135,
+     "pool_size": 125
+    },
+    {
+     "asset_ticker": "AMB",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 7204621.258536095,
+     "pool_size": 125
+    }
+   ]
+  },
+  {
+   "sample_id": "S20",
+   "quarter": "2022-Q4",
+   "t_utc": "2022-12-29T04:02:00Z",
+   "universe_size": 367,
+   "universe_without_volume": 3,
+   "assets": [
+    {
+     "asset_ticker": "XRPUP",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 516081.6303325,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "ERN",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 1174710.81879485,
+     "pool_size": 121
+    },
+    {
+     "asset_ticker": "UNFI",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 3581319.4793012515,
+     "pool_size": 121
+    }
+   ]
+  },
+  {
+   "sample_id": "S21",
+   "quarter": "2023-Q1",
+   "t_utc": "2023-02-26T04:42:00Z",
+   "universe_size": 368,
+   "universe_without_volume": 3,
+   "assets": [
+    {
+     "asset_ticker": "POND",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 1881830.939379999,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "IOTX",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 4581014.3506478965,
+     "pool_size": 121
+    },
+    {
+     "asset_ticker": "ROSE",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 21237323.524840273,
+     "pool_size": 122
+    }
+   ]
+  },
+  {
+   "sample_id": "S22",
+   "quarter": "2023-Q2",
+   "t_utc": "2023-06-19T00:47:00Z",
+   "universe_size": 366,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "PHA",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 569072.5538933238,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "STORJ",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 978050.175234206,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "PAXG",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 2915328.4437258816,
+     "pool_size": 122
+    }
+   ]
+  },
+  {
+   "sample_id": "S23",
+   "quarter": "2023-Q3",
+   "t_utc": "2023-07-15T02:53:00Z",
+   "universe_size": 367,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "KP3R",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 487010.22490000003,
+     "pool_size": 123
+    },
+    {
+     "asset_ticker": "PAXG",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2410922.953812766,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "SSV",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 4135687.4090322936,
+     "pool_size": 122
+    }
+   ]
+  },
+  {
+   "sample_id": "S24",
+   "quarter": "2023-Q4",
+   "t_utc": "2023-12-06T18:47:00Z",
+   "universe_size": 366,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "SYS",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 1275276.2594339226,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "KNC",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 3367465.43853883,
+     "pool_size": 122
+    },
+    {
+     "asset_ticker": "MANA",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 12712382.12562649,
+     "pool_size": 122
+    }
+   ]
+  },
+  {
+   "sample_id": "S25",
+   "quarter": "2024-Q1",
+   "t_utc": "2024-02-11T15:27:00Z",
+   "universe_size": 373,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "WRX",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 723053.2340299999,
+     "pool_size": 125
+    },
+    {
+     "asset_ticker": "THETA",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 3356297.5981128495,
+     "pool_size": 124
+    },
+    {
+     "asset_ticker": "MATIC",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 54558234.711872265,
+     "pool_size": 124
+    }
+   ]
+  },
+  {
+   "sample_id": "S26",
+   "quarter": "2024-Q2",
+   "t_utc": "2024-04-15T04:06:00Z",
+   "universe_size": 375,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "WIN",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 3076630.728935142,
+     "pool_size": 125
+    },
+    {
+     "asset_ticker": "SXP",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 6929038.374508391,
+     "pool_size": 125
+    },
+    {
+     "asset_ticker": "LDO",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 29856950.97520522,
+     "pool_size": 125
+    }
+   ]
+  },
+  {
+   "sample_id": "S27",
+   "quarter": "2024-Q3",
+   "t_utc": "2024-07-06T17:49:00Z",
+   "universe_size": 379,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "LOOM",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 1012714.9140856646,
+     "pool_size": 127
+    },
+    {
+     "asset_ticker": "MOVR",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2586025.5744760856,
+     "pool_size": 126
+    },
+    {
+     "asset_ticker": "SOL",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 846561503.3001432,
+     "pool_size": 126
+    }
+   ]
+  },
+  {
+   "sample_id": "S28",
+   "quarter": "2024-Q4",
+   "t_utc": "2024-10-23T15:18:00Z",
+   "universe_size": 380,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "AKRO",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 1055188.609402,
+     "pool_size": 127
+    },
+    {
+     "asset_ticker": "AMP",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2615060.214819986,
+     "pool_size": 126
+    },
+    {
+     "asset_ticker": "NOT",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 37075288.656564556,
+     "pool_size": 127
+    }
+   ]
+  },
+  {
+   "sample_id": "S29",
+   "quarter": "2025-Q1",
+   "t_utc": "2025-01-31T20:01:00Z",
+   "universe_size": 386,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "LOKA",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 723242.2670792527,
+     "pool_size": 129
+    },
+    {
+     "asset_ticker": "POND",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 4689857.867903767,
+     "pool_size": 128
+    },
+    {
+     "asset_ticker": "DYDX",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 17894077.8814462,
+     "pool_size": 129
+    }
+   ]
+  },
+  {
+   "sample_id": "S30",
+   "quarter": "2025-Q2",
+   "t_utc": "2025-04-11T17:20:00Z",
+   "universe_size": 392,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "REI",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 579419.2800535001,
+     "pool_size": 131
+    },
+    {
+     "asset_ticker": "TROY",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2819231.175713279,
+     "pool_size": 130
+    },
+    {
+     "asset_ticker": "JUP",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 12750621.512899175,
+     "pool_size": 131
+    }
+   ]
+  },
+  {
+   "sample_id": "S31",
+   "quarter": "2025-Q3",
+   "t_utc": "2025-08-07T05:44:00Z",
+   "universe_size": 403,
+   "universe_without_volume": 0,
+   "assets": [
+    {
+     "asset_ticker": "SFP",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 479411.8999346314,
+     "pool_size": 135
+    },
+    {
+     "asset_ticker": "DEGO",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 1726316.113585,
+     "pool_size": 134
+    },
+    {
+     "asset_ticker": "SOL",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 2162039361.7797947,
+     "pool_size": 134
+    }
+   ]
+  },
+  {
+   "sample_id": "S32",
+   "quarter": "2025-Q4",
+   "t_utc": "2025-12-11T18:57:00Z",
+   "universe_size": 439,
+   "universe_without_volume": 44,
+   "assets": [
+    {
+     "asset_ticker": "REQ",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 224478.8322339069,
+     "pool_size": 132
+    },
+    {
+     "asset_ticker": "1MBABYDOGE",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 2267440.233683277,
+     "pool_size": 131
+    },
+    {
+     "asset_ticker": "TRB",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 4193349.5878548753,
+     "pool_size": 132
+    }
+   ]
+  },
+  {
+   "sample_id": "S33",
+   "quarter": "2026-Q1",
+   "t_utc": "2026-03-04T15:12:00Z",
+   "universe_size": 441,
+   "universe_without_volume": 57,
+   "assets": [
+    {
+     "asset_ticker": "WOO",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 496068.290775,
+     "pool_size": 128
+    },
+    {
+     "asset_ticker": "PIXEL",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 522054.73156591516,
+     "pool_size": 128
+    },
+    {
+     "asset_ticker": "SYRUP",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 2938392.7493824437,
+     "pool_size": 128
+    }
+   ]
+  },
+  {
+   "sample_id": "S34",
+   "quarter": "2026-Q2",
+   "t_utc": "2026-06-09T10:40:00Z",
+   "universe_size": 428,
+   "universe_without_volume": 67,
+   "assets": [
+    {
+     "asset_ticker": "GMX",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 218125.25991,
+     "pool_size": 121
+    },
+    {
+     "asset_ticker": "OG",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 1165777.5007716443,
+     "pool_size": 120
+    },
+    {
+     "asset_ticker": "OP",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 4461349.083186679,
+     "pool_size": 120
+    }
+   ]
+  },
+  {
+   "sample_id": "S35",
+   "quarter": "2026-Q3",
+   "t_utc": "2026-09-02T19:20:00Z",
+   "universe_size": 474,
+   "universe_without_volume": 129,
+   "assets": [
+    {
+     "asset_ticker": "QUICK",
+     "liquidity_tercile": "T1_LOW",
+     "trailing_30d_median_usd_volume": 42093.205745,
+     "pool_size": 115
+    },
+    {
+     "asset_ticker": "XEC",
+     "liquidity_tercile": "T2_MID",
+     "trailing_30d_median_usd_volume": 442805.03880981565,
+     "pool_size": 115
+    },
+    {
+     "asset_ticker": "BOME",
+     "liquidity_tercile": "T3_HIGH",
+     "trailing_30d_median_usd_volume": 2714456.1102237226,
+     "pool_size": 115
+    }
+   ]
+  }
+ ],
+ "freeze_sha256": "d3ea6d53bd177bc5677b1f2f405c261e19c933c4c576d62aa8537111c22e9e5c",
+ "freeze_sha256_note": "sha256 of this file serialised with indent=1 and without the two freeze_sha256 fields; H20_0_SAMPLE_FREEZE.json.sha256 holds the sha256 of the final bytes"
+}

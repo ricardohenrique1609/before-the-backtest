@@ -9,6 +9,11 @@ repository is the paper and its evidence trail; it is not a preprint server list
 external peer review**. The four referee reports in `versions/` are this project's own hostile-review
 process, and say so.
 
+> **Also in this repository: `contextual-alpha/`.** A separate working-paper draft, *Beyond Market
+> Data: Does Point-in-Time Public Context Add Incremental Predictive Signal?*, with its full
+> H20.0–H20.3 evidence trail. Verdict: pre-registered null. Not peer-reviewed; prospective
+> confirmation pending; no licence chosen yet. Read `contextual-alpha/PUBLIC_PACKAGE_NOTES.md` first.
+
 ---
 
 ## What this is

@@ -1,0 +1,378 @@
+{
+ "experiment": "H20.0 Context Data Feasibility",
+ "computed_utc": "2026-10-18T20:06:10.292926Z",
+ "freeze_sha256": "d3ea6d53bd177bc5677b1f2f405c261e19c933c4c576d62aa8537111c22e9e5c",
+ "plan_sha256": "5da67c69d447a3be46113a8cb20e325b99c58cd426f5792e649010769b9b0fa7",
+ "verdict": "PARTIAL PASS",
+ "verdict_scope": "data substrate only; never an economic REJECT",
+ "layers": {
+  "C1": {
+   "criteria": {
+    "G1_coverage": {
+     "value": 1.0,
+     "bar": 0.9,
+     "pass": true,
+     "note": "share of sample timestamps with >=1 available+retrievable source"
+    },
+    "G2_year_span": {
+     "value": 9,
+     "bar": 8,
+     "pass": true
+    },
+    "G3_timestamp": {
+     "value": 1.0,
+     "t4": 0.0,
+     "bar": "T0+T1+T2 >= 0.80 and T4 <= 0.05",
+     "n_docs": 408,
+     "pass": true
+    },
+    "G4_version": {
+     "value": 0.9864705882352942,
+     "bar": 0.7,
+     "pass": true,
+     "by_source": {
+      "S_FED_PRESS": {
+       "docs": 23,
+       "v012_share": 0.76,
+       "basis": "ARCHIVE_SUBSAMPLE_n=75"
+      },
+      "S_ALFRED": {
+       "docs": 105,
+       "v012_share": 1.0,
+       "basis": "ALL_DOCS_n=105"
+      },
+      "S_WIKI_PORTAL": {
+       "docs": 280,
+       "v012_share": 1.0,
+       "basis": "ALL_DOCS_n=280"
+      }
+     }
+    },
+    "G5_reproducibility": {
+     "refetch_success": 1.0,
+     "hash_stable": 1.0,
+     "bar": 0.95,
+     "pass": true,
+     "sources": [
+      "S_ALFRED",
+      "S_FED_PRESS",
+      "S_WIKI_PORTAL"
+     ]
+    },
+    "G6_licensing": {
+     "pass": true,
+     "classes": {
+      "S_FED_PRESS": "US_GOV_PUBLIC_DOMAIN",
+      "S_ALFRED": "FRED_TERMS_ATTRIBUTION",
+      "S_WIKI_PORTAL": "CC_BY_SA_4_0"
+     }
+    }
+   },
+   "all_criteria_pass": true,
+   "severe_bias": [
+    "archive_captured_le_t:S_FED_PRESS"
+   ],
+   "layer_verdict": "CONDITIONAL",
+   "failed": []
+  },
+  "C2": {
+   "criteria": {
+    "G1_coverage": {
+     "value": 1.0,
+     "bar": 0.9,
+     "pass": true,
+     "note": "share of sample timestamps with >=1 available+retrievable source"
+    },
+    "G2_year_span": {
+     "value": 9,
+     "bar": 8,
+     "pass": true
+    },
+    "G3_timestamp": {
+     "value": 1.0,
+     "t4": 0.0,
+     "bar": "T0+T1+T2 >= 0.80 and T4 <= 0.05",
+     "n_docs": 720,
+     "pass": true
+    },
+    "G4_version": {
+     "value": 0.8747270746682511,
+     "bar": 0.7,
+     "pass": true,
+     "by_source": {
+      "S_FEDREG": {
+       "docs": 75,
+       "v012_share": 1.0,
+       "basis": "ALL_DOCS_n=75"
+      },
+      "S_SEC_PRESS": {
+       "docs": 199,
+       "v012_share": 0.8787878787878788,
+       "basis": "ARCHIVE_SUBSAMPLE_n=99"
+      },
+      "S_CFTC_PRESS": {
+       "docs": 50,
+       "v012_share": 0.23529411764705882,
+       "basis": "ARCHIVE_SUBSAMPLE_n=17"
+      },
+      "S_FED_PRESS": {
+       "docs": 116,
+       "v012_share": 0.76,
+       "basis": "ARCHIVE_SUBSAMPLE_n=75"
+      },
+      "S_WIKI_PORTAL": {
+       "docs": 280,
+       "v012_share": 1.0,
+       "basis": "ALL_DOCS_n=280"
+      }
+     }
+    },
+    "G5_reproducibility": {
+     "refetch_success": 1.0,
+     "hash_stable": 1.0,
+     "bar": 0.95,
+     "pass": true,
+     "sources": [
+      "S_FEDREG",
+      "S_FED_PRESS",
+      "S_SEC_PRESS",
+      "S_WIKI_PORTAL"
+     ]
+    },
+    "G6_licensing": {
+     "pass": true,
+     "classes": {
+      "S_FEDREG": "US_GOV_PUBLIC_DOMAIN",
+      "S_SEC_PRESS": "US_GOV_PUBLIC_DOMAIN",
+      "S_CFTC_PRESS": "US_GOV_PUBLIC_DOMAIN",
+      "S_FED_PRESS": "US_GOV_PUBLIC_DOMAIN",
+      "S_WIKI_PORTAL": "CC_BY_SA_4_0"
+     }
+    }
+   },
+   "all_criteria_pass": true,
+   "severe_bias": [
+    "archive_captured_le_t:S_FED_PRESS"
+   ],
+   "layer_verdict": "CONDITIONAL",
+   "failed": []
+  },
+  "C3": {
+   "criteria": {
+    "G1_coverage": {
+     "value": 1.0,
+     "bar": 0.9,
+     "pass": true,
+     "note": "share of sample timestamps with >=1 available+retrievable source"
+    },
+    "G2_year_span": {
+     "value": 9,
+     "bar": 8,
+     "pass": true
+    },
+    "G3_timestamp": {
+     "value": 1.0,
+     "t4": 0.0,
+     "bar": "T0+T1+T2 >= 0.80 and T4 <= 0.05",
+     "n_docs": 403,
+     "pass": true
+    },
+    "G4_version": {
+     "value": 1.0,
+     "bar": 0.7,
+     "pass": true,
+     "by_source": {
+      "S_GDELT_GKG": {
+       "docs": 399,
+       "v012_share": 1.0,
+       "basis": "ALL_DOCS_n=140099"
+      },
+      "S_WIKI_PORTAL": {
+       "docs": 4,
+       "v012_share": 1.0,
+       "basis": "ALL_DOCS_n=280"
+      }
+     }
+    },
+    "G5_reproducibility": {
+     "refetch_success": 1.0,
+     "hash_stable": 1.0,
+     "bar": 0.95,
+     "pass": true,
+     "sources": [
+      "S_GDELT_GKG",
+      "S_WIKI_PORTAL"
+     ]
+    },
+    "G6_licensing": {
+     "pass": true,
+     "classes": {
+      "S_GDELT_GKG": "GDELT_OPEN_CITATION_METADATA_ONLY",
+      "S_WIKI_PORTAL": "CC_BY_SA_4_0"
+     }
+    }
+   },
+   "all_criteria_pass": true,
+   "severe_bias": [
+    "language_crypto_tag_rate",
+    "archive_captured_le_t:S_GDELT_GKG"
+   ],
+   "layer_verdict": "CONDITIONAL",
+   "failed": []
+  },
+  "C4": {
+   "criteria": {
+    "G1_coverage": {
+     "value": 1.0,
+     "bar": 0.9,
+     "pass": true,
+     "note": "share of sample timestamps with >=1 available+retrievable source"
+    },
+    "G2_year_span": {
+     "value": 9,
+     "bar": 8,
+     "pass": true
+    },
+    "G3_timestamp": {
+     "value": 1.0,
+     "t4": 0.0,
+     "bar": "T0+T1+T2 >= 0.80 and T4 <= 0.05",
+     "n_docs": 801,
+     "pass": true
+    },
+    "G4_version": {
+     "value": 0.38461538461538464,
+     "bar": 0.7,
+     "pass": false,
+     "by_source": {
+      "S_BINANCE_CMS": {
+       "docs": 801,
+       "v012_share": 0.38461538461538464,
+       "basis": "ARCHIVE_SUBSAMPLE_n=104"
+      }
+     }
+    },
+    "G5_reproducibility": {
+     "refetch_success": 0.9666666666666667,
+     "hash_stable": 0.9666666666666667,
+     "bar": 0.95,
+     "pass": true,
+     "sources": [
+      "S_BINANCE_CMS"
+     ]
+    },
+    "G6_licensing": {
+     "pass": true,
+     "classes": {
+      "S_BINANCE_CMS": "PROPRIETARY_TOS"
+     }
+    },
+    "G7_entity": {
+     "value": 0.7950310559006211,
+     "ambiguous": 0.0,
+     "bar": "resolved >= 0.80, ambiguous <= 0.10",
+     "basis": "parenthesised tickers in W7 Binance notices -> era as of publication",
+     "n": 161,
+     "pass": false
+    }
+   },
+   "all_criteria_pass": false,
+   "severe_bias": [
+    "archive_captured_le_t:S_BINANCE_CMS"
+   ],
+   "layer_verdict": "FAIL",
+   "failed": [
+    "G4_version",
+    "G7_entity"
+   ]
+  },
+  "C5": {
+   "criteria": {
+    "G1_coverage": {
+     "value": 1.0,
+     "bar": 0.9,
+     "pass": true,
+     "note": "share of asset-time units with >=1 available asset-specific source (Binance notices by ticker)"
+    },
+    "G2_year_span": {
+     "value": 9,
+     "bar": 8,
+     "pass": true
+    },
+    "G3_timestamp": {
+     "value": 1.0,
+     "t4": 0.0,
+     "bar": "T0+T1+T2 >= 0.80 and T4 <= 0.05",
+     "n_docs": 143,
+     "pass": true
+    },
+    "G4_version": {
+     "value": 0.3975255513717052,
+     "bar": 0.7,
+     "pass": false,
+     "by_source": {
+      "S_BINANCE_CMS": {
+       "docs": 140,
+       "v012_share": 0.38461538461538464,
+       "basis": "ARCHIVE_SUBSAMPLE_n=104"
+      },
+      "S_GDELT_GKG": {
+       "docs": 0,
+       "v012_share": 1.0,
+       "basis": "ALL_DOCS_n=140099"
+      },
+      "S_WIKI_ASSET": {
+       "docs": 3,
+       "v012_share": 1.0,
+       "basis": "ALL_DOCS_n=3"
+      }
+     }
+    },
+    "G5_reproducibility": {
+     "refetch_success": 0.9777777777777777,
+     "hash_stable": 0.9777777777777777,
+     "bar": 0.95,
+     "pass": true,
+     "sources": [
+      "S_BINANCE_CMS",
+      "S_WIKI_PORTAL"
+     ]
+    },
+    "G6_licensing": {
+     "pass": true,
+     "classes": {
+      "S_BINANCE_CMS": "PROPRIETARY_TOS",
+      "S_GDELT_GKG": "GDELT_OPEN_CITATION_METADATA_ONLY",
+      "S_WIKI_ASSET": "CC_BY_SA_4_0"
+     }
+    },
+    "G7_entity": {
+     "value": 0.580952380952381,
+     "ambiguous": 0.0,
+     "bar": "resolved >= 0.80, ambiguous <= 0.10",
+     "basis": "PIT name resolution, parser v2, untuned validation sample (deviation D1)",
+     "gold_same_asset_precision": 1.0,
+     "gold_exact_string": 0.9508196721311475,
+     "pass": false
+    }
+   },
+   "all_criteria_pass": false,
+   "severe_bias": [
+    "archive_captured_le_t:S_BINANCE_CMS",
+    "entity_popularity_any_doc_w30"
+   ],
+   "layer_verdict": "FAIL",
+   "failed": [
+    "G4_version",
+    "G7_entity"
+   ]
+  }
+ },
+ "survivorship_audit": {
+  "file": "evidence/H20_0_SEALED_SURVIVORSHIP.json",
+  "severe": [],
+  "pre_seal_gate_sha256": "64ea3225074db3bca9252d61de40306434b823f900e03929f226ac5d42c97815"
+ },
+ "outcome_tables_read": false,
+ "returns_computed": false
+}

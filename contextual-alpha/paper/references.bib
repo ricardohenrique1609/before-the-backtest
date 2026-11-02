@@ -1,0 +1,346 @@
+% Contextual Alpha paper bibliography.
+% Entries below are copied verbatim from papers/falsification_first_alpha_discovery/release/references.bib,
+% including each entry's access-level note. No field was added, inferred or corrected here.
+% METADATA RULE (inherited): no author, year, journal, volume, issue, page or DOI is inferred.
+
+@article{rubin2008design,
+  author  = {Rubin, Donald B.},
+  title   = {For objective causal inference, design trumps analysis},
+  journal = {The Annals of Applied Statistics},
+  volume  = {2},
+  number  = {3},
+  year    = {2008},
+  doi     = {10.1214/08-AOAS187},
+  note    = {Accessed at abstract, arXiv (0811.1640) and Project Euclid record level; the full text
+             was not read. States that observational studies must be designed without examining any
+             outcome data, and that a candidate dataset may have to be rejected as inadequate for
+             lack of covariate data or lack of overlap between treatment and control groups, often
+             revealed by propensity-score analysis. **This is the design-stage rejection principle
+             that this paper operationalises; the principle is Rubin's and is not claimed here.**
+             Page numbers were not recorded by the source consulted and are not supplied.}
+}
+
+@article{kapoor2023leakage,
+  author  = {Kapoor, Sayash and Narayanan, Arvind},
+  title   = {Leakage and the reproducibility crisis in machine-learning-based science},
+  journal = {Patterns},
+  volume  = {4},
+  number  = {9},
+  pages   = {100804},
+  year    = {2023},
+  doi     = {10.1016/j.patter.2023.100804},
+  note    = {Accessed at abstract and project-page level; the three top-level taxonomy categories
+             were read from the authors' project page, the full eight-type taxonomy was not.
+             Surveys 17 fields and 294 affected papers in the published version (329 in the 2022
+             arXiv preprint, arXiv:2207.07048). Its second top-level category, "model uses features
+             which are not legitimate", plausibly already covers the classification-level leakage
+             this manuscript measures; the manuscript therefore claims a detection procedure and a
+             measured rate, not a new category.}
+}
+
+@article{bailey2014deflated,
+  author  = {Bailey, David H. and L{\'o}pez de Prado, Marcos},
+  title   = {The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting
+             and Non-Normality},
+  journal = {The Journal of Portfolio Management},
+  volume  = {40},
+  number  = {5},
+  pages   = {94--107},
+  year    = {2014},
+  note    = {Accessed at abstract and SSRN-record level (SSRN 2460551). Corrects a reported Sharpe
+             ratio for the number of trials, skewness and kurtosis. Establishes that the count of
+             strategy variants tried is a required input to any performance claim. Cited here as
+             prior work that already owns the "a spectacular backtest is a candidate artefact"
+             message at the model-selection layer.}
+}
+
+@article{menkveld2024nonstandard,
+  author  = {Menkveld, Albert J. and others},
+  title   = {Nonstandard Errors},
+  journal = {The Journal of Finance},
+  volume  = {79},
+  number  = {3},
+  pages   = {2339--2390},
+  year    = {2024},
+  doi     = {10.1111/jofi.13337},
+  note    = {Accessed at metadata and repository-record level. Multi-team design: many independent
+             research teams are given the same data and the same hypothesis, and the dispersion of
+             their results is measured. Open access under CC BY. The full author list is very long
+             and is abbreviated here as "and others" rather than guessed. Cited as the prior work
+             that owns researcher-discretion variation; its object is dispersion across analysis
+             choices on a shared dataset, which is downstream of the dataset-construction failures
+             this manuscript documents.}
+}
+
+@misc{jbef_registered_reports,
+  title        = {Registered Reports: Author Guidelines},
+  howpublished = {Journal of Behavioral and Experimental Finance},
+  note         = {Accessed at guidelines-document level. The clearest finance-journal instance of
+                  the registered-report format, in which methods and planned analyses are
+                  pre-registered and reviewed before the research is conducted, stated as a remedy
+                  for publication bias and questionable research practices. Year and editor not
+                  recorded by the source consulted and not supplied here.}
+}
+
+@article{shumway1997delisting,
+  author  = {Shumway, Tyler},
+  title   = {The Delisting Bias in {CRSP} Data},
+  journal = {The Journal of Finance},
+  volume  = {52},
+  number  = {1},
+  pages   = {327--340},
+  year    = {1997},
+  note    = {Accessed at abstract and RePEc-record level. Documents that correct delisting returns
+             are missing for most stocks delisted for negative reasons, so studies that drop
+             delisted firms overstate average returns. The canonical statement of the survivorship
+             problem this manuscript meets again in a different data environment.}
+}
+
+@article{yang2026delistings,
+  author  = {Yang, Sungju and Kwon, Hunyeong},
+  title   = {Developing Predictive and Explainable Models for Cryptocurrency Delistings:
+             A Case Study of Binance Exchange},
+  journal = {Asia-Pacific Journal of Financial Studies},
+  year    = {2026},
+  doi     = {10.1111/ajfs.70045},
+  note    = {Full text obtained; Table 5 read. Closest prior work to the predictive hypothesis
+             tested here. Its feature set contains no trading-pair count, pair-removal history or
+             exchange-native route topology.}
+}
+
+@article{bedowska2025zombie,
+  author  = {B{\k{e}}dowska-S{\'o}jka, Barbara and W{\'o}jcik, Piotr and Pele, Daniel Traian},
+  title   = {Early warning systems for cryptocurrency markets: Predicting `zombie' assets using
+             machine learning},
+  journal = {The North American Journal of Economics and Finance},
+  volume  = {81},
+  doi     = {10.1016/j.najef.2025.102543},
+  note    = {Accessed at abstract, SSRN record and RePEc metadata level; the publisher returned
+             HTTP 403. Working paper: SSRN 4942031, August 2024. Reports approximately 84 percent
+             out-of-time balanced accuracy at a 28-day horizon.}
+}
+
+@article{fantazzini2022creditrisk,
+  author  = {Fantazzini},
+  title   = {Crypto-Coins and Credit Risk},
+  journal = {Journal of Risk and Financial Management},
+  volume  = {15},
+  number  = {7},
+  pages   = {304},
+  year    = {2022},
+  doi     = {10.3390/jrfm15070304},
+  note    = {Over 2,000 coins, 2015-2020. Tests several competing definitions of a dead coin; the
+             best model depends on coin age and forecast horizon. The given name, any subtitle and
+             the access level were not recorded by the source consulted and none is claimed here.}
+}
+
+@techreport{ammann2022survivorship,
+  author      = {Ammann and Burdorf and Liebi and St{\"o}ckl},
+  title       = {Survivorship and Delisting Bias in Cryptocurrency Markets},
+  institution = {University of St. Gallen},
+  year        = {2022},
+  month       = {11},
+  note        = {Retrieved in full. 3,904 cryptocurrencies, January 2014 to December 2021, 417
+                 weeks; 1,222 delisted (39.5 percent). Bias of 0.93 percent annualised
+                 value-weighted and 62.19 percent equal-weighted. Attributes the bias to reliance
+                 on aggregators that provide historical data only for currently listed assets -
+                 the aggregator side of the asymmetry this manuscript measures from the venue side.
+                 SSRN record 4287573. Given names were not recorded by the source consulted and are
+                 not supplied here.}
+}
+
+@article{aldhahi2026regime,
+  author  = {Aldhahi and Alsamaani},
+  title   = {Regime-Dependent Predictability of Cryptocurrency Distress: Cross-Sectional Evidence
+             from Two Exchanges},
+  journal = {Journal of Risk and Financial Management},
+  volume  = {19},
+  number  = {8},
+  pages   = {599},
+  year    = {2026},
+  doi     = {10.3390/jrfm19080599},
+  note    = {Accessed at abstract level; the publisher returned HTTP 403. Coin-quarter panel that
+             retains coins which later become inactive; panel logit; cross-validated out-of-sample
+             AUC of approximately 0.68. Given names were not recorded by the source consulted and
+             are not supplied here.}
+}
+
+@misc{ramossilva2026beforebacktest,
+  author       = {Ramos Silva, Ricardo H.},
+  title        = {Before the Backtest: Pre-Freeze Common-Support Ceilings for Event-Driven Strategy Research},
+  year         = {2026},
+  howpublished = {https://github.com/ricardohenrique1609/before-the-backtest},
+  note         = {Version 1.0.0, released 2026-10-13, per the repository CITATION.cff. No DOI has been created.
+                  The author's previous paper in the same research repository.}
+}
+
+% ---------------------------------------------------------------------------------------------
+% Added in the 2026-10-19 verification pass. Every field below was read from the source itself
+% (full text, or official documentation for web sources). Nothing was inferred. Details of what
+% was read are in paper/REFERENCE_VERIFICATION.md.
+% ---------------------------------------------------------------------------------------------
+
+@article{owen2007pigeonhole,
+  author  = {Owen, Art B.},
+  title   = {The pigeonhole bootstrap},
+  journal = {The Annals of Applied Statistics},
+  volume  = {1},
+  number  = {2},
+  pages   = {386--411},
+  year    = {2007},
+  doi     = {10.1214/07-AOAS122},
+  note    = {Full text read (arXiv:0712.1111v1 reprint). Section 3.2 defines the method: rows and
+             columns sampled IID with replacement, independently, resampled data = their intersections.
+             Section 4 gives variance results for totals and means; p. 2 calls the procedure mildly
+             conservative.}
+}
+
+@article{saito2015precision,
+  author  = {Saito, Takaya and Rehmsmeier, Marc},
+  title   = {The Precision-Recall Plot Is More Informative than the {ROC} Plot When Evaluating Binary
+             Classifiers on Imbalanced Datasets},
+  journal = {PLoS ONE},
+  volume  = {10},
+  number  = {3},
+  pages   = {e0118432},
+  year    = {2015},
+  doi     = {10.1371/journal.pone.0118432},
+  note    = {Full text read (open access). Abstract, Results and Discussion, Conclusion.}
+}
+
+@techreport{croushore1999realtime,
+  author      = {Croushore, Dean and Stark, Tom},
+  title       = {A Real-Time Data Set for Macroeconomists},
+  institution = {Federal Reserve Bank of Philadelphia, Research Department},
+  type        = {Working Paper},
+  number      = {99-4},
+  year        = {1999},
+  month       = {6},
+  url         = {https://www.philadelphiafed.org/-/media/FRBP/Assets/working-papers/1999/wp99-4.pdf},
+  note        = {Full text read (working paper). Abstract and Section I. A later journal version is
+                 listed by EconPapers; its metadata were not read and it is not cited.}
+}
+
+@misc{alfred_help,
+  author       = {{Federal Reserve Bank of St. Louis}},
+  title        = {Help | {ALFRED}},
+  howpublished = {\url{https://alfred.stlouisfed.org/help}},
+  note         = {Official documentation, accessed 2026-10-19. Sections "What is ALFRED?" and the
+                  release-date sections. Current page.}
+}
+
+@misc{glasserman2023lookahead,
+  author        = {Glasserman, Paul and Lin, Caden},
+  title         = {Assessing Look-Ahead Bias in Stock Return Predictions Generated By {GPT} Sentiment
+                   Analysis},
+  year          = {2023},
+  eprint        = {2309.17322},
+  archivePrefix = {arXiv},
+  primaryClass  = {q-fin.GN},
+  note          = {Full text read (arXiv v1, HTML), including the Abstract and Sections 1.1 and 2.4. A
+                   later journal publication is reported elsewhere but was not verified and is not
+                   cited.}
+}
+
+@techreport{kelly2026pit,
+  author      = {Kelly, Bryan T. and Malamud, Semyon and Schwab, Johannes and Xu, Teng Andrea},
+  title       = {Scaling Point-in-Time Language Models},
+  institution = {National Bureau of Economic Research},
+  type        = {NBER Working Paper},
+  number      = {35247},
+  year        = {2026},
+  month       = {5},
+  url         = {http://www.nber.org/papers/w35247},
+  note        = {Full text read: title page, abstract and introduction. Not peer-reviewed, as the
+                 working paper states.}
+}
+
+@misc{gdelt_gkg_codebook_v21,
+  author       = {{The GDELT Project}},
+  title        = {The {GDELT} Global Knowledge Graph ({GKG}) Data Format Codebook {V2.1}},
+  year         = {2015},
+  howpublished = {\url{http://data.gdeltproject.org/documentation/GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf}},
+  note         = {Official documentation, accessed 2026-10-19. Dated 2/19/2015 on its first page. Pages
+                  1, 6, 8 and 10 cover the introduction, GKGRECORDID (15-minute update batch),
+                  V1/V2 themes and the tone field. The PDF metadata name Kalev Leetaru as author; no
+                  author is printed on the page.}
+}
+
+@article{putter2017landmarking,
+  author  = {Putter, Hein and van Houwelingen, Hans C.},
+  title   = {Understanding Landmarking and Its Relation with Time-Dependent {Cox} Regression},
+  journal = {Statistics in Biosciences},
+  volume  = {9},
+  number  = {2},
+  pages   = {489--503},
+  year    = {2017},
+  doi     = {10.1007/s12561-016-9157-9},
+  note    = {Full text read (open access, PMC5711994; CC BY 4.0). Published online 2016-07-11; issue
+             year 2017. Introduction and Theory sections.}
+}
+
+@book{hyndman2021fpp3,
+  author    = {Hyndman, Rob J. and Athanasopoulos, George},
+  title     = {Forecasting: Principles and Practice},
+  edition   = {3rd},
+  publisher = {OTexts},
+  address   = {Melbourne, Australia},
+  year      = {2021},
+  url       = {https://otexts.com/fpp3/},
+  note      = {Section 5.10, "Time series cross-validation", read online, accessed 2026-10-19.}
+}
+
+@techreport{petersen2006standard,
+  author      = {Petersen, Mitchell A.},
+  title       = {Estimating Standard Errors in Finance Panel Data Sets: Comparing Approaches},
+  institution = {National Bureau of Economic Research},
+  type        = {NBER Working Paper},
+  number      = {11280},
+  year        = {2006},
+  url         = {http://www.nber.org/papers/w11280},
+  note        = {Full text read (working paper dated April 2005, revised June 2006): abstract and
+                 introduction. The later journal version was not read and is not cited.}
+}
+
+@article{auer2018regulating,
+  author  = {Auer, Raphael and Claessens, Stijn},
+  title   = {Regulating cryptocurrencies: assessing market reactions},
+  journal = {BIS Quarterly Review},
+  year    = {2018},
+  month   = {9},
+  url     = {https://www.bis.org/publ/qtrpdf/r_qt1809f.htm},
+  note    = {Full article read on the BIS site (September 2018 issue). Event study of regulatory news.}
+}
+
+@article{shen2019twitter,
+  author  = {Shen, D. and Urquhart, A. and Wang, P.},
+  title   = {Does {Twitter} predict {Bitcoin}?},
+  journal = {Economics Letters},
+  volume  = {174},
+  pages   = {118--122},
+  year    = {2019},
+  doi     = {10.1016/j.econlet.2018.11.007},
+  note    = {Full text read (accepted version, University of Reading CentAUR, CC BY-NC-ND). Author
+             names are given as printed by the repository (initials only).}
+}
+
+@article{steinert2018altcoin,
+  author  = {Steinert, Lars and Herff, Christian},
+  title   = {Predicting altcoin returns using social media},
+  journal = {PLoS ONE},
+  volume  = {13},
+  number  = {12},
+  pages   = {e0208119},
+  year    = {2018},
+  doi     = {10.1371/journal.pone.0208119},
+  note    = {Full text read (open access, PMC6279012).}
+}
+
+@misc{binance_delisting_faq,
+  author       = {{Binance}},
+  title        = {Binance Delisting Guidelines \& Frequently Asked Questions},
+  howpublished = {\url{https://www.binance.com/en/support/faq/detail/e5a9718ccb794acda1c48db5c71753e4}},
+  note         = {Official documentation, accessed 2026-10-19. The page states it was published
+                  2022-12-19 and updated 2026-06-10. This is the CURRENT version, not a historical
+                  one; it does not establish the criteria applied in earlier years.}
+}

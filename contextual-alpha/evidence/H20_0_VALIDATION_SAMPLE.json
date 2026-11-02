@@ -1,0 +1,673 @@
+{
+ "seed": 20261019,
+ "created_utc": "2026-10-18T17:11:22.763860Z",
+ "rule": "identical to plan section 3",
+ "purpose": "untuned score of entity parser v2",
+ "sample": [
+  {
+   "sample_id": "V01",
+   "quarter": "2018-Q1",
+   "t_utc": "2018-01-31T19:09:00Z",
+   "assets": [
+    {
+     "asset_ticker": "KMD",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "NEBL",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "CND",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V02",
+   "quarter": "2018-Q2",
+   "t_utc": "2018-04-23T23:57:00Z",
+   "assets": [
+    {
+     "asset_ticker": "GXS",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "ENG",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "MTL",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V03",
+   "quarter": "2018-Q3",
+   "t_utc": "2018-08-27T14:53:00Z",
+   "assets": [
+    {
+     "asset_ticker": "DGD",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "LSK",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "LINK",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V04",
+   "quarter": "2018-Q4",
+   "t_utc": "2018-12-07T22:24:00Z",
+   "assets": [
+    {
+     "asset_ticker": "REP",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "OAX",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "ELF",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V05",
+   "quarter": "2019-Q1",
+   "t_utc": "2019-02-11T13:12:00Z",
+   "assets": [
+    {
+     "asset_ticker": "ADX",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "POLY",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "ONT",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V06",
+   "quarter": "2019-Q2",
+   "t_utc": "2019-04-14T11:33:00Z",
+   "assets": [
+    {
+     "asset_ticker": "CND",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "XVG",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "FUEL",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V07",
+   "quarter": "2019-Q3",
+   "t_utc": "2019-07-06T22:32:00Z",
+   "assets": [
+    {
+     "asset_ticker": "POA",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "CDT",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "QTUM",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V08",
+   "quarter": "2019-Q4",
+   "t_utc": "2019-11-19T04:13:00Z",
+   "assets": [
+    {
+     "asset_ticker": "NEBL",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "FUEL",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "BCHABC",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V09",
+   "quarter": "2020-Q1",
+   "t_utc": "2020-01-25T00:21:00Z",
+   "assets": [
+    {
+     "asset_ticker": "YOYO",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "DOGE",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "GO",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V10",
+   "quarter": "2020-Q2",
+   "t_utc": "2020-05-07T17:22:00Z",
+   "assets": [
+    {
+     "asset_ticker": "RDN",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "BQX",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "FTM",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V11",
+   "quarter": "2020-Q3",
+   "t_utc": "2020-07-18T07:43:00Z",
+   "assets": [
+    {
+     "asset_ticker": "GNT",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "REQ",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "EOS",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V12",
+   "quarter": "2020-Q4",
+   "t_utc": "2020-12-28T02:36:00Z",
+   "assets": [
+    {
+     "asset_ticker": "GRS",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "AION",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "BTT",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V13",
+   "quarter": "2021-Q1",
+   "t_utc": "2021-02-24T01:57:00Z",
+   "assets": [
+    {
+     "asset_ticker": "FIO",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "LSK",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "ALPHA",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V14",
+   "quarter": "2021-Q2",
+   "t_utc": "2021-06-25T09:14:00Z",
+   "assets": [
+    {
+     "asset_ticker": "WNXM",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "AAVEUP",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "LUNA",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V15",
+   "quarter": "2021-Q3",
+   "t_utc": "2021-08-03T12:41:00Z",
+   "assets": [
+    {
+     "asset_ticker": "ASR",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "BTS",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "VET",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V16",
+   "quarter": "2021-Q4",
+   "t_utc": "2021-10-27T08:08:00Z",
+   "assets": [
+    {
+     "asset_ticker": "DUSK",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "DOCK",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "KAVA",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V17",
+   "quarter": "2022-Q1",
+   "t_utc": "2022-01-17T21:51:00Z",
+   "assets": [
+    {
+     "asset_ticker": "XTZDOWN",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "BETA",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "ALICE",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V18",
+   "quarter": "2022-Q2",
+   "t_utc": "2022-06-11T15:59:00Z",
+   "assets": [
+    {
+     "asset_ticker": "CKB",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "REQ",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "EOS",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V19",
+   "quarter": "2022-Q3",
+   "t_utc": "2022-09-19T11:45:00Z",
+   "assets": [
+    {
+     "asset_ticker": "WTC",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "SKL",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "LINK",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V20",
+   "quarter": "2022-Q4",
+   "t_utc": "2022-11-06T13:01:00Z",
+   "assets": [
+    {
+     "asset_ticker": "BNT",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "CKB",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "ACH",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V21",
+   "quarter": "2023-Q1",
+   "t_utc": "2023-03-25T04:23:00Z",
+   "assets": [
+    {
+     "asset_ticker": "WTC",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "FIDA",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "TUSD",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V22",
+   "quarter": "2023-Q2",
+   "t_utc": "2023-05-15T18:01:00Z",
+   "assets": [
+    {
+     "asset_ticker": "MDX",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "DODO",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "CTSI",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V23",
+   "quarter": "2023-Q3",
+   "t_utc": "2023-07-08T01:08:00Z",
+   "assets": [
+    {
+     "asset_ticker": "SUN",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "CELR",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "FIL",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V24",
+   "quarter": "2023-Q4",
+   "t_utc": "2023-10-14T05:02:00Z",
+   "assets": [
+    {
+     "asset_ticker": "BAR",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "ZRX",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "USDT",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V25",
+   "quarter": "2024-Q1",
+   "t_utc": "2024-03-19T22:06:00Z",
+   "assets": [
+    {
+     "asset_ticker": "FARM",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "SUPER",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "CRV",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V26",
+   "quarter": "2024-Q2",
+   "t_utc": "2024-05-05T03:36:00Z",
+   "assets": [
+    {
+     "asset_ticker": "ALPACA",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "JOE",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "DYDX",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V27",
+   "quarter": "2024-Q3",
+   "t_utc": "2024-09-22T06:55:00Z",
+   "assets": [
+    {
+     "asset_ticker": "DEGO",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "DASH",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "AR",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V28",
+   "quarter": "2024-Q4",
+   "t_utc": "2024-11-02T06:46:00Z",
+   "assets": [
+    {
+     "asset_ticker": "KMD",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "POLYX",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "MKR",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V29",
+   "quarter": "2025-Q1",
+   "t_utc": "2025-02-27T07:28:00Z",
+   "assets": [
+    {
+     "asset_ticker": "WOO",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "GMX",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "BNX",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V30",
+   "quarter": "2025-Q2",
+   "t_utc": "2025-05-18T11:04:00Z",
+   "assets": [
+    {
+     "asset_ticker": "FLOW",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "ME",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "S",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V31",
+   "quarter": "2025-Q3",
+   "t_utc": "2025-07-09T15:34:00Z",
+   "assets": [
+    {
+     "asset_ticker": "ATM",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "XVG",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "DOT",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V32",
+   "quarter": "2025-Q4",
+   "t_utc": "2025-11-22T16:37:00Z",
+   "assets": [
+    {
+     "asset_ticker": "JUV",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "MOVR",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "RSR",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V33",
+   "quarter": "2026-Q1",
+   "t_utc": "2026-02-14T01:01:00Z",
+   "assets": [
+    {
+     "asset_ticker": "TFUEL",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "BABY",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "ZEN",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V34",
+   "quarter": "2026-Q2",
+   "t_utc": "2026-06-24T13:26:00Z",
+   "assets": [
+    {
+     "asset_ticker": "AUCTION",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "BB",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "USD1",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  },
+  {
+   "sample_id": "V35",
+   "quarter": "2026-Q3",
+   "t_utc": "2026-09-11T10:02:00Z",
+   "assets": [
+    {
+     "asset_ticker": "AEVO",
+     "liquidity_tercile": "T1_LOW"
+    },
+    {
+     "asset_ticker": "NEO",
+     "liquidity_tercile": "T2_MID"
+    },
+    {
+     "asset_ticker": "EUR",
+     "liquidity_tercile": "T3_HIGH"
+    }
+   ]
+  }
+ ]
+}

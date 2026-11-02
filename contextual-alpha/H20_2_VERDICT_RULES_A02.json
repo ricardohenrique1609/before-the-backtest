@@ -1,0 +1,96 @@
+{
+ "spec_version": "h20_2_v1+A02",
+ "closed_list": [
+  "INCREMENTAL CONTEXT SIGNAL SUPPORTED",
+  "PRE-REGISTERED NULL",
+  "NEGATIVE INCREMENTAL RESULT",
+  "DATA / DESIGN FAILURE"
+ ],
+ "evaluated_on": "primary comparison only (M2 vs M0, L2 logistic at the fixed lambda = 10); exploratory configurations never",
+ "conditions_for_support": {
+  "S1": "development pooled-OOF Delta PR-AUC > 0 (lambda = 10)",
+  "S2": "Delta > 0 in at least 5 of the 8 development folds (a strict majority)",
+  "S3": "two-way cluster (pigeonhole) bootstrap 95% percentile CI for the development pooled-OOF Delta (lambda = 10) has lower bound > 0",
+  "S4": "LOCKED_CONTEXT_UNSEEN_VALIDATION Delta PR-AUC > 0 (directional confirmation; its CI is reported, not required)",
+  "S5": {
+   "id": "S5",
+   "name": "no severe calibration deterioration on the LCUV block (primary class, fixed lambda)",
+   "computed_on": "LOCKED_CONTEXT_UNSEEN_VALIDATION predictions of M0 and M2 (the same rows)",
+   "definitions": {
+    "brier": "mean((p - y)^2)",
+    "calibration_slope": "coefficient b1 of an unpenalised logistic regression y ~ b0 + b1 * logit(p), with p clipped to [1e-6, 1 - 1e-6], fitted by the frozen numpy/scipy routine (L-BFGS-B, gtol 1e-8, maxiter 5000)"
+   },
+   "rule": {
+    "all_of": [
+     {
+      "quantity": "brier_ratio",
+      "expr": "Brier(M2) / Brier(M0)",
+      "op": "<=",
+      "value": 1.05
+     },
+     {
+      "quantity": "slope_excess",
+      "expr": "abs(slope(M2) - 1) - abs(slope(M0) - 1)",
+      "op": "<=",
+      "value": 0.2
+     }
+    ]
+   },
+   "severe_deterioration": "S5 fails (severe deterioration) if either inequality is violated",
+   "not_computable": "if a calibration slope does not converge or Brier(M0) == 0, S5 is NOT passed (an unmeasured criterion is not a satisfied one)",
+   "unchanged_from_v1": "the two numeric bars (1.05 and 0.20) are v1's; A02 only makes the rule machine-readable and fixes the computation and the not-computable case"
+  },
+  "S6": "every check of H20_2_PIT_AUDIT_PLAN.md passes (0 violations)",
+  "S7": "not driven by one era: Delta > 0 in at least 2 of the 3 era blocks {2022 folds, 2023 folds, 2025 LOCKED_CONTEXT_UNSEEN_VALIDATION} AND the development pooled-OOF Delta stays > 0 when each fold is left out in turn"
+ },
+ "rules_in_order": [
+  "DATA / DESIGN FAILURE if: S6 fails; or the sealed target checks fail (unparsable announcement time, an event matching > 1 era); or any development fold has < 5 unique positive events or the LOCKED_CONTEXT_UNSEEN_VALIDATION block has < 20; or > 20% of landmark weeks lack every context source; or a model fails to converge twice; or the LOCKED_CONTEXT_UNSEEN_VALIDATION block has to be opened more than once",
+  "INCREMENTAL CONTEXT SIGNAL SUPPORTED if S1-S7 all hold",
+  "NEGATIVE INCREMENTAL RESULT if the development bootstrap CI upper bound < 0 AND LOCKED_CONTEXT_UNSEEN_VALIDATION Delta < 0",
+  "PRE-REGISTERED NULL otherwise (including any CI straddling zero, any fold-majority failure, any LOCKED_CONTEXT_UNSEEN_VALIDATION veto)"
+ ],
+ "annotations_not_verdicts": {
+  "materiality": "MATERIAL if absolute Delta >= 0.01 AND relative Delta >= 10% on both development and LOCKED_CONTEXT_UNSEEN_VALIDATION, else SMALL (never converts one verdict into another)",
+  "classifier_free_robustness": "M2_core vs M0 evaluated identically; if the primary verdict is SUPPORTED and M2_core fails S1 or S4, annotate 'support depends on agent-audited classifiers'",
+  "model_class_robustness": "LightGBM M2 vs M0 evaluated identically; disagreement with the primary is annotated, never substituted",
+  "context_only": "M1 / M1_core reported for completeness; a context-only model ranks weeks, not assets",
+  "exploratory_tuning": "selected-lambda and selected-tree results are reported as exploratory; they never determine, upgrade or downgrade the verdict"
+ },
+ "never": [
+  "no new verdict label after execution",
+  "no switch of primary metric, model class, arm or split",
+  "no claim of trading profitability (H20.4 territory)"
+ ],
+ "inference": {
+  "primary": "pigeonhole two-way cluster bootstrap (Owen 2007): each replicate resamples asset-eras with replacement and, independently, calendar blocks with replacement; a row's weight = (multiplicity of its asset-era) x (multiplicity of its block); weighted PR-AUC of M2 and M0 recomputed on the same weights; Delta per replicate",
+  "blocks": {
+   "development": "the 8 fold test windows (13 weeks each)",
+   "LOCKED_CONTEXT_UNSEEN_VALIDATION": "calendar months (10)"
+  },
+  "replicates": 2000,
+  "seed": 20261103,
+  "ci": "95% percentile",
+  "secondary": [
+   "asset-era-only cluster bootstrap",
+   "time-block-only bootstrap"
+  ],
+  "models_not_refit": "replicates reweight fixed out-of-fold predictions; models are not refit inside the bootstrap",
+  "predictions": "primary class at lambda = 10 (no selection inside or outside the bootstrap)"
+ },
+ "claim_scope": {
+  "if_supported": "incremental context signal supported in the locked retrospective / context-unseen evaluation",
+  "always_append": "prospective confirmation pending (PROSPECTIVE_CONFIRMATION block, not scorable before its 365-day outcomes mature after 2027-09-28)",
+  "never_say": [
+   "untouched holdout",
+   "out-of-sample external confirmation",
+   "prospective confirmation",
+   "fully prospective"
+  ],
+  "why": "no H20 or context model has seen the 2025 block and the H20.2 rules are frozen before H20 scoring, but the research programme previously observed market-model behaviour in that calendar period (H18.3 holdout)"
+ },
+ "terminology_map": {
+  "HOLDOUT_H20": "LOCKED_CONTEXT_UNSEEN_VALIDATION",
+  "holdout (any v1 use, incl. 'pre-holdout freeze', 'holdout scored once', '2025 holdout')": "LOCKED_CONTEXT_UNSEEN_VALIDATION ('pre-LCUV freeze', 'LCUV scored once', '2025 LCUV block')"
+ },
+ "amendment": "A02.1 / A02.2 / A02.3"
+}

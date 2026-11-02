@@ -1,0 +1,21 @@
+{
+ "spec_version": "h20_2_v1",
+ "primary": {
+  "name": "PR_AUC",
+  "definition": "average precision: AP = sum_k (R_k - R_{k-1}) * P_k over distinct score thresholds in descending order, tied scores forming one threshold; with case weights w_i (bootstrap multiplicities) every count is weighted",
+  "primary_quantity": "Delta PR-AUC = PR-AUC(M2) - PR-AUC(M0) on the pooled out-of-fold development predictions (8 folds) and, separately, on the holdout",
+  "relative": "Delta / PR-AUC(M0), reported but never used alone",
+  "pooling": "pooled across asset-eras and weeks of the evaluation set (as specified by the sponsor)"
+ },
+ "secondary": {
+  "ROC_AUC": "Mann-Whitney U with average ranks for ties",
+  "BRIER": "mean (p - y)^2",
+  "TOP_DECILE_LIFT_XSEC": "within each evaluation week rank the risk-set assets; top decile = ceil(10%) highest; lift = (sum of positives in weekly top deciles / their count) / (overall positive rate); never formed by pooling weeks (inherited H18.3 section 8a)",
+  "CALIBRATION": "slope and intercept of a logistic regression of y on logit(p) (unpenalised); reliability table in 10 equal-count bins; expected calibration error reported",
+  "WITHIN_WEEK_PR_AUC": "mean over weeks with >= 1 positive of the within-week PR-AUC (separates cross-sectional ranking from calendar-regime prediction, because context is common to all assets in a week)",
+  "PER_FOLD": "every metric per fold with unique events, landmark weeks and asset-eras",
+  "PER_ERA": "Delta PR-AUC for 2022 folds (1-4), 2023 folds (5-8) and the 2025 holdout"
+ },
+ "reported_counts": "always with landmark rows, unique asset-eras, unique positive events and distinct weeks; positive landmark weeks are never called events",
+ "no_outcome_tuning": "no threshold is chosen; every metric is threshold-free except the top-decile rule fixed here"
+}

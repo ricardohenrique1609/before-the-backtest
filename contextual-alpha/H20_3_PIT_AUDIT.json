@@ -1,0 +1,99 @@
+{
+ "computed_utc": "2026-10-19T19:55:04.292150Z",
+ "P0": "PASS (all H20.1 / H20.2 / A02 hashes verified at every stage)",
+ "P1_context": {
+  "PASS": true,
+  "checks": {
+   "P1.1_rules_module_unchanged": true,
+   "P1.2_availability_after_t": 0,
+   "P1.3_vintage_after_asof_or_revision_after_t": 0,
+   "P1.4_window_end_after_t": 0,
+   "P1.5_provenance_completeness": 1.0,
+   "P1.6_deterministic": true,
+   "P1.7_missing_encoding_violations": 0,
+   "P1.8_common_to_all_assets": "by construction: one value per decision time, joined to every asset at that t",
+   "P1.9_only_frozen_features": true
+  }
+ },
+ "P2_market": {
+  "PASS": true,
+  "route_state_mode": "candle",
+  "checks": {
+   "P2.1_joined_daily_after_w": 0,
+   "P2.1_asof_tolerance_days": 10,
+   "P2.2_rows_after_w_entering_windows": 0,
+   "P2.2_removal_after_w_counted": 0,
+   "P2.2_pair_first_candle_after_w_counted": 0,
+   "P2.3_route_state_disagreement_share": 0.04554,
+   "P2.3_bar": 0.01,
+   "P2.3_fallback_applied": true,
+   "P2.4_removals_with_later_candle_share": 0.0,
+   "P2.4_bar": 0.01,
+   "P2.4_fallback_applied": false,
+   "P2.4_removals_counted_after_w": 0,
+   "P2.5_batch_count_recompute_mismatches": 0,
+   "P2.6_excluded_columns_present": [],
+   "P2.7_era_not_backward": 0,
+   "P2.8_matched_rows": 93415,
+   "P2.8_agreement_share_by_feature": {
+    "dollar_volume_90d": 1.0,
+    "volume_trend": 1.0,
+    "zero_low_volume_freq_90d": 1.0,
+    "realized_vol_90d": 1.0,
+    "trailing_return_90d": 1.0,
+    "drawdown_365d": 1.0,
+    "liquidity_concentration_90d": 1.0,
+    "asset_age_days": 1.0,
+    "n_active_spot_pairs": 0.9553,
+    "n_quote_assets": 0.9553,
+    "has_USDT": 0.9975,
+    "has_USDC": 0.9769,
+    "has_BTC": 0.9986,
+    "has_BNB": 0.9974,
+    "has_FDUSD": 0.9997,
+    "venue_listed_assets": 0.6563,
+    "venue_removal_intensity_90d": 0.6734,
+    "time_index_years": 1.0
+   },
+   "P2.8_rows_only_in_h20": 238
+  }
+ },
+ "P3_x_seal": {
+  "sealed_utc": "2026-10-19T19:35:18.140523Z",
+  "outcome_read_before_seal": false
+ },
+ "P4_target": {
+  "PASS": true,
+  "checks": {
+   "P4.1_unparsable_announcement_times": 0,
+   "P4.1_date_only_values": 0,
+   "P4.2_events_matching_more_than_one_era": 0,
+   "P4.2_events_matching_no_era": [
+    "IDRT",
+    "SKY",
+    "USDS",
+    "VAI"
+   ],
+   "P4.3_landmarks_with_announcement_le_t_remaining": 0,
+   "P4.4_followup_incomplete_landmarks": 0,
+   "P4.5_agreement_with_inherited_y_365": 1.0,
+   "P4.5_matched_rows": 93394,
+   "P4.5_rows_differing": 0,
+   "excluded_already_announced_rows": 259
+  }
+ },
+ "P5_P6_modelling": {
+  "PASS": true,
+  "checks": {
+   "P5.1_preprocessing_from_training_rows_only": "by construction (h20_3_model.prep_fit called on each training set)",
+   "P5.2_train_landmarks_le_test_from_minus_366d": "asserted in every fold (h20_3_model.dev)",
+   "P5.3_identical_lambda_preprocessing_folds_for_all_arms": true,
+   "P5.4_pre_lcuv_freeze_before_lcuv_scoring": true,
+   "P5.4_lcuv_rows_scored_before_freeze": 0,
+   "P6.1_lcuv_primary_scoring_runs": 1,
+   "P6.1_lock_present": true,
+   "lcuv_predictions_hash_matches": true
+  }
+ },
+ "S6_PASS": true
+}

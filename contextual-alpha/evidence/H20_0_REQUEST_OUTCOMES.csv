@@ -1,0 +1,12 @@
+src,ACCESS_BLOCKED,HTTP_ERROR,NETWORK_ERROR,NO_DATA,OK
+alfred,0,0,0,0,108
+archive,45,22,19,48,1220
+binance_cms,34,0,2,0,1014
+capability_probe,0,0,0,0,25
+cftc,30,0,0,0,21
+fed,0,0,0,0,3
+fr,0,0,0,0,34
+gdelt,0,0,0,2,68
+refetch,2,0,0,0,282
+sec,0,0,0,0,106
+wiki,0,0,0,0,1405

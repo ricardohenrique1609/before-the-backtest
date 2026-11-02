@@ -1,0 +1,1435 @@
+{
+ "experiment": "H20.1 Context Representation Feasibility",
+ "computed_utc": "2026-10-18T23:29:35.647887Z",
+ "representation_version": "h20_1_rep_v1",
+ "representation_freeze_sha256": "f32e862c847bd43561d7f2bd1478eab7ca6d235dab5adab28d8f3c815fbbc05d",
+ "sample_freeze_sha256": "e12c5f3ae0c2f813b70a144b2aff619f7a404a7919fa1675ad88ed58ce8a7e45",
+ "n_timestamps": 105,
+ "n_nonoverlap_timestamps": 42,
+ "n_features": 25,
+ "inputs_sha256": {
+  "alfred.parquet": "4b2749b2cdd4da01a796686b752ec267b3a7b3adfe0d427b0d015e33194538e9",
+  "cftc.parquet": "25790526adb931112904ec54fdd38e6e54726c0166dd66ecdf30c3289809500c",
+  "fed.parquet": "a7df1ca9346d457a1f466ffbd59908d64474bf46817bb412ca089f694b403468",
+  "fr.parquet": "a721cd494be36485ebf2e2a6bf8624121ca84be4e3a3ae3e1eedbdd3ec08b8cc",
+  "fr_status.parquet": "133b7a577d8eb804b95b2cbf87ca0649674de472c2633b0fac1c7a2af19c5735",
+  "gdelt_crypto_records.parquet": "b9d25b076ac3d8f24254a1826f6cafed57460b7e9a97f80a66aba4e4a8237cb8",
+  "gdelt_files.parquet": "b9ed16487fe7f2b9bce4604732b1cc96a5771929e2f11259b46f57b2f5db816d",
+  "sec.parquet": "a9c10de8826e0aa8d7ac177806b73906ebb151394819394417003fd20ac3dde5",
+  "sec_status.parquet": "808457307c3286e2924bc6809c24b2fb21fc61bdf5d37297336e8f304b4c9d3d",
+  "wiki_items.parquet": "8fc059a99027c6770c49ec9fcb5f98835302cbcd46136416ec39927141f53763",
+  "wiki_pages.parquet": "1de3cac9bca3d945dd1ede9bfc1d55d946447d7dd1c23e4f8481eda44f6922a7"
+ },
+ "build_outputs_sha256": {
+  "features_long.csv": "ef9fa501176a9b9428c11561fe1d31193df0225fd0933b9001fa741bd64835e0",
+  "features_wide.csv": "b0348109f067d7509e8869f61b8f8710a8656ce5a1ac911693b10477beb5fdb3",
+  "provenance.csv": "7ce940fe21d17a2c62764658defb105a7ef12f761a706cee98a3a940639d4560"
+ },
+ "A_determinism": {
+  "run1": {
+   "features_long.csv": "ef9fa501176a9b9428c11561fe1d31193df0225fd0933b9001fa741bd64835e0",
+   "features_wide.csv": "b0348109f067d7509e8869f61b8f8710a8656ce5a1ac911693b10477beb5fdb3",
+   "provenance.csv": "7ce940fe21d17a2c62764658defb105a7ef12f761a706cee98a3a940639d4560"
+  },
+  "run2": {
+   "features_long.csv": "ef9fa501176a9b9428c11561fe1d31193df0225fd0933b9001fa741bd64835e0",
+   "features_wide.csv": "b0348109f067d7509e8869f61b8f8710a8656ce5a1ac911693b10477beb5fdb3",
+   "provenance.csv": "7ce940fe21d17a2c62764658defb105a7ef12f761a706cee98a3a940639d4560"
+  },
+  "primary": {
+   "features_long.csv": "ef9fa501176a9b9428c11561fe1d31193df0225fd0933b9001fa741bd64835e0",
+   "features_wide.csv": "b0348109f067d7509e8869f61b8f8710a8656ce5a1ac911693b10477beb5fdb3",
+   "provenance.csv": "7ce940fe21d17a2c62764658defb105a7ef12f761a706cee98a3a940639d4560"
+  },
+  "identical": true
+ },
+ "B_pit_integrity": {
+  "provenance_rows": 55561,
+  "rows_with_availability_time": 55138,
+  "availability_after_t": 0,
+  "vintage_date_after_asof": 0,
+  "window_end_after_t": 0,
+  "timed_record_types_missing_time": 0,
+  "violations_by_feature": {
+   "F01": 0,
+   "F02": 0,
+   "F03": 0,
+   "F04": 0,
+   "F05": 0,
+   "F06": 0,
+   "F07": 0,
+   "F08": 0,
+   "F09": 0,
+   "F10": 0,
+   "F11": 0,
+   "F12": 0,
+   "F13": 0,
+   "F14": 0,
+   "F15": 0,
+   "F16": 0,
+   "F17": 0,
+   "F18": 0,
+   "F19": 0,
+   "F20": 0,
+   "F21": 0,
+   "F22": 0,
+   "F23": 0,
+   "F24": 0,
+   "F25": 0
+  },
+  "by_record_type": {
+   "DOCUMENT": {
+    "rows": 10437,
+    "with_time": 10437,
+    "violations": 0
+   },
+   "EMPTY_WINDOW": {
+    "rows": 318,
+    "with_time": 0,
+    "violations": 0
+   },
+   "GDELT_FILE": {
+    "rows": 4920,
+    "with_time": 4920,
+    "violations": 0
+   },
+   "GDELT_RECORD": {
+    "rows": 36821,
+    "with_time": 36821,
+    "violations": 0
+   },
+   "VINTAGE": {
+    "rows": 735,
+    "with_time": 735,
+    "violations": 0
+   },
+   "VINTAGE_OBS": {
+    "rows": 105,
+    "with_time": 0,
+    "violations": 0
+   },
+   "WIKI_ITEM": {
+    "rows": 20,
+    "with_time": 20,
+    "violations": 0
+   },
+   "WIKI_PAGE": {
+    "rows": 2205,
+    "with_time": 2205,
+    "violations": 0
+   }
+  },
+  "total_violations": 0
+ },
+ "provenance_completeness": {
+  "values_checked": 2537,
+  "incomplete": 0,
+  "completeness": 1.0,
+  "incomplete_by_feature": {
+   "F01": 0,
+   "F02": 0,
+   "F03": 0,
+   "F04": 0,
+   "F05": 0,
+   "F06": 0,
+   "F07": 0,
+   "F08": 0,
+   "F09": 0,
+   "F10": 0,
+   "F11": 0,
+   "F12": 0,
+   "F13": 0,
+   "F14": 0,
+   "F15": 0,
+   "F16": 0,
+   "F17": 0,
+   "F18": 0,
+   "F19": 0,
+   "F20": 0,
+   "F21": 0,
+   "F22": 0,
+   "F23": 0,
+   "F24": 0,
+   "F25": 0
+  },
+  "incomplete_sample": []
+ },
+ "C_transform_pit": {
+  "items": 38,
+  "classified": 38,
+  "by_class": [
+   {
+    "item_type": "CLASSIFIER",
+    "class": "PIT_SAFE",
+    "n": 6
+   },
+   {
+    "item_type": "FEATURE",
+    "class": "PIT_SAFE",
+    "n": 25
+   },
+   {
+    "item_type": "R3_CANDIDATE",
+    "class": "PIT_SAFE",
+    "n": 1
+   },
+   {
+    "item_type": "R3_CANDIDATE_NOT_BUILT",
+    "class": "NON_PIT",
+    "n": 3
+   },
+   {
+    "item_type": "R3_CANDIDATE_NOT_BUILT",
+    "class": "UNRESOLVED",
+    "n": 3
+   }
+  ],
+  "built_features_non_pit": []
+ },
+ "D_coverage": {
+  "by_feature": {
+   "F01": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F02": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F03": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F04": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F05": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F06": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F07": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F08": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F09": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F10": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F11": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F12": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F13": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F14": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F15": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F16": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F17": {
+    "nonmissing_share": 0.3143,
+    "years_with_value": 4
+   },
+   "F18": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F19": {
+    "nonmissing_share": 0.9429,
+    "years_with_value": 9
+   },
+   "F20": {
+    "nonmissing_share": 0.981,
+    "years_with_value": 9
+   },
+   "F21": {
+    "nonmissing_share": 0.981,
+    "years_with_value": 9
+   },
+   "F22": {
+    "nonmissing_share": 0.9429,
+    "years_with_value": 9
+   },
+   "F23": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F24": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   },
+   "F25": {
+    "nonmissing_share": 1.0,
+    "years_with_value": 9
+   }
+  },
+  "by_source": {
+   "S_ALFRED": 1.0,
+   "S_CFTC_PRESS": 0.3143,
+   "S_FEDREG": 1.0,
+   "S_FED_PRESS": 1.0,
+   "S_GDELT_GKG": 0.9619,
+   "S_SEC_PRESS": 1.0,
+   "S_WIKI_PORTAL": 1.0
+  },
+  "by_layer_year": {
+   "C1": {
+    "2018": 1.0,
+    "2019": 1.0,
+    "2020": 1.0,
+    "2021": 1.0,
+    "2022": 1.0,
+    "2023": 1.0,
+    "2024": 1.0,
+    "2025": 1.0,
+    "2026": 1.0
+   },
+   "C2": {
+    "2018": 0.9833,
+    "2019": 0.9833,
+    "2020": 0.9917,
+    "2021": 0.9167,
+    "2022": 0.9,
+    "2023": 0.9,
+    "2024": 0.9,
+    "2025": 0.9,
+    "2026": 0.9
+   },
+   "C3": {
+    "2018": 0.9286,
+    "2019": 1.0,
+    "2020": 0.9524,
+    "2021": 1.0,
+    "2022": 0.9762,
+    "2023": 1.0,
+    "2024": 1.0,
+    "2025": 0.9524,
+    "2026": 1.0
+   }
+  }
+ },
+ "E_zero_vs_missing": {
+  "encoding_checks": {
+   "missing_with_value": 0,
+   "missing_without_reason": 0,
+   "zero_without_value": 0
+  },
+  "by_feature": {
+   "F01": {
+    "zero_share": 0.0381,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F02": {
+    "zero_share": 0.0,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F03": {
+    "zero_share": 0.8762,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F04": {
+    "zero_share": 0.6762,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F05": {
+    "zero_share": 0.7714,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F06": {
+    "zero_share": 0.0,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F07": {
+    "zero_share": 0.0,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F08": {
+    "zero_share": 0.0,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F09": {
+    "zero_share": 0.0095,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F10": {
+    "zero_share": 0.4286,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F11": {
+    "zero_share": 0.0381,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F12": {
+    "zero_share": 0.5524,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F13": {
+    "zero_share": 0.0476,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F14": {
+    "zero_share": 0.219,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F15": {
+    "zero_share": 0.4571,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F16": {
+    "zero_share": 0.0095,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F17": {
+    "zero_share": 0.0,
+    "missing_share": 0.6857,
+    "missing_reasons": "{\"ACCESS_BLOCKED\": 67, \"NOT_WALKED\": 5}"
+   },
+   "F18": {
+    "zero_share": 0.3524,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F19": {
+    "zero_share": 0.0,
+    "missing_share": 0.0571,
+    "missing_reasons": "{\"FILE_MISSING\": 6}"
+   },
+   "F20": {
+    "zero_share": 0.0,
+    "missing_share": 0.019,
+    "missing_reasons": "{\"INSUFFICIENT_SLICES\": 2}"
+   },
+   "F21": {
+    "zero_share": 0.0,
+    "missing_share": 0.019,
+    "missing_reasons": "{\"INSUFFICIENT_SLICES\": 2}"
+   },
+   "F22": {
+    "zero_share": 0.0,
+    "missing_share": 0.0571,
+    "missing_reasons": "{\"FILE_MISSING\": 6}"
+   },
+   "F23": {
+    "zero_share": 0.9143,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F24": {
+    "zero_share": 0.9143,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   },
+   "F25": {
+    "zero_share": 1.0,
+    "missing_share": 0.0,
+    "missing_reasons": "{}"
+   }
+  }
+ },
+ "F_temporal_stability": {
+  "fed_doc_type_sets": {
+   "by_year": {
+    "2017": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2018": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2019": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2020": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2021": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2022": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2023": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2024": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2025": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ],
+    "2026": [
+     "Banking and Consumer Regulatory Policy",
+     "Enforcement Actions",
+     "Monetary Policy",
+     "Orders on Banking Applications",
+     "Other Announcements"
+    ]
+   },
+   "changed": false
+  },
+  "fr_type_sets": {
+   "by_year": {
+    "2017": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ],
+    "2018": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ],
+    "2019": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ],
+    "2020": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule",
+     "Uncategorized Document"
+    ],
+    "2021": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ],
+    "2022": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ],
+    "2023": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ],
+    "2024": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ],
+    "2025": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ],
+    "2026": [
+     "Notice",
+     "Presidential Document",
+     "Proposed Rule",
+     "Rule"
+    ]
+   },
+   "changed": true
+  },
+  "gdelt_row_widths": {
+   "total_by_width": {
+    "27": 2932764,
+    "1": 202,
+    "0": 169,
+    "2": 4
+   },
+   "short_row_share": 0.000128
+  },
+  "wiki_pages": {
+   "outcomes": {
+    "OK": 735
+   },
+   "items_per_page_by_era": {
+    "2018-20": 22.06,
+    "2021-23": 29.11,
+    "2024-26": 24.95
+   },
+   "zero_item_pages_by_era": {
+    "2018-20": 0.004,
+    "2021-23": 0.004,
+    "2024-26": 0.0
+   },
+   "items_per_line_by_era": {
+    "2018-20": 0.6345,
+    "2021-23": 0.7014,
+    "2024-26": 0.6554
+   }
+  },
+  "denominators": {
+   "fed_items_per_W7 (F01)": {
+    "by_era": {
+     "2018-20": 4.278,
+     "2021-23": 2.833,
+     "2024-26": 3.03
+    },
+    "era_ratio": 1.51
+   },
+   "sec_releases_per_W7 (F13)": {
+    "by_era": {
+     "2018-20": 5.611,
+     "2021-23": 4.806,
+     "2024-26": 3.848
+    },
+    "era_ratio": 1.458
+   },
+   "fedreg_finreg_docs_per_W7 (F09)": {
+    "by_era": {
+     "2018-20": 69.389,
+     "2021-23": 64.222,
+     "2024-26": 65.273
+    },
+    "era_ratio": 1.08
+   },
+   "fedreg_all_docs_per_month": {
+    "by_era": {
+     "2018-20": 2311.833,
+     "2021-23": 2335.056,
+     "2024-26": 2245.818
+    },
+    "era_ratio": 1.04
+   },
+   "cftc_releases_per_W30 (F17)": {
+    "by_era": {
+     "2018-20": 18.903,
+     "2021-23": 11.0
+    },
+    "era_ratio": 1.718
+   },
+   "gdelt_records_per_file_en": {
+    "by_era": {
+     "2018-20": 2092.305,
+     "2021-23": 1362.701,
+     "2024-26": 1302.17
+    },
+    "era_ratio": 1.607
+   },
+   "gdelt_records_per_file_translingual": {
+    "by_era": {
+     "2018-20": 3022.846,
+     "2021-23": 2268.299,
+     "2024-26": 2213.321
+    },
+    "era_ratio": 1.366
+   },
+   "wiki_items_per_page": {
+    "by_era": {
+     "2018-20": 22.063,
+     "2021-23": 29.107,
+     "2024-26": 24.948
+    },
+    "era_ratio": 1.319
+   }
+  },
+  "classifier_base_rates_by_era": {
+   "sec_crypto_share": {
+    "2018-20": 0.0335,
+    "2021-23": 0.0601,
+    "2024-26": 0.0722
+   },
+   "sec_enforcement_share": {
+    "2018-20": 0.4352,
+    "2021-23": 0.5163,
+    "2024-26": 0.3982
+   },
+   "fedreg_crypto_share": {
+    "2018-20": 0.00117,
+    "2021-23": 0.00231,
+    "2024-26": 0.00521
+   },
+   "wiki_item_crypto_share": {
+    "2018-20": 0.00072,
+    "2021-23": 0.00041,
+    "2024-26": 0.00052
+   },
+   "gdelt_crypto_share_all": {
+    "2018-20": 0.00266,
+    "2021-23": 0.0037,
+    "2024-26": 0.00472
+   },
+   "gdelt_crypto_share_en": {
+    "2018-20": 0.00422,
+    "2021-23": 0.00633,
+    "2024-26": 0.00994
+   },
+   "gdelt_crypto_share_translingual": {
+    "2018-20": 0.00157,
+    "2021-23": 0.00211,
+    "2024-26": 0.00165
+   },
+   "gdelt_translingual_record_share": {
+    "2018-20": 0.588,
+    "2021-23": 0.6247,
+    "2024-26": 0.6296
+   }
+  },
+  "coverage_by_era": {
+   "F01": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F02": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F03": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F04": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F05": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F06": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F07": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F08": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F09": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F10": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F11": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F12": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F13": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F14": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F15": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F16": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F17": {
+    "2018-20": 0.8611,
+    "2021-23": 0.0556,
+    "2024-26": 0.0
+   },
+   "F18": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F19": {
+    "2018-20": 0.8889,
+    "2021-23": 0.9722,
+    "2024-26": 0.9697
+   },
+   "F20": {
+    "2018-20": 0.9722,
+    "2021-23": 1.0,
+    "2024-26": 0.9697
+   },
+   "F21": {
+    "2018-20": 0.9722,
+    "2021-23": 1.0,
+    "2024-26": 0.9697
+   },
+   "F22": {
+    "2018-20": 0.8889,
+    "2021-23": 0.9722,
+    "2024-26": 0.9697
+   },
+   "F23": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F24": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   },
+   "F25": {
+    "2018-20": 1.0,
+    "2021-23": 1.0,
+    "2024-26": 1.0
+   }
+  }
+ },
+ "G_sparsity": {
+  "F01": {
+   "nonzero_share_of_nonmissing": 0.9619,
+   "distinct_values": 10,
+   "p10": 1.0,
+   "p50": 3.0,
+   "p90": 6.0,
+   "early_2018_20_mean": 4.2778,
+   "late_2024_26_mean": 3.0303,
+   "early_nonzero_share": 0.9722,
+   "late_nonzero_share": 1.0
+  },
+  "F02": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 10,
+   "p10": 2.0,
+   "p50": 3.0,
+   "p90": 5.0,
+   "early_2018_20_mean": 3.9444,
+   "late_2024_26_mean": 2.303,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 1.0
+  },
+  "F03": {
+   "nonzero_share_of_nonmissing": 0.1238,
+   "distinct_values": 2,
+   "p10": 0.0,
+   "p50": 0.0,
+   "p90": 1.0,
+   "early_2018_20_mean": 0.0833,
+   "late_2024_26_mean": 0.0909,
+   "early_nonzero_share": 0.0833,
+   "late_nonzero_share": 0.0909
+  },
+  "F04": {
+   "nonzero_share_of_nonmissing": 0.3238,
+   "distinct_values": 2,
+   "p10": 0.0,
+   "p50": 0.0,
+   "p90": 1.0,
+   "early_2018_20_mean": 0.4167,
+   "late_2024_26_mean": 0.2727,
+   "early_nonzero_share": 0.4167,
+   "late_nonzero_share": 0.2727
+  },
+  "F05": {
+   "nonzero_share_of_nonmissing": 0.2286,
+   "distinct_values": 2,
+   "p10": 0.0,
+   "p50": 0.0,
+   "p90": 1.0,
+   "early_2018_20_mean": 0.2222,
+   "late_2024_26_mean": 0.1818,
+   "early_nonzero_share": 0.2222,
+   "late_nonzero_share": 0.1818
+  },
+  "F06": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 44,
+   "p10": 0.08,
+   "p50": 2.4,
+   "p90": 5.33,
+   "early_2018_20_mean": 1.4669,
+   "late_2024_26_mean": 4.4097,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 1.0
+  },
+  "F07": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 78,
+   "p10": 1.4461,
+   "p50": 2.7326,
+   "p90": 7.3649,
+   "early_2018_20_mean": 1.8499,
+   "late_2024_26_mean": 2.9696,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 1.0
+  },
+  "F08": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 26,
+   "p10": 3.5,
+   "p50": 4.0,
+   "p90": 6.16,
+   "early_2018_20_mean": 5.2278,
+   "late_2024_26_mean": 4.1364,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 1.0
+  },
+  "F09": {
+   "nonzero_share_of_nonmissing": 0.9905,
+   "distinct_values": 53,
+   "p10": 45.0,
+   "p50": 67.0,
+   "p90": 88.6,
+   "early_2018_20_mean": 69.3889,
+   "late_2024_26_mean": 65.2727,
+   "early_nonzero_share": 0.9722,
+   "late_nonzero_share": 1.0
+  },
+  "F10": {
+   "nonzero_share_of_nonmissing": 0.5714,
+   "distinct_values": 10,
+   "p10": 0.0,
+   "p50": 1.0,
+   "p90": 3.0,
+   "early_2018_20_mean": 0.5556,
+   "late_2024_26_mean": 2.3939,
+   "early_nonzero_share": 0.3056,
+   "late_nonzero_share": 0.8485
+  },
+  "F11": {
+   "nonzero_share_of_nonmissing": 0.9619,
+   "distinct_values": 20,
+   "p10": 1.0,
+   "p50": 4.0,
+   "p90": 13.0,
+   "early_2018_20_mean": 2.7222,
+   "late_2024_26_mean": 11.2727,
+   "early_nonzero_share": 0.9167,
+   "late_nonzero_share": 0.9697
+  },
+  "F12": {
+   "nonzero_share_of_nonmissing": 0.4476,
+   "distinct_values": 5,
+   "p10": 0.0,
+   "p50": 0.0,
+   "p90": 2.0,
+   "early_2018_20_mean": 0.3056,
+   "late_2024_26_mean": 1.0,
+   "early_nonzero_share": 0.3056,
+   "late_nonzero_share": 0.5455
+  },
+  "F13": {
+   "nonzero_share_of_nonmissing": 0.9524,
+   "distinct_values": 15,
+   "p10": 2.0,
+   "p50": 4.0,
+   "p90": 9.0,
+   "early_2018_20_mean": 5.6111,
+   "late_2024_26_mean": 3.8485,
+   "early_nonzero_share": 0.9722,
+   "late_nonzero_share": 0.8788
+  },
+  "F14": {
+   "nonzero_share_of_nonmissing": 0.781,
+   "distinct_values": 11,
+   "p10": 0.0,
+   "p50": 2.0,
+   "p90": 5.0,
+   "early_2018_20_mean": 2.5,
+   "late_2024_26_mean": 1.7576,
+   "early_nonzero_share": 0.8611,
+   "late_nonzero_share": 0.5758
+  },
+  "F15": {
+   "nonzero_share_of_nonmissing": 0.5429,
+   "distinct_values": 5,
+   "p10": 0.0,
+   "p50": 1.0,
+   "p90": 2.0,
+   "early_2018_20_mean": 0.8333,
+   "late_2024_26_mean": 0.9394,
+   "early_nonzero_share": 0.5,
+   "late_nonzero_share": 0.5152
+  },
+  "F16": {
+   "nonzero_share_of_nonmissing": 0.9905,
+   "distinct_values": 9,
+   "p10": 1.0,
+   "p50": 3.0,
+   "p90": 5.0,
+   "early_2018_20_mean": 3.6389,
+   "late_2024_26_mean": 2.5455,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 0.9697
+  },
+  "F17": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 20,
+   "p10": 10.2,
+   "p50": 16.0,
+   "p90": 27.8,
+   "early_2018_20_mean": 18.9032,
+   "late_2024_26_mean": NaN,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": NaN
+  },
+  "F18": {
+   "nonzero_share_of_nonmissing": 0.6476,
+   "distinct_values": 2,
+   "p10": 0.0,
+   "p50": 1.0,
+   "p90": 1.0,
+   "early_2018_20_mean": 0.4444,
+   "late_2024_26_mean": 0.8485,
+   "early_nonzero_share": 0.4444,
+   "late_nonzero_share": 0.8485
+  },
+  "F19": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 70,
+   "p10": 43.8,
+   "p50": 84.0,
+   "p90": 155.0,
+   "early_2018_20_mean": 83.4062,
+   "late_2024_26_mean": 116.1875,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 1.0
+  },
+  "F20": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 103,
+   "p10": 0.0018,
+   "p50": 0.0031,
+   "p90": 0.0062,
+   "early_2018_20_mean": 0.0026,
+   "late_2024_26_mean": 0.0049,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 1.0
+  },
+  "F21": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 103,
+   "p10": 0.0028,
+   "p50": 0.0057,
+   "p90": 0.0117,
+   "early_2018_20_mean": 0.0041,
+   "late_2024_26_mean": 0.0097,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 1.0
+  },
+  "F22": {
+   "nonzero_share_of_nonmissing": 1.0,
+   "distinct_values": 99,
+   "p10": -1.5425,
+   "p50": -0.5218,
+   "p90": 0.2507,
+   "early_2018_20_mean": -0.7024,
+   "late_2024_26_mean": -0.5249,
+   "early_nonzero_share": 1.0,
+   "late_nonzero_share": 1.0
+  },
+  "F23": {
+   "nonzero_share_of_nonmissing": 0.0857,
+   "distinct_values": 3,
+   "p10": 0.0,
+   "p50": 0.0,
+   "p90": 0.0,
+   "early_2018_20_mean": 0.1111,
+   "late_2024_26_mean": 0.0909,
+   "early_nonzero_share": 0.0833,
+   "late_nonzero_share": 0.0909
+  },
+  "F24": {
+   "nonzero_share_of_nonmissing": 0.0857,
+   "distinct_values": 2,
+   "p10": 0.0,
+   "p50": 0.0,
+   "p90": 0.0,
+   "early_2018_20_mean": 0.0833,
+   "late_2024_26_mean": 0.0909,
+   "early_nonzero_share": 0.0833,
+   "late_nonzero_share": 0.0909
+  },
+  "F25": {
+   "nonzero_share_of_nonmissing": 0.0,
+   "distinct_values": 1,
+   "p10": 0.0,
+   "p50": 0.0,
+   "p90": 0.0,
+   "early_2018_20_mean": 0.0,
+   "late_2024_26_mean": 0.0,
+   "early_nonzero_share": 0.0,
+   "late_nonzero_share": 0.0
+  }
+ },
+ "H_redundancy": {
+  "pairs": 300,
+  "redundant_pairs_rule": [
+   {
+    "feature_a": "F23",
+    "feature_b": "F24",
+    "spearman": 0.9996,
+    "n_pairs": 105
+   }
+  ]
+ },
+ "I_semantic": [
+  {
+   "classifier": "K1a",
+   "n_pos": 30,
+   "n_pos_determinable": 30,
+   "precision": 0.9666666666666668,
+   "n_neg": 20,
+   "n_neg_determinable": 20,
+   "negative_agreement": 1.0,
+   "overall_agreement": 0.98,
+   "undeterminable_share": 0.0,
+   "meets_bar": true,
+   "false_positive_ids": "A0194",
+   "false_negative_ids": NaN
+  },
+  {
+   "classifier": "K1b",
+   "n_pos": 30,
+   "n_pos_determinable": 30,
+   "precision": 0.9666666666666668,
+   "n_neg": 20,
+   "n_neg_determinable": 20,
+   "negative_agreement": 1.0,
+   "overall_agreement": 0.98,
+   "undeterminable_share": 0.0,
+   "meets_bar": true,
+   "false_positive_ids": "A0068",
+   "false_negative_ids": NaN
+  },
+  {
+   "classifier": "K2",
+   "n_pos": 30,
+   "n_pos_determinable": 30,
+   "precision": 0.9666666666666668,
+   "n_neg": 20,
+   "n_neg_determinable": 20,
+   "negative_agreement": 1.0,
+   "overall_agreement": 0.98,
+   "undeterminable_share": 0.0,
+   "meets_bar": true,
+   "false_positive_ids": "A0016",
+   "false_negative_ids": NaN
+  },
+  {
+   "classifier": "K3",
+   "n_pos": 12,
+   "n_pos_determinable": 12,
+   "precision": 1.0,
+   "n_neg": 20,
+   "n_neg_determinable": 20,
+   "negative_agreement": 1.0,
+   "overall_agreement": 1.0,
+   "undeterminable_share": 0.0,
+   "meets_bar": true,
+   "false_positive_ids": NaN,
+   "false_negative_ids": NaN
+  },
+  {
+   "classifier": "K4",
+   "n_pos": 10,
+   "n_pos_determinable": 10,
+   "precision": 1.0,
+   "n_neg": 20,
+   "n_neg_determinable": 20,
+   "negative_agreement": 1.0,
+   "overall_agreement": 1.0,
+   "undeterminable_share": 0.0,
+   "meets_bar": true,
+   "false_positive_ids": NaN,
+   "false_negative_ids": NaN
+  },
+  {
+   "classifier": "K5",
+   "n_pos": 0,
+   "n_pos_determinable": 0,
+   "precision": NaN,
+   "n_neg": 10,
+   "n_neg_determinable": 10,
+   "negative_agreement": 0.9,
+   "overall_agreement": 0.9,
+   "undeterminable_share": 0.0,
+   "meets_bar": false,
+   "false_positive_ids": NaN,
+   "false_negative_ids": "A0134"
+  },
+  {
+   "classifier": "K6",
+   "n_pos": 30,
+   "n_pos_determinable": 28,
+   "precision": 0.6785714285714286,
+   "n_neg": 20,
+   "n_neg_determinable": 20,
+   "negative_agreement": 1.0,
+   "overall_agreement": 0.8125,
+   "undeterminable_share": 0.04,
+   "meets_bar": false,
+   "false_positive_ids": "A0023;A0024;A0039;A0042;A0066;A0113;A0142;A0151;A0165",
+   "false_negative_ids": NaN
+  }
+ ],
+ "L_lexicon": {
+  "terms": 40,
+  "not_attested_by_first_t": [
+   {
+    "dictionary": "K_CRYPTO",
+    "term": "crypto",
+    "earliest_attestation_utc": "2018-02-01T05:00:00Z",
+    "matches_in_corpus": 183
+   },
+   {
+    "dictionary": "K_CRYPTO",
+    "term": "digital asset",
+    "earliest_attestation_utc": "2018-06-04T15:15:00Z",
+    "matches_in_corpus": 69
+   },
+   {
+    "dictionary": "K_CRYPTO",
+    "term": "stablecoin",
+    "earliest_attestation_utc": "2020-02-12T05:00:00Z",
+    "matches_in_corpus": 25
+   },
+   {
+    "dictionary": "K_CRYPTO",
+    "term": "token",
+    "earliest_attestation_utc": "2018-11-16T10:15:49Z",
+    "matches_in_corpus": 65
+   },
+   {
+    "dictionary": "K_CRYPTO",
+    "term": "coin offering",
+    "earliest_attestation_utc": "2018-01-30T09:35:00Z",
+    "matches_in_corpus": 4
+   },
+   {
+    "dictionary": "K_CRYPTO",
+    "term": "binance",
+    "earliest_attestation_utc": "2023-06-05T11:00:00Z",
+    "matches_in_corpus": 3
+   },
+   {
+    "dictionary": "K_GDELT_CRYPTO",
+    "term": "binance",
+    "earliest_attestation_utc": "2018-03-22T22:00:00Z",
+    "matches_in_corpus": 198
+   },
+   {
+    "dictionary": "K_GDELT_CRYPTO",
+    "term": "stablecoin",
+    "earliest_attestation_utc": "2019-09-12T05:00:00Z",
+    "matches_in_corpus": 74
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "\\bsettle(?:s|d|ment|ments)?\\b",
+    "earliest_attestation_utc": "2018-03-08T16:25:00Z",
+    "matches_in_corpus": 73
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "\\bto pay\\b",
+    "earliest_attestation_utc": "2018-02-02T10:12:00Z",
+    "matches_in_corpus": 84
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "\\bpenalt",
+    "earliest_attestation_utc": "2018-03-06T13:30:00Z",
+    "matches_in_corpus": 31
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "\\bjudgment",
+    "earliest_attestation_utc": "2019-01-28T14:33:00Z",
+    "matches_in_corpus": 5
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "asset freeze",
+    "earliest_attestation_utc": "2018-03-08T15:10:10Z",
+    "matches_in_corpus": 18
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "trading suspension",
+    "earliest_attestation_utc": "",
+    "matches_in_corpus": 0
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "suspends trading",
+    "earliest_attestation_utc": "2018-02-16T09:35:00Z",
+    "matches_in_corpus": 4
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "\\bbar(?:s|red)?\\b",
+    "earliest_attestation_utc": "2018-02-16T13:35:05Z",
+    "matches_in_corpus": 8
+   },
+   {
+    "dictionary": "K_SEC_ENFORCEMENT",
+    "term": "\\bsanction",
+    "earliest_attestation_utc": "",
+    "matches_in_corpus": 0
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "\\bhack",
+    "earliest_attestation_utc": "2018-03-24T21:20:49Z",
+    "matches_in_corpus": 11
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "\\bstolen\\b",
+    "earliest_attestation_utc": "2018-09-05T21:11:01Z",
+    "matches_in_corpus": 12
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "\\btheft\\b",
+    "earliest_attestation_utc": "2022-03-14T22:04:06Z",
+    "matches_in_corpus": 2
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "\\bexploit",
+    "earliest_attestation_utc": "2019-02-12T19:12:27Z",
+    "matches_in_corpus": 6
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "insolven",
+    "earliest_attestation_utc": "2022-12-10T11:02:11Z",
+    "matches_in_corpus": 1
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "bankrupt",
+    "earliest_attestation_utc": "2018-03-21T01:16:02Z",
+    "matches_in_corpus": 23
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "de-?peg",
+    "earliest_attestation_utc": "",
+    "matches_in_corpus": 0
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "(?:halt|suspend|freez)\\w* (?:all )?withdrawals",
+    "earliest_attestation_utc": "",
+    "matches_in_corpus": 0
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "\\bfraud",
+    "earliest_attestation_utc": "2018-02-16T18:53:20Z",
+    "matches_in_corpus": 39
+   },
+   {
+    "dictionary": "K_CRYPTO_STRESS",
+    "term": "\\bponzi\\b",
+    "earliest_attestation_utc": "",
+    "matches_in_corpus": 0
+   }
+  ]
+ },
+ "outcome_tables_read": false,
+ "returns_computed": false,
+ "models_fitted": false
+}

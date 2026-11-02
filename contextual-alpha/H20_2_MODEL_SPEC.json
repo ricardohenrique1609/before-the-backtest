@@ -1,0 +1,137 @@
+{
+ "spec_version": "h20_2_v1",
+ "arms": {
+  "M0": {
+   "role": "PRIMARY baseline",
+   "features": "MARKET (M01-M22, 23 columns)"
+  },
+  "M1": {
+   "role": "secondary",
+   "features": "CONTEXT_EXPANDED (18)"
+  },
+  "M2": {
+   "role": "PRIMARY treatment",
+   "features": "MARKET + CONTEXT_EXPANDED"
+  },
+  "M1_core": {
+   "role": "robustness",
+   "features": "CONTEXT_CORE (10)"
+  },
+  "M2_core": {
+   "role": "robustness",
+   "features": "MARKET + CONTEXT_CORE"
+  }
+ },
+ "primary_comparison": "M2 vs M0 under the primary model class (L2 logistic): Delta PR-AUC = PR-AUC(M2) - PR-AUC(M0)",
+ "market_arm_features": [
+  "dollar_volume_90d",
+  "volume_trend",
+  "zero_low_volume_freq_90d",
+  "realized_vol_90d",
+  "trailing_return_90d",
+  "drawdown_365d",
+  "liquidity_concentration_90d",
+  "asset_age_days",
+  "n_active_spot_pairs",
+  "n_quote_assets",
+  "has_USDT",
+  "has_USDC",
+  "has_BTC",
+  "has_BNB",
+  "has_FDUSD",
+  "venue_listed_assets",
+  "venue_removal_intensity_90d",
+  "time_index_years",
+  "route_ratio_to_peak",
+  "days_since_last_pair_removal",
+  "asset_specific_removals_365d_mkt",
+  "batch_prune_removals_365d_mkt",
+  "never_had_pair_removal"
+ ],
+ "context_expanded": [
+  "c1_fed_release_count_W7",
+  "c1_fed_monetary_policy_count_W30",
+  "c1_fomc_statement_flag_W7",
+  "c1_cpi_release_flag_W7",
+  "c1_unrate_release_flag_W7",
+  "c1_policy_rate_asof",
+  "c1_cpi_yoy_asof",
+  "c1_unrate_asof",
+  "c2_fedreg_finreg_doc_count_W7",
+  "c2_fedreg_crypto_doc_count_W7",
+  "c2_fedreg_crypto_doc_count_W30",
+  "c2_fedreg_crypto_rulemaking_count_W30",
+  "c2_sec_press_count_W7",
+  "c2_sec_enforcement_count_W7",
+  "c2_sec_crypto_press_count_W30",
+  "c2_fed_enforcement_count_W30",
+  "c2_crypto_regulatory_action_flag_W7",
+  "c3_wiki_crypto_item_count_D7"
+ ],
+ "context_core": [
+  "c1_fed_release_count_W7",
+  "c1_fed_monetary_policy_count_W30",
+  "c1_cpi_release_flag_W7",
+  "c1_unrate_release_flag_W7",
+  "c1_policy_rate_asof",
+  "c1_cpi_yoy_asof",
+  "c1_unrate_asof",
+  "c2_fedreg_finreg_doc_count_W7",
+  "c2_sec_press_count_W7",
+  "c2_fed_enforcement_count_W30"
+ ],
+ "primary_class": {
+  "name": "L2_LOGISTIC",
+  "implementation": "numpy/scipy (scipy.optimize.minimize, L-BFGS-B, gtol 1e-8, maxiter 5000); objective = sum of log-loss + 0.5 * lambda * ||beta||^2 over standardised features, intercept unpenalised",
+  "hyperparameter_grid": {
+   "lambda": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+   ]
+  },
+  "preprocessing_order": [
+   "per-feature transform from the registries (log1p or none)",
+   "winsorise at the training 0.5th / 99.5th percentiles",
+   "median imputation from the training rows + a <feature>_missing indicator for every feature with >= 1 missing training value",
+   "standardise with training mean / sd (sd 0 -> column dropped for that fit, recorded)"
+  ],
+  "class_weight": "none (unweighted likelihood)",
+  "calibration_policy": "no post-hoc recalibration; calibration is measured, not repaired",
+  "convergence": "a fit that does not converge is retried once with maxiter 20000; a second failure is a DATA / DESIGN FAILURE"
+ },
+ "secondary_class": {
+  "name": "LIGHTGBM",
+  "implementation": "lightgbm 4.7.0, objective binary, deterministic=True, force_row_wise=True, num_threads=1, seed 20261104, learning_rate 0.03, min_child_samples 200, subsample 0.8 (bagging_freq 1), colsample_bytree 0.8, reg_lambda 1.0, max_bin 255, no early stopping, verbose -1",
+  "hyperparameter_grid": {
+   "num_leaves": [
+    7,
+    15
+   ],
+   "n_estimators": [
+    200,
+    500
+   ]
+  },
+  "preprocessing": "raw features (no transform, no scaling); missing values passed as NaN (native handling); no indicators",
+  "class_weight": "none",
+  "calibration_policy": "no post-hoc recalibration"
+ },
+ "equal_budget_rule": "every arm gets exactly the same grid (5 lambdas; 4 tree configs), the same folds, the same preprocessing rules and the same seeds; no arm may receive an extra search, feature selection or early stopping",
+ "selection": "for each arm and class separately: the configuration with the highest mean PR-AUC over the 8 development folds; ties broken by the stronger regularisation (larger lambda; fewer leaves, then fewer trees)",
+ "final_fit": "selected configuration refit on all DEVELOPMENT landmarks; the holdout is scored once with that fit",
+ "sensitivity_reported": "also at the a-priori defaults (lambda = 10; num_leaves 7 / 200 trees), to show selection optimism",
+ "seeds": {
+  "lightgbm": 20261104,
+  "bootstrap": 20261103
+ },
+ "no_feature_selection": "no feature is dropped, added or transformed differently by any result",
+ "environment_pins": {
+  "python": "3.12.14",
+  "lightgbm": "4.7.0",
+  "scipy": "1.18.1",
+  "note": "scikit-learn is not installed in the repository venv and is not used"
+ }
+}

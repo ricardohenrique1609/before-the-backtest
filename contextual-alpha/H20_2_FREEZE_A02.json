@@ -1,0 +1,55 @@
+{
+ "experiment": "H20.2 Addendum 02 (pre-outcome methodological amendment)",
+ "frozen_utc": "2026-10-19T17:09:27.928867Z",
+ "spec_version": "h20_2_v1+A02",
+ "supersedes": {
+  "H20_2_MODEL_SPEC.json": "H20_2_MODEL_SPEC_A02.json",
+  "H20_2_TEMPORAL_SPLIT.json": "H20_2_TEMPORAL_SPLIT_A02.json",
+  "H20_2_METRICS_SPEC.json": "H20_2_METRICS_SPEC_A02.json",
+  "H20_2_VERDICT_RULES.json": "H20_2_VERDICT_RULES_A02.json",
+  "H20_2_INFERENCE_SPEC.md": "H20_2_INFERENCE_SPEC_A02.md",
+  "H20_2_PREREG.md (sections 4-6, 8)": "H20_2_PREREG_ADDENDUM_02.md"
+ },
+ "terminology_map": {
+  "HOLDOUT_H20": "LOCKED_CONTEXT_UNSEEN_VALIDATION",
+  "holdout (any v1 use, incl. 'pre-holdout freeze', 'holdout scored once', '2025 holdout')": "LOCKED_CONTEXT_UNSEEN_VALIDATION ('pre-LCUV freeze', 'LCUV scored once', '2025 LCUV block')"
+ },
+ "files": {
+  "H20_2_MODEL_SPEC_A02.json": "ace2478141924913f7553b80a7352e349b4e4eb43b012f31bc4f225a408353b2",
+  "H20_2_TEMPORAL_SPLIT_A02.json": "b2fff66b9c32b4800abfdd2608c9a3b1b7bfa090517c5532430c2e22bd4cd422",
+  "H20_2_METRICS_SPEC_A02.json": "6ca53070da69050e778427c55e0bb10db1a9aa8fbdd6b79ed3df8516b06cb663",
+  "H20_2_VERDICT_RULES_A02.json": "5cb25532fb56a42f1f3e05255552a97edafae6cd98f4c54cfc589d8e79070dae",
+  "H20_2_PREREG_ADDENDUM_02.md": "360393d99c9a38ebf2760272e236fa799f724448f8f6e2560ff6450a528314f3",
+  "H20_2_INFERENCE_SPEC_A02.md": "b16a6eda38d9abb0066e3375c4298cd9cd60a54e2438d931000cab265ba60382",
+  "scripts/h20_2_amend02.py": "582cba7ce8de86e1ebf9926ad29917c7218973e54d922ef9eead980d9bcafc38"
+ },
+ "v1_freeze": {
+  "file": "H20_2_FREEZE.json",
+  "sha256": "bf12b1398b327d6cacfc31f6325ce83a232ead7570f6fe5960c9a52040052cb1",
+  "files_verified_unchanged": 13
+ },
+ "addendum_01": {
+  "file": "H20_2_PREREG_ADDENDUM_01.md",
+  "sha256": "5b2c8a8934f5332e14b695439891ee7d226c7a2c013e9092e0dc45e27f136758"
+ },
+ "unchanged": [
+  "target",
+  "context features and sets",
+  "market features",
+  "temporal dates",
+  "PIT rules and audit plan",
+  "outcome definition",
+  "primary metric",
+  "C4/C5 exclusions",
+  "H20.1 representations"
+ ],
+ "state_at_freeze": {
+  "outcome_tables_read": false,
+  "rows_of_lifecycle_tables_read": false,
+  "returns_after_t_computed": false,
+  "models_fitted": false,
+  "metrics_computed": false,
+  "h18_3_results_files_read": false
+ },
+ "authorises": "nothing; H20.3 requires sponsor authorisation"
+}

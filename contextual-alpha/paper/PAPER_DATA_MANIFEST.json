@@ -1,0 +1,54 @@
+{
+ "generator": "paper/scripts/build_paper_assets.py",
+ "generator_sha256": "5cb7296f6fd86f53ce1e38baada52f1a96ce687524c02ff5782989aac943c807",
+ "inputs": {
+  "H20_0_GATE.json": "b3d366a44926fb2c215af8e0eebefc43483812c3247a72b8cf7923855f8bc8f9",
+  "H20_1_GATE.json": "43e7eeddefcdb309941faf460e60bab9942cd4e16469ace494712c39dc8538c6",
+  "H20_2_TEMPORAL_SPLIT_A02.json": "b2fff66b9c32b4800abfdd2608c9a3b1b7bfa090517c5532430c2e22bd4cd422",
+  "H20_3_BOOTSTRAP_RESULTS.json": "357644c5c70922f1ad5d3db9798555bd2a39c10afe9134d2155dbd64ca20f356",
+  "H20_3_DEVELOPMENT_RESULTS.json": "9eb6d74950204805f53f6b2cc678c42a4181436104e218e8a175e085463aa48d",
+  "H20_3_EXPLORATORY_RESULTS.json": "bffe42b03713c4394396b37691ad1bfb7c4cc8f315f2b1d9f96899a7a4fd5fa7",
+  "H20_3_LCUV_RESULTS.json": "25c8a3f72152c7ddc52e9f911267ff6f3205fe965d0528c3fb9e9da35aa86aca",
+  "H20_3_TARGET_AUDIT.json": "c63b0e1a3fb54a883ae35a395f643dc68fbdbe2cdcecd562ad1e7ad1ab64fc58",
+  "H20_3_VERDICT.json": "97455837759fecaf6fc1d93eab038c3a256632f93f4ab62abaf8a9e97997a6ed",
+  "data/derived/h20_3/oof_predictions_primary.parquet": "5fad1f0c5a3f028d4ce87d2e8f97e207e5df631a16f56fa496acf593c8d40a08",
+  "evidence/H20_1_FEATURE_ELIGIBILITY.csv": "0a24fc7b791c2089f2d5512c04e6e8a5f7105bc70b27edd9c645a64e191e0cd6"
+ },
+ "outputs": {
+  "figures/figure1_research_funnel.png": "82d7132a2a40afbb98480d9f8377cfb96d018e5421f12464c9596506edb20ae3",
+  "figures/figure2_timeline.png": "463edc557ff647d3e250133ec323c3a155103fd79a18edf8f274a380c406ab32",
+  "figures/figure3_primary_pr_auc.png": "1b8258e014ff0edde2eb69f641e0b4b6991233650fb9492cfba09cfc7bee08b4",
+  "figures/figure4_fold_delta.png": "446821368210c05a33919acf632086560c2ec266abbfba7d03103d484fb6ab3e",
+  "figures/figure5_bootstrap_delta.png": "03325d79868c33240ac49eb22a8ebd3107736281a2aec21c07494eb81b202e5a",
+  "figures/figure6_feature_survival.png": "f032c7227be12f17967a17c698313400645dcf1f759a4d364ed566e8a4af8048",
+  "tables/table1_context_layers.csv": "ad8b4688ef03434ae9719ec9da394e4c5646f2fcd93092aff51428168615c87b",
+  "tables/table1_context_layers.md": "700b522e7a4db574011d8d39f0d4007203c68d64c5b45f05a08d7431eb9125ea",
+  "tables/table2_representation_families.csv": "2ac4be4dd2ff4fda80de190f17568ca8be3a0103716a326105134b28b2fdb5f9",
+  "tables/table2_representation_families.md": "81c9f004ef191e30e97341a9ba44cacef7669c6aa2002c613765849d098077c8",
+  "tables/table3_design_effective_units.csv": "284bb537b536044ed3620ec5331b99da8efe78778ad14bf099f9da1eb1487283",
+  "tables/table3_design_effective_units.md": "06afbf0766c372280369fce0a2dd93288a645b13bbf1307274bcca06034f811c",
+  "tables/table4_development_results.csv": "8a676cce41599e0755dea2d1c36af0d7932ee3482319f15101080583845d7c2e",
+  "tables/table4_development_results.md": "f324fad74d853f29768231cd0c797024f0ed181548cfda0febfbd6ca5beb8fc8",
+  "tables/table5_lcuv_results.csv": "b52777a8e3b66b73c9b48bf57566ba7404daed855c8471ad9a08a7abdbbaf9aa",
+  "tables/table5_lcuv_results.md": "1fbd3627dee2019fe6efb195ad4b06767c7a2141a8ef2c82c866af8604298bec",
+  "tables/table6_verdict.csv": "709dba07c7fb82726c4db0c6762c9f0cfdd2543ed05cbd2705d3d567375529f6",
+  "tables/table6_verdict.md": "005234e89bc4a1e5c1cd55785cbd6c75167699556fec6cd10c9c462c4155f3d3",
+  "tables/table7_robustness_exploratory.csv": "d74d47ec2df55c4fa3a59e066bc7fbd55319dafbf8462c98f987d345fd27b5fa",
+  "tables/table7_robustness_exploratory.md": "b7472d73c5714201423038941178c4c9a71b91b94df9dc0ed840cd8a84b270cb",
+  "tables/tableA1_feature_eligibility.csv": "ba777b19c875f9faecfeb250411e0af87423ce8435144391c4f84be1a96018d8",
+  "tables/tableA1_feature_eligibility.md": "43990b01fc1cc8b33c0cdab4d75dcebf41cb53ac510b93c0236f997794e037ed",
+  "tables/tableA2_fold_results.csv": "32dd02a9bd08096af18228742e18ad4a3746852dfc9ea15a5716ca0c05daf6f2",
+  "tables/tableA2_fold_results.md": "6e0023e0beee789368fa94739aa29af68288689598d12f78cfbe71880bbc986e"
+ },
+ "bootstrap_recomputed_ci_equals_frozen": [
+  -0.062050227180945314,
+  0.040463864007122104
+ ],
+ "note": "figures in PDF are regenerated alongside PNG; PNG hashes are recorded (PDF embeds renderer metadata)",
+ "frozen_commits": {
+  "H20.0": "a14c347",
+  "H20.1": "e21c264",
+  "H20.2+A02": "9932e20",
+  "H20.3": "180def4"
+ }
+}

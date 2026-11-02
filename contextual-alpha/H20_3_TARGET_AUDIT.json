@@ -1,0 +1,214 @@
+{
+ "stage": "P4",
+ "computed_utc": "2026-10-19T19:35:35.627875Z",
+ "PASS": true,
+ "sample_floors_PASS": true,
+ "checks": {
+  "P4.1_unparsable_announcement_times": 0,
+  "P4.1_date_only_values": 0,
+  "P4.2_events_matching_more_than_one_era": 0,
+  "P4.2_events_matching_no_era": [
+   "IDRT",
+   "SKY",
+   "USDS",
+   "VAI"
+  ],
+  "P4.3_landmarks_with_announcement_le_t_remaining": 0,
+  "P4.4_followup_incomplete_landmarks": 0,
+  "P4.5_agreement_with_inherited_y_365": 1.0,
+  "P4.5_matched_rows": 93394,
+  "P4.5_rows_differing": 0,
+  "excluded_already_announced_rows": 259
+ },
+ "floors": {
+  "min_fold_test_events": 20,
+  "fold_floor": 5,
+  "lcuv_events": 86,
+  "lcuv_floor": 20
+ },
+ "events_in_table": 201,
+ "events_attached_to_an_era": 197,
+ "asset_eras_with_an_event": 197,
+ "effective_units": {
+  "DEVELOPMENT": {
+   "rows": 78227,
+   "asset_eras": 522,
+   "weeks": 313,
+   "positive_rows": 4555,
+   "unique_positive_events": 110,
+   "base_rate": 0.05823
+  },
+  "LOCKED_CONTEXT_UNSEEN_VALIDATION": {
+   "rows": 15167,
+   "asset_eras": 443,
+   "weeks": 40,
+   "positive_rows": 1789,
+   "unique_positive_events": 86,
+   "base_rate": 0.11795
+  },
+  "folds": [
+   {
+    "fold": 1,
+    "train": {
+     "rows": 23626,
+     "asset_eras": 288,
+     "weeks": 157,
+     "positive_rows": 1163,
+     "unique_positive_events": 36,
+     "base_rate": 0.04923
+    },
+    "test": {
+     "rows": 4575,
+     "asset_eras": 380,
+     "weeks": 13,
+     "positive_rows": 344,
+     "unique_positive_events": 31,
+     "base_rate": 0.07519
+    },
+    "shared_events": 0
+   },
+   {
+    "fold": 2,
+    "train": {
+     "rows": 27277,
+     "asset_eras": 345,
+     "weeks": 170,
+     "positive_rows": 1381,
+     "unique_positive_events": 42,
+     "base_rate": 0.05063
+    },
+    "test": {
+     "rows": 4778,
+     "asset_eras": 378,
+     "weeks": 13,
+     "positive_rows": 345,
+     "unique_positive_events": 27,
+     "base_rate": 0.07221
+    },
+    "shared_events": 0
+   },
+   {
+    "fold": 3,
+    "train": {
+     "rows": 31409,
+     "asset_eras": 379,
+     "weeks": 183,
+     "positive_rows": 1667,
+     "unique_positive_events": 45,
+     "base_rate": 0.05307
+    },
+    "test": {
+     "rows": 4830,
+     "asset_eras": 381,
+     "weeks": 13,
+     "positive_rows": 277,
+     "unique_positive_events": 27,
+     "base_rate": 0.05735
+    },
+    "shared_events": 0
+   },
+   {
+    "fold": 4,
+    "train": {
+     "rows": 35865,
+     "asset_eras": 405,
+     "weeks": 196,
+     "positive_rows": 1996,
+     "unique_positive_events": 55,
+     "base_rate": 0.05565
+    },
+    "test": {
+     "rows": 4792,
+     "asset_eras": 375,
+     "weeks": 13,
+     "positive_rows": 228,
+     "unique_positive_events": 24,
+     "base_rate": 0.04758
+    },
+    "shared_events": 0
+   },
+   {
+    "fold": 5,
+    "train": {
+     "rows": 40455,
+     "asset_eras": 427,
+     "weeks": 209,
+     "positive_rows": 2327,
+     "unique_positive_events": 63,
+     "base_rate": 0.05752
+    },
+    "test": {
+     "rows": 4713,
+     "asset_eras": 369,
+     "weeks": 13,
+     "positive_rows": 203,
+     "unique_positive_events": 22,
+     "base_rate": 0.04307
+    },
+    "shared_events": 0
+   },
+   {
+    "fold": 6,
+    "train": {
+     "rows": 45030,
+     "asset_eras": 462,
+     "weeks": 222,
+     "positive_rows": 2671,
+     "unique_positive_events": 68,
+     "base_rate": 0.05932
+    },
+    "test": {
+     "rows": 4666,
+     "asset_eras": 369,
+     "weeks": 13,
+     "positive_rows": 191,
+     "unique_positive_events": 20,
+     "base_rate": 0.04093
+    },
+    "shared_events": 0
+   },
+   {
+    "fold": 7,
+    "train": {
+     "rows": 49808,
+     "asset_eras": 481,
+     "weeks": 235,
+     "positive_rows": 3016,
+     "unique_positive_events": 72,
+     "base_rate": 0.06055
+    },
+    "test": {
+     "rows": 4707,
+     "asset_eras": 367,
+     "weeks": 13,
+     "positive_rows": 293,
+     "unique_positive_events": 27,
+     "base_rate": 0.06225
+    },
+    "shared_events": 0
+   },
+   {
+    "fold": 8,
+    "train": {
+     "rows": 54638,
+     "asset_eras": 491,
+     "weeks": 248,
+     "positive_rows": 3293,
+     "unique_positive_events": 75,
+     "base_rate": 0.06027
+    },
+    "test": {
+     "rows": 4711,
+     "asset_eras": 368,
+     "weeks": 13,
+     "positive_rows": 347,
+     "unique_positive_events": 35,
+     "base_rate": 0.07366
+    },
+    "shared_events": 0
+   }
+  ]
+ },
+ "rule": "y(t, a) = 1 if asset-era a has its validated full-asset delisting ANNOUNCEMENT at time A with t < A <= t + 365 d; else 0",
+ "y_parquet_sha256": "a34d085b703d97485546fc8e87ada42431c6d62dc879512c0bf4d157172ace8b"
+}

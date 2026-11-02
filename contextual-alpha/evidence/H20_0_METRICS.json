@@ -1,0 +1,134 @@
+{
+ "documents_total": 141751,
+ "documents_pit_eligible": 141673,
+ "documents_by_source": {
+  "S_GDELT_GKG": 140099,
+  "S_BINANCE_CMS": 801,
+  "S_WIKI_PORTAL": 280,
+  "S_SEC_PRESS": 199,
+  "S_FED_PRESS": 139,
+  "S_ALFRED": 105,
+  "S_FEDREG": 75,
+  "S_CFTC_PRESS": 50,
+  "S_WIKI_ASSET": 3
+ },
+ "binance_harvest": {
+  "harvest_utc": "2026-10-18T05:44:07.422561Z",
+  "catalogs": {
+   "48": {
+    "reported_total": 2283,
+    "harvested": 2283,
+    "coverage": 1.0,
+    "failed_pages": [],
+    "status": "COMPLETE",
+    "repaired": true
+   },
+   "49": {
+    "reported_total": 4452,
+    "harvested": 4452,
+    "coverage": 1.0,
+    "failed_pages": [],
+    "status": "COMPLETE",
+    "repaired": true
+   },
+   "51": {
+    "reported_total": 81,
+    "harvested": 81,
+    "coverage": 1.0,
+    "failed_pages": [],
+    "status": "COMPLETE",
+    "repaired": true
+   },
+   "93": {
+    "reported_total": 3193,
+    "harvested": 3193,
+    "coverage": 1.0,
+    "failed_pages": [],
+    "status": "COMPLETE",
+    "repaired": true
+   },
+   "128": {
+    "reported_total": 53,
+    "harvested": 53,
+    "coverage": 1.0,
+    "failed_pages": [],
+    "status": "COMPLETE",
+    "repaired": true
+   },
+   "161": {
+    "reported_total": 441,
+    "harvested": 441,
+    "coverage": 1.0,
+    "failed_pages": [],
+    "status": "COMPLETE",
+    "repaired": true
+   }
+  },
+  "memberships": 10503,
+  "unique_articles": 10503,
+  "repair_utc": "2026-10-18T16:31:05.050846Z"
+ },
+ "binance_snapshot_diff": {
+  "snapshot_path": "data/raw/h18_1b/catalog_titles.parquet",
+  "snapshot_rows": 9631,
+  "snapshot_newest_utc": "2026-10-09T11:00:05.873000Z",
+  "fresh_unique_articles": 10503,
+  "fresh_articles_released_by_snapshot_newest": 10473,
+  "snapshot_codes_absent_now": 0,
+  "absent_now_by_catalog": {},
+  "absent_now_by_year": {},
+  "fresh_codes_missing_from_snapshot": 842,
+  "missing_from_snapshot_by_year": {
+   "2017": 98,
+   "2018": 136,
+   "2019": 197,
+   "2020": 411
+  },
+  "missing_from_snapshot_by_catalog": {
+   "49": 842
+  },
+  "fresh_catalog49_oldest_utc": "2017-07-02T06:03:12Z",
+  "snapshot_catalog49_rows": 3600,
+  "fresh_catalog49_rows": 4452
+ },
+ "binance_detail_outcomes": {
+  "OK": 801
+ },
+ "binance_cms_version_values": {
+  "1": 724,
+  "0": 77
+ },
+ "binance_cms_last_update_nonzero": 0.04244694132334582,
+ "wiki_portal": {
+  "day_pages": 280,
+  "exists_at_t": 1.0,
+  "items_at_t": 6843,
+  "items_now": 7907,
+  "share_of_current_items_absent_at_t": 0.13456431010497028,
+  "pages_edited_after_t": 0.9642857142857143,
+  "median_edits_after_t": 6.0,
+  "completed_days_share_of_items_absent_at_t": 0.04824308755760365,
+  "crypto_items_at_t": 4,
+  "crypto_items_now": 4
+ },
+ "sec_url_migration": {
+  "n": 99,
+  "current_url_captured_le_t": 0.20202020202020202,
+  "at_time_url_captured_le_t": 0.6767676767676768
+ },
+ "gdelt": {
+  "slices_ok": 68,
+  "slices_total": 70,
+  "records": 140099,
+  "crypto_records": 399
+ },
+ "request_log_malformed_lines": 1,
+ "requests_total": 4490,
+ "entity_validation_v2_by_period": {
+  "EARLY_2018_2020": 0.4444444444444444,
+  "LATE_2024_2026": 0.7272727272727273,
+  "MID_2021_2023": 0.5833333333333334
+ },
+ "c5_any_asset_doc_w30": 0.17142857142857143,
+ "c5_non_venue_doc_w30": 0.0761904761904762
+}

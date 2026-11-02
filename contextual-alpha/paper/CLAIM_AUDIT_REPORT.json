@@ -1,0 +1,51 @@
+{
+ "ledger_rows": 117,
+ "supported": 117,
+ "failures": [],
+ "uncovered_numeric_tokens": [],
+ "forbidden_phrases": [],
+ "lcuv_terminology_and_pending_statement": true,
+ "h20_4_mentioned": false,
+ "sanity_phrase_occurrences_for_manual_review": [
+  {
+   "phrase": "prove",
+   "line": "23-feature market baseline did not improve out-of-time precision–recall performance:"
+  },
+  {
+   "phrase": "prove",
+   "line": "- 0 point-in-time violations over 55,561 provenance records;"
+  },
+  {
+   "phrase": "prove",
+   "line": "- complete provenance;"
+  },
+  {
+   "phrase": "prove",
+   "line": "- complete provenance;"
+  },
+  {
+   "phrase": "prove",
+   "line": "More flexible or selected specifications produced apparent development improvements that did not"
+  },
+  {
+   "phrase": "prove",
+   "line": "and audited as it was, did not improve out-of-time predictive performance for this target beyond"
+  },
+  {
+   "phrase": "no effect",
+   "line": "result that a broader claim must not overwrite, and it is not evidence that no effect exists."
+  },
+  {
+   "phrase": "no effect",
+   "line": "an absence of evidence of incremental value, not evidence that context has no effect: the point"
+  }
+ ],
+ "claim_types": {
+  "EMPIRICAL_PROJECT": 84,
+  "EXPLORATORY": 8,
+  "INTERPRETATION": 3,
+  "LIMITATION": 3,
+  "METHODOLOGICAL_LITERATURE": 19
+ },
+ "PASS": true
+}

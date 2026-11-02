@@ -1,0 +1,80 @@
+{
+ "experiment": "H20.1 Context Representation Feasibility",
+ "created_utc": "2026-10-18T20:30:31.261699Z",
+ "representation_version": "h20_1_rep_v1",
+ "plan_file": "H20_1_REPRESENTATION_PLAN.md",
+ "plan_sha256": "f10bd6fade5f188ddc825a0c40a9fbb46644b573ad156ec38810e0b6fe845840",
+ "rules_module": "scripts/h20_1_rep.py",
+ "rules_module_sha256": "c1e60626e46e34502537a9351d472bde00550558afd407c33b01078d99832abf",
+ "registry_file": "CONTEXT_FEATURE_REGISTRY.csv",
+ "registry_sha256": "748299f17583e893b9838adc75346b9c1bf7b1620893dff1293fa80c215c5792",
+ "common_module_sha256": "c1a123bfd6b9e88edcb52338a6cce44835c1f894b77cf88699f03d7c5dada1ea",
+ "freeze_script_sha256": "d5a7ea64760b99da07b0383889b9df78cf085d26be620cd5468979037aa3b47c",
+ "n_features": 25,
+ "features_by_family": {
+  "R1": 6,
+  "R2": 15,
+  "R3": 1,
+  "R4": 3
+ },
+ "features_by_layer": {
+  "C1": 8,
+  "C2": 10,
+  "C3": 7
+ },
+ "r3_candidates_assessed_not_built": [
+  {
+   "id": "X01",
+   "transform": "current LLM extraction / event labelling (e.g. Claude, GPT, Gemini) of historical documents",
+   "class": "NON_PIT"
+  },
+  {
+   "id": "X02",
+   "transform": "current sentence-embedding models (e.g. MiniLM 2021, text-embedding-3 2024) of document text",
+   "class": "NON_PIT"
+  },
+  {
+   "id": "X03",
+   "transform": "TF-IDF / topic model / vocabulary fitted on the full 2018-2026 collected corpus",
+   "class": "NON_PIT"
+  },
+  {
+   "id": "X04",
+   "transform": "TF-IDF / vocabulary re-fitted at each t on documents available <= t (expanding window)",
+   "class": "UNRESOLVED"
+  },
+  {
+   "id": "X05",
+   "transform": "TF-IDF fitted once on a frozen corpus published before 2018-01-01",
+   "class": "UNRESOLVED"
+  },
+  {
+   "id": "X06",
+   "transform": "static word embeddings trained on pre-2018 corpora (GloVe 6B 2014, word2vec GoogleNews 2013)",
+   "class": "UNRESOLVED"
+  },
+  {
+   "id": "X07",
+   "transform": "GDELT V2Tone written at ingest into the GKG slice file (built as F22)",
+   "class": "PIT_SAFE"
+  }
+ ],
+ "frozen_before": "H20.1 evaluation sample draw and any H20.1 context collection",
+ "gate_bars": {
+  "pit_violations": 0,
+  "determinism": "identical sha256 across two independent builds",
+  "provenance_completeness": 1.0,
+  "coverage_nonmissing_share": 0.9,
+  "coverage_years": "8 of 9",
+  "semantic_precision": 0.9,
+  "semantic_negative_agreement": 0.9,
+  "semantic_min_n": 10,
+  "gdelt_undeterminable_max": 0.2,
+  "sparse_nonzero_share_min": 0.05,
+  "redundancy_abs_spearman": 0.95,
+  "redundancy_min_pairs": 30,
+  "drift_era_ratio": 2.0
+ },
+ "outcome_inputs": "none",
+ "freeze_sha256": "f32e862c847bd43561d7f2bd1478eab7ca6d235dab5adab28d8f3c815fbbc05d"
+}

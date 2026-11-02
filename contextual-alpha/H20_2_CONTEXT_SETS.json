@@ -1,0 +1,221 @@
+{
+ "spec_version": "h20_2_v1",
+ "CONTEXT_EXPANDED": [
+  {
+   "feature_name": "c1_fed_release_count_W7",
+   "feature_id": "F01",
+   "layer": "C1",
+   "family": "R2",
+   "classifiers": "",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c1_fed_monetary_policy_count_W30",
+   "feature_id": "F02",
+   "layer": "C1",
+   "family": "R2",
+   "classifiers": "",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c1_fomc_statement_flag_W7",
+   "feature_id": "F03",
+   "layer": "C1",
+   "family": "R1",
+   "classifiers": "K3",
+   "logistic_transform": "none"
+  },
+  {
+   "feature_name": "c1_cpi_release_flag_W7",
+   "feature_id": "F04",
+   "layer": "C1",
+   "family": "R1",
+   "classifiers": "",
+   "logistic_transform": "none"
+  },
+  {
+   "feature_name": "c1_unrate_release_flag_W7",
+   "feature_id": "F05",
+   "layer": "C1",
+   "family": "R1",
+   "classifiers": "",
+   "logistic_transform": "none"
+  },
+  {
+   "feature_name": "c1_policy_rate_asof",
+   "feature_id": "F06",
+   "layer": "C1",
+   "family": "R4",
+   "classifiers": "",
+   "logistic_transform": "none"
+  },
+  {
+   "feature_name": "c1_cpi_yoy_asof",
+   "feature_id": "F07",
+   "layer": "C1",
+   "family": "R4",
+   "classifiers": "",
+   "logistic_transform": "none"
+  },
+  {
+   "feature_name": "c1_unrate_asof",
+   "feature_id": "F08",
+   "layer": "C1",
+   "family": "R4",
+   "classifiers": "",
+   "logistic_transform": "none"
+  },
+  {
+   "feature_name": "c2_fedreg_finreg_doc_count_W7",
+   "feature_id": "F09",
+   "layer": "C2",
+   "family": "R2",
+   "classifiers": "",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c2_fedreg_crypto_doc_count_W7",
+   "feature_id": "F10",
+   "layer": "C2",
+   "family": "R2",
+   "classifiers": "K1b",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c2_fedreg_crypto_doc_count_W30",
+   "feature_id": "F11",
+   "layer": "C2",
+   "family": "R2",
+   "classifiers": "K1b",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c2_fedreg_crypto_rulemaking_count_W30",
+   "feature_id": "F12",
+   "layer": "C2",
+   "family": "R2",
+   "classifiers": "K1b",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c2_sec_press_count_W7",
+   "feature_id": "F13",
+   "layer": "C2",
+   "family": "R2",
+   "classifiers": "",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c2_sec_enforcement_count_W7",
+   "feature_id": "F14",
+   "layer": "C2",
+   "family": "R2",
+   "classifiers": "K2",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c2_sec_crypto_press_count_W30",
+   "feature_id": "F15",
+   "layer": "C2",
+   "family": "R2",
+   "classifiers": "K1a",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c2_fed_enforcement_count_W30",
+   "feature_id": "F16",
+   "layer": "C2",
+   "family": "R2",
+   "classifiers": "",
+   "logistic_transform": "log1p"
+  },
+  {
+   "feature_name": "c2_crypto_regulatory_action_flag_W7",
+   "feature_id": "F18",
+   "layer": "C2",
+   "family": "R1",
+   "classifiers": "K1a;K1b",
+   "logistic_transform": "none"
+  },
+  {
+   "feature_name": "c3_wiki_crypto_item_count_D7",
+   "feature_id": "F23",
+   "layer": "C3",
+   "family": "R2",
+   "classifiers": "K4",
+   "logistic_transform": "log1p"
+  }
+ ],
+ "CONTEXT_CORE": [
+  "c1_fed_release_count_W7",
+  "c1_fed_monetary_policy_count_W30",
+  "c1_cpi_release_flag_W7",
+  "c1_unrate_release_flag_W7",
+  "c1_policy_rate_asof",
+  "c1_cpi_yoy_asof",
+  "c1_unrate_asof",
+  "c2_fedreg_finreg_doc_count_W7",
+  "c2_sec_press_count_W7",
+  "c2_fed_enforcement_count_W30"
+ ],
+ "core_rule": "classifier-free: excludes every feature using K1a, K1b, K2, K3 or K4; fixed before any outcome",
+ "excluded_from_core": [
+  "c1_fomc_statement_flag_W7",
+  "c2_crypto_regulatory_action_flag_W7",
+  "c2_fedreg_crypto_doc_count_W30",
+  "c2_fedreg_crypto_doc_count_W7",
+  "c2_fedreg_crypto_rulemaking_count_W30",
+  "c2_sec_crypto_press_count_W30",
+  "c2_sec_enforcement_count_W7",
+  "c3_wiki_crypto_item_count_D7"
+ ],
+ "layers_in_core": [
+  "C1",
+  "C2"
+ ],
+ "rules": {
+  "rules_module": "scripts/h20_1_rep.py (h20_1_rep_v1), unchanged; its sha256 must equal H20_1_REPRESENTATION_FREEZE.json",
+  "computed_at": "every landmark decision time t = w + 1 d 00:00 UTC (not the H20.1 monthly sample); common to all assets at t",
+  "sources_to_extend": "Federal Register and SEC months already collected cover every W30 window; the Fed feed bytes are reused; ALFRED vintages and Wikipedia day-page revisions are collected for each new t with the H20.1 collector logic",
+  "missing": "as H20.1 (NaN + reason, never 0); in models: train-median imputation + missing indicator (logistic), native NaN (trees)",
+  "c3_scope": "the only C3 feature is generic English-Wikipedia crypto attention (count of crypto items in current-events day pages). It is NOT a systemic-crypto-state representation; no stress, failure or depeg feature survived H20.1",
+  "excluded": "all GDELT features (F19-F22), CFTC (F17), F24 (redundant), F25 (stress, degenerate), any C4/C5, any LLM or embedding feature, any repaired representation",
+  "classifier_dependence": {
+   "c1_fomc_statement_flag_W7": "K3",
+   "c2_fedreg_crypto_doc_count_W7": "K1b",
+   "c2_fedreg_crypto_doc_count_W30": "K1b",
+   "c2_fedreg_crypto_rulemaking_count_W30": "K1b",
+   "c2_sec_enforcement_count_W7": "K2",
+   "c2_sec_crypto_press_count_W30": "K1a",
+   "c2_crypto_regulatory_action_flag_W7": "K1a;K1b",
+   "c3_wiki_crypto_item_count_D7": "K4"
+  },
+  "annotation_disclosure": "the semantic audit behind K1a/K1b/K2/K3/K4 was produced by the AI research agent (H20.1 D7); no human re-annotation; classifiers are not retuned",
+  "drift_constraint": "c2_fedreg_crypto_rulemaking_count_W30 carries the H20.1 DRIFT constraint: era-stratified reporting is mandatory"
+ },
+ "h20_1_gate_sha256": "43e7eeddefcdb309941faf460e60bab9942cd4e16469ace494712c39dc8538c6",
+ "h20_1_representation_freeze_sha256": "f32e862c847bd43561d7f2bd1478eab7ca6d235dab5adab28d8f3c815fbbc05d",
+ "arms": {
+  "M0": {
+   "role": "PRIMARY baseline",
+   "features": "MARKET (M01-M22, 23 columns)"
+  },
+  "M1": {
+   "role": "secondary",
+   "features": "CONTEXT_EXPANDED (18)"
+  },
+  "M2": {
+   "role": "PRIMARY treatment",
+   "features": "MARKET + CONTEXT_EXPANDED"
+  },
+  "M1_core": {
+   "role": "robustness",
+   "features": "CONTEXT_CORE (10)"
+  },
+  "M2_core": {
+   "role": "robustness",
+   "features": "MARKET + CONTEXT_CORE"
+  }
+ },
+ "primary_comparison": "M2 vs M0 under the primary model class (L2 logistic): Delta PR-AUC = PR-AUC(M2) - PR-AUC(M0)"
+}

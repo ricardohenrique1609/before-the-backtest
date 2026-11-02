@@ -1,0 +1,26 @@
+feature_id,feature_name,layer,family,n,nonmissing_share,years_with_value,missing_share,zero_share,nonzero_share_of_nonmissing,distinct_values,min,p10,p50,p90,max,mean,early_2018_20_mean,late_2024_26_mean,early_nonzero_share,late_nonzero_share,early_nonmissing_share,late_nonmissing_share,nonoverlap_nonmissing_share,nonoverlap_nonzero_share,missing_reasons,denominator,denominator_era_ratio,category_set_changed,DRIFT
+F01,c1_fed_release_count_W7,C1,R2,105,1.0,9,0.0,0.0381,0.9619,10,0.0,1.0,3.0,6.0,9.0,3.3905,4.2778,3.0303,0.9722,1.0,1.0,1.0,1.0,0.9524,{},fed_items_per_W7 (F01),1.51,False,False
+F02,c1_fed_monetary_policy_count_W30,C1,R2,105,1.0,9,0.0,0.0,1.0,10,1.0,2.0,3.0,5.0,10.0,3.1524,3.9444,2.303,1.0,1.0,1.0,1.0,1.0,1.0,{},fed_items_per_W7 (F01),1.51,False,False
+F03,c1_fomc_statement_flag_W7,C1,R1,105,1.0,9,0.0,0.8762,0.1238,2,0.0,0.0,0.0,1.0,1.0,0.1238,0.0833,0.0909,0.0833,0.0909,1.0,1.0,1.0,0.119,{},fed_items_per_W7 (F01),1.51,False,False
+F04,c1_cpi_release_flag_W7,C1,R1,105,1.0,9,0.0,0.6762,0.3238,2,0.0,0.0,0.0,1.0,1.0,0.3238,0.4167,0.2727,0.4167,0.2727,1.0,1.0,1.0,0.3571,{},n/a (vintage values),,False,False
+F05,c1_unrate_release_flag_W7,C1,R1,105,1.0,9,0.0,0.7714,0.2286,2,0.0,0.0,0.0,1.0,1.0,0.2286,0.2222,0.1818,0.2222,0.1818,1.0,1.0,1.0,0.2857,{},n/a (vintage values),,False,False
+F06,c1_policy_rate_asof,C1,R4,105,1.0,9,0.0,0.0,1.0,44,0.05,0.08,2.4,5.33,5.33,2.6632,1.4669,4.4097,1.0,1.0,1.0,1.0,1.0,1.0,{},n/a (vintage values),,False,False
+F07,c1_cpi_yoy_asof,C1,R4,105,1.0,9,0.0,0.0,1.0,78,0.2355,1.4461,2.7326,7.3649,8.9952,3.4686,1.8499,2.9696,1.0,1.0,1.0,1.0,1.0,1.0,{},n/a (vintage values),,False,False
+F08,c1_unrate_asof,C1,R4,105,1.0,9,0.0,0.0,1.0,26,3.4,3.5,4.0,6.16,14.7,4.5667,5.2278,4.1364,1.0,1.0,1.0,1.0,1.0,1.0,{},n/a (vintage values),,False,False
+F09,c2_fedreg_finreg_doc_count_W7,C2,R2,105,1.0,9,0.0,0.0095,0.9905,53,0.0,45.0,67.0,88.6,108.0,66.3238,69.3889,65.2727,0.9722,1.0,1.0,1.0,1.0,0.9762,{},fedreg_all_docs_per_month,1.04,False,False
+F10,c2_fedreg_crypto_doc_count_W7,C2,R2,105,1.0,9,0.0,0.4286,0.5714,10,0.0,0.0,1.0,3.0,10.0,1.2667,0.5556,2.3939,0.3056,0.8485,1.0,1.0,1.0,0.5,{},fedreg_all_docs_per_month,1.04,False,False
+F11,c2_fedreg_crypto_doc_count_W30,C2,R2,105,1.0,9,0.0,0.0381,0.9619,20,0.0,1.0,4.0,13.0,39.0,6.2095,2.7222,11.2727,0.9167,0.9697,1.0,1.0,1.0,0.9762,{},fedreg_all_docs_per_month,1.04,False,False
+F12,c2_fedreg_crypto_rulemaking_count_W30,C2,R2,105,1.0,9,0.0,0.5524,0.4476,5,0.0,0.0,0.0,2.0,5.0,0.7429,0.3056,1.0,0.3056,0.5455,1.0,1.0,1.0,0.3571,{},fedreg_all_docs_per_month,1.04,True,True
+F13,c2_sec_press_count_W7,C2,R2,105,1.0,9,0.0,0.0476,0.9524,15,0.0,2.0,4.0,9.0,21.0,4.781,5.6111,3.8485,0.9722,0.8788,1.0,1.0,1.0,0.9286,{},sec_releases_per_W7 (F13),1.458,False,False
+F14,c2_sec_enforcement_count_W7,C2,R2,105,1.0,9,0.0,0.219,0.781,11,0.0,0.0,2.0,5.0,16.0,2.2476,2.5,1.7576,0.8611,0.5758,1.0,1.0,1.0,0.7143,{},sec_releases_per_W7 (F13),1.458,False,False
+F15,c2_sec_crypto_press_count_W30,C2,R2,105,1.0,9,0.0,0.4571,0.5429,5,0.0,0.0,1.0,2.0,4.0,0.9619,0.8333,0.9394,0.5,0.5152,1.0,1.0,1.0,0.5238,{},sec_releases_per_W7 (F13),1.458,False,False
+F16,c2_fed_enforcement_count_W30,C2,R2,105,1.0,9,0.0,0.0095,0.9905,9,0.0,1.0,3.0,5.0,10.0,2.9238,3.6389,2.5455,1.0,0.9697,1.0,1.0,1.0,1.0,{},fed_items_per_W7 (F01),1.51,False,False
+F17,c2_cftc_press_count_W30,C2,R2,105,0.3143,4,0.6857,0.0,1.0,20,5.0,10.2,16.0,27.8,46.0,18.4242,18.9032,,1.0,,0.8611,0.0,0.3333,1.0,"{""ACCESS_BLOCKED"": 67, ""NOT_WALKED"": 5}",cftc_releases_per_W30 (F17),1.718,False,False
+F18,c2_crypto_regulatory_action_flag_W7,C2,R1,105,1.0,9,0.0,0.3524,0.6476,2,0.0,0.0,1.0,1.0,1.0,0.6476,0.4444,0.8485,0.4444,0.8485,1.0,1.0,1.0,0.5476,{},sec_releases_per_W7 (F13),1.458,False,False
+F19,c3_gdelt_crypto_record_count_S7,C3,R2,105,0.9429,9,0.0571,0.0,1.0,70,27.0,43.8,84.0,155.0,317.0,97.4848,83.4062,116.1875,1.0,1.0,0.8889,0.9697,0.9048,1.0,"{""FILE_MISSING"": 6}",gdelt_records_per_file_translingual,1.607,False,False
+F20,c3_gdelt_crypto_record_share_S7,C3,R2,105,0.981,9,0.019,0.0,1.0,103,0.001,0.0018,0.0031,0.0062,0.0123,0.0037,0.0026,0.0049,1.0,1.0,0.9722,0.9697,0.9524,1.0,"{""INSUFFICIENT_SLICES"": 2}",gdelt_records_per_file_translingual,1.607,False,False
+F21,c3_gdelt_crypto_record_share_en_S7,C3,R2,105,0.981,9,0.019,0.0,1.0,103,0.0013,0.0028,0.0057,0.0117,0.0232,0.0066,0.0041,0.0097,1.0,1.0,0.9722,0.9697,0.9524,1.0,"{""INSUFFICIENT_SLICES"": 2}",gdelt_records_per_file_en,1.607,False,False
+F22,c3_gdelt_crypto_tone_mean_S7,C3,R3,105,0.9429,9,0.0571,0.0,1.0,99,-2.721,-1.5425,-0.5218,0.2507,0.6002,-0.6539,-0.7024,-0.5249,1.0,1.0,0.8889,0.9697,0.9048,1.0,"{""FILE_MISSING"": 6}",gdelt_records_per_file_translingual,1.607,False,False
+F23,c3_wiki_crypto_item_count_D7,C3,R2,105,1.0,9,0.0,0.9143,0.0857,3,0.0,0.0,0.0,0.0,2.0,0.0952,0.1111,0.0909,0.0833,0.0909,1.0,1.0,1.0,0.0476,{},wiki_items_per_page,1.319,False,False
+F24,c3_wiki_crypto_item_flag_D7,C3,R1,105,1.0,9,0.0,0.9143,0.0857,2,0.0,0.0,0.0,0.0,1.0,0.0857,0.0833,0.0909,0.0833,0.0909,1.0,1.0,1.0,0.0476,{},wiki_items_per_page,1.319,False,False
+F25,c3_crypto_stress_flag_D7,C3,R1,105,1.0,9,0.0,1.0,0.0,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,{},wiki_items_per_page,1.319,False,False

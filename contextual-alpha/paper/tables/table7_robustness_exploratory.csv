@@ -1,0 +1,5 @@
+analysis,status,development Delta,LCUV Delta,note
+"CONTEXT_CORE (classifier-free), primary lambda",robustness (secondary),0.0003,-0.0158,"two-way CI [-0.042, +0.045]; 3 of 8 folds positive"
+"logistic, fold-selected lambda",EXPLORATORY,0.0273,-0.0167,M2 configuration: 1000.0
+"LightGBM, a-priori default",EXPLORATORY,0.0285,-0.008,"M2 configuration: {'num_leaves': 7, 'n_estimators': 200}"
+"LightGBM, fold-selected",EXPLORATORY,0.0271,-0.003,"M2 configuration: {'num_leaves': 7, 'n_estimators': 200}"

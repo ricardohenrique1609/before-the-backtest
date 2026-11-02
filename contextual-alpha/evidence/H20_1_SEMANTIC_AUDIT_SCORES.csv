@@ -1,0 +1,8 @@
+classifier,n_pos,n_pos_determinable,precision,n_neg,n_neg_determinable,negative_agreement,overall_agreement,undeterminable_share,meets_bar,false_positive_ids,false_negative_ids
+K1a,30,30,0.9666666666666667,20,20,1.0,0.98,0.0,True,A0194,
+K1b,30,30,0.9666666666666667,20,20,1.0,0.98,0.0,True,A0068,
+K2,30,30,0.9666666666666667,20,20,1.0,0.98,0.0,True,A0016,
+K3,12,12,1.0,20,20,1.0,1.0,0.0,True,,
+K4,10,10,1.0,20,20,1.0,1.0,0.0,True,,
+K5,0,0,,10,10,0.9,0.9,0.0,False,,A0134
+K6,30,28,0.6785714285714286,20,20,1.0,0.8125,0.04,False,A0023;A0024;A0039;A0042;A0066;A0113;A0142;A0151;A0165,
