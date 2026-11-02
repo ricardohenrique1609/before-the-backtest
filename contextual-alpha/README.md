@@ -9,6 +9,10 @@ out-of-sample predictive information beyond structured market and venue data (Mo
 Model B context only, Model C both; the object is the increment from adding context). A null or
 negative answer is acceptable.
 
+**Read the paper:** [`paper.pdf`](paper.pdf) (pre-referee working draft) or [`paper.md`](paper.md).
+Companion to *Before the Backtest*: same research programme and delisting universe, separate study.
+Built by `paper/scripts/build_release.py`; sources and audit trail in `paper/`.
+
 ## Status
 
 **H20.3 — Incremental Context Information Test: PRE-REGISTERED NULL** (2026-10-19). Executed exactly

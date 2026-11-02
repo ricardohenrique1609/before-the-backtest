@@ -75,6 +75,17 @@ outcome, exchange-specific and asset-specific information, failed the point-in-t
 entered the predictive experiment. That limitation is a finding of the feasibility stage, not an
 omission.
 
+**Relation to the companion paper.** This is the second paper from the research programme that
+produced *Before the Backtest* [@ramossilva2026beforebacktest]. The two papers share their event
+data and their discipline. Both use the same validated universe of 201 Binance full-asset delisting
+events (stage H18.1b), and both fix a design and check its feasibility before any outcome is opened.
+They ask different questions. *Before the Backtest* asks whether a matched event study has enough
+common support to be run at all, and stops one that does not. This paper asks whether point-in-time
+public context adds predictive information to a market baseline. An earlier market-only test on the
+same delisting target, H18.3, is listed in that paper's research registry, also as a pre-registered
+null. This paper is a separate study: it does not revise the companion paper, and none of its
+results is reported there.
+
 ## 2. Research question and contributions
 
 **Question.** Does public context that was genuinely available at a historical decision time add

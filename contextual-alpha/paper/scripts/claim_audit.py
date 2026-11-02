@@ -151,6 +151,8 @@ R += [
     ("C115", "2", "no contribution is claimed as new", "LIMITATION", "", None, None, None, "none is claimed as new", "limitation", "Gap 11 decision"),
     ("C116", "2.1", "fixing design before outcomes; registered reports; selection across specifications; previous paper", "METHODOLOGICAL_LITERATURE", "text:paper/references.bib:jbef_registered_reports", None, None, None, "", "citation", "reused entries (rubin2008design, jbef_registered_reports, bailey2014deflated, ramossilva2026beforebacktest)"),
     ("C117", "References", "eleven reused entries; fourteen added in the verification pass", "EMPIRICAL_PROJECT", "bibcount", 1, 26, 0, "Fourteen entries were added", "bibliography", "11 reused + 1 previous paper + 14 added = 26"),
+    ("C118", "1", "same validated universe of 201 full-delisting events as the companion paper", "quantitative", f"json:{T}:events_in_table", 1, 201, 0, "201", "design (H18.1b)", "Before the Backtest v1.0.0 §3 reports the same 201 validated events (H18.1b)"),
+    ("C119", "1", "H18.3 market-only test listed in the companion paper's registry as a pre-registered null", "citation", "text:paper/references.bib:ramossilva2026beforebacktest", None, None, None, "", "citation", "Before the Backtest v1.0.0 research registry row H18.3: PRE-REGISTERED NULL"),
 ]
 TYPE_MAP = {"quantitative": "EMPIRICAL_PROJECT", "verdict": "EMPIRICAL_PROJECT", "methodological": "EMPIRICAL_PROJECT",
             "citation": "METHODOLOGICAL_LITERATURE", "interpretation": "INTERPRETATION", "scope": "LIMITATION"}

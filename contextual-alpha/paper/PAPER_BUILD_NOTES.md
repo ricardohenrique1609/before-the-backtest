@@ -1,6 +1,8 @@
 # Paper build notes
 
-**Status:** working-paper draft. Not peer-reviewed, not released, not published, no DOI, not pushed.
+**Status:** working-paper draft, pre-referee. Not peer-reviewed, not submitted, no DOI, no tag.
+Published on 2026-11-02 as a working draft in the public repository `before-the-backtest`,
+directory `contextual-alpha/`, at the author's request.
 
 ## Rebuild
 
@@ -16,6 +18,10 @@ From the repository root, with the project venv:
 
 ```bash
 .venv/Scripts/python "Contextual Alpha/paper/scripts/claim_audit.py"
+```
+
+```bash
+.venv/Scripts/python -I "Contextual Alpha/paper/scripts/build_release.py"
 ```
 
 1. **`build_paper_assets.py`** writes `tables/` and `figures/` and `PAPER_DATA_MANIFEST.json`.
@@ -35,6 +41,38 @@ From the repository root, with the project venv:
    - forbidden phrasings are absent ("untouched holdout", "external validation", "fully prospective",
      "proves", "novel", trading/profitability language and similar);
    - the LCUV terminology and the "prospective confirmation is pending" statement are present.
+
+4. **`build_release.py`** writes the reader-facing `paper.md`, `paper.tex` and `paper.pdf` at the top of
+   `Contextual Alpha/`. Production only:
+   - citation keys become author-year labels taken from `references.bib`, and the reference list is
+     rendered from it, with each entry's access note;
+   - figure captions are set under their figures, and the PDF figures are used;
+   - the title page carries the pre-referee draft notice.
+   It reuses the Before the Backtest release converter (`scripts/release_md_to_tex.py`) and
+   bibliography reader (`scripts/release_refs.py`) read-only, switches off that paper's
+   mathematics table, and adds the Unicode this manuscript needs at run time. It fails if any
+   citation key is missing from the bibliography or any non-ASCII character reaches `paper.tex`.
+
+## PDF build record
+
+| | |
+|---|---|
+| engine | Tectonic 0.17.0, the binary verified for Before the Backtest (`.tools/tectonic/`, its BUILD.md §4.1) |
+| build date | 2026-11-02 |
+| pages | 24 |
+| overfull vertical boxes | 0 |
+| overfull horizontal boxes | 18, the widest 16.1pt (wide tables and one long reference URL) |
+
+The PDF embeds a creation timestamp, so its hash changes on every build; `paper.tex` and `paper.md`
+are byte-reproducible.
+
+## Manuscript change after pass 2
+
+One paragraph was added to §1, **"Relation to the companion paper"**, stating how this study relates
+to *Before the Backtest*: same research programme, same 201-event delisting universe (H18.1b), same
+design-before-outcome discipline, different question; the earlier market-only H18.3 test is listed in
+that paper's registry as a pre-registered null. Two ledger rows cover it (C118, C119). No result,
+number or verdict changed.
 
 ## Figures
 
@@ -73,9 +111,8 @@ old→new in `MANUSCRIPT_CHANGES_PASS2.json`: null-language, literature and refe
 
 ## Not done (deliberately)
 
-- **No LaTeX build.** The previous paper's Tectonic workflow can be reused later inside this
-  directory.
-- No public release, DOI or push.
+- No DOI, tag, Zenodo deposit or submission. The PDF is a pre-referee draft, not a v1.0.0.
+- The hostile-referee rounds that *Before the Backtest* went through before its PDF have not been run.
 - No H20.4, no new hypothesis, no opening of PROSPECTIVE_CONFIRMATION.
 - The human re-annotation of the H20.1 semantic audit has not been done, and is disclosed as a
   limitation.

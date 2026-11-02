@@ -11,7 +11,7 @@ process, and say so.
 
 > **Also in this repository: `contextual-alpha/`.** A separate working-paper draft, *Beyond Market
 > Data: Does Point-in-Time Public Context Add Incremental Predictive Signal?*, with its full
-> H20.0–H20.3 evidence trail. Verdict: pre-registered null. Not peer-reviewed; prospective
+> H20.0–H20.3 evidence trail (`contextual-alpha/paper.pdf`). Verdict: pre-registered null. Not peer-reviewed; prospective
 > confirmation pending. Same licence split (MIT / CC BY 4.0 / CC0), scoped by the licence files in
 > `contextual-alpha/`. Read `contextual-alpha/PUBLIC_PACKAGE_NOTES.md` first.
 

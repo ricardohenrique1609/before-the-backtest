@@ -4,14 +4,16 @@
 **pre-registered null** (H20.3). The PROSPECTIVE_CONFIRMATION block (2025-10-13 → 2026-09-28) is
 **unopened**, so the prospective confirmation is still pending.
 
-Start with `paper/manuscript.md`, then `H20_3_EXECUTION_REPORT.md` and `H20_3_VERDICT.json`.
+Start with `paper.pdf` (or `paper.md`), then `H20_3_EXECUTION_REPORT.md` and `H20_3_VERDICT.json`.
 `README.md` in this directory describes the stages H20.0–H20.3 and the layout.
 
 ## Where this comes from
 
-This directory is an export of `Contextual Alpha/` from the research repository at commit `4eb65f4`
-(`git archive`), with one edit, listed below. It is a separate study from *Before the Backtest*,
-which is the rest of this repository. The two papers share no claims.
+This directory is an export of `Contextual Alpha/` from the research repository at commit `79647ed`
+(`git archive` at `4eb65f4`, then the files changed since), with one edit, listed below. It is a
+companion to *Before the Backtest*, the rest of this repository: same research programme and the
+same 201-event delisting universe, but a separate study with its own question and verdict. Neither
+paper revises the other (see the paper's §1, "Relation to the companion paper").
 
 ## The one edit
 

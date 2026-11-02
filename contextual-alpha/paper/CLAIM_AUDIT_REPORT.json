@@ -1,6 +1,6 @@
 {
- "ledger_rows": 117,
- "supported": 117,
+ "ledger_rows": 119,
+ "supported": 119,
  "failures": [],
  "uncovered_numeric_tokens": [],
  "forbidden_phrases": [],
@@ -41,11 +41,11 @@
   }
  ],
  "claim_types": {
-  "EMPIRICAL_PROJECT": 84,
+  "EMPIRICAL_PROJECT": 85,
   "EXPLORATORY": 8,
   "INTERPRETATION": 3,
   "LIMITATION": 3,
-  "METHODOLOGICAL_LITERATURE": 19
+  "METHODOLOGICAL_LITERATURE": 20
  },
  "PASS": true
 }
