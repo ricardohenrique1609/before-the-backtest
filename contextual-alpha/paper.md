@@ -1,6 +1,6 @@
 # Beyond Market Data: Does Point-in-Time Public Context Add Incremental Predictive Signal?
 
-*A pre-registered, staged test on Binance full-asset delistings*
+*A pre-registered test of macro, US regulatory and crypto-attention context on Binance full-asset delistings*
 
 **Ricardo H. Ramos Silva**
 
@@ -11,8 +11,8 @@ October 2026
 > **Status.** Working-paper draft, pre-referee. Not peer-reviewed, not submitted, no DOI. Prospective confirmation pending.
 ## Abstract
 
-A common proposal in event-driven research is to add news, regulatory and macroeconomic context to
-market data, on the premise that public information known at decision time is predictive. Testing
+We examine the premise that news, regulatory and macroeconomic context known at decision time adds
+predictive information to market data. Testing
 that premise requires two conditions that are easy to violate. Context must be reconstructed as it
 was available at each historical decision time, and it must be transformed into features without
 importing later knowledge. We test the premise in a staged design that separates the two conditions from the
@@ -28,7 +28,11 @@ The application is the prediction of Binance full-asset delisting announcements 
 five candidate context layers, three were reconstructible and only conditionally so: macro, US
 political/regulatory, and a thin crypto-systemic layer. Exchange-specific and asset-specific
 context failed the data gate. Of 25 representations built from the surviving substrate, 18 passed
-the representation gate. No model-based text representation qualified as transform-time PIT.
+the representation gate. No model-based text representation qualified as transform-time PIT. What
+survived is US macro and regulatory calendars and values plus one crypto-attention count, all common
+to every asset in a week, so the experiment tests whether that context predicts *when* delistings
+cluster, not *which* asset is delisted. The evaluation period holds about two non-overlapping 365-day
+label windows, and only large increments could have been detected.
 
 In the frozen primary comparison (L2 logistic, λ = 10), adding the 18 context features to a
 23-feature market baseline did not improve out-of-time precision–recall performance:
@@ -36,6 +40,9 @@ In the frozen primary comparison (L2 logistic, λ = 10), adding the 18 context f
   context (M2), ΔPR-AUC −0.0095. Two of eight folds were positive, and the two-way cluster-bootstrap
   95% interval was [−0.0621, +0.0405];
 - **locked 2025 block** (not seen by any context model): 0.3270 against 0.3029, Δ −0.0240.
+
+The development sign of Δ depends on the penalty: it is +0.0273 pooled under the strongest penalty
+in the frozen exploratory grid. The locked-block Δ is negative under every specification reported.
 
 The pre-registered verdict is **PRE-REGISTERED NULL**. Under the frozen point-in-time
 specification, the surviving public-context feature set did not provide evidence of incremental
@@ -51,7 +58,7 @@ that prices and volumes do not yet carry. Testing that proposal historically dem
 model comparison. A feature computed for a past date must use only what was public at that date, and
 the procedure that turns documents into features must not use knowledge acquired later. Both
 requirements can fail silently. A current web page about a past day may contain later revisions. A
-missing source may be coded as "no event". A text representation fitted on a corpus that includes
+missing source may be coded as “no event”. A text representation fitted on a corpus that includes
 later years can encode the future in its parameters even when every input document is old.
 
 This paper reports a full research cycle built to keep those failures out of a confirmatory test.
@@ -61,6 +68,8 @@ The cycle is staged so that each stage can fail without contaminating the next:
 - **H20.1** asks whether the reconstructed substrate can be represented without future knowledge.
 - **H20.2** freezes the predictive experiment before any outcome is opened.
 - **H20.3** opens the outcome once and executes the frozen comparison.
+
+![Figure 1. The Contextual Alpha research funnel. Each stage could fail independently; C4/C5 and the text representations dropped out before any outcome was opened.](paper/figures/figure1_research_funnel.png)
 
 The prediction task is deliberately concrete: whether a listed asset on Binance spot receives an
 official full-asset delisting announcement within the next 365 days. That task has a validated event
@@ -80,8 +89,10 @@ omission.
 **Relation to the companion paper.** This is the second paper from the research programme that
 produced *Before the Backtest* (Ramos Silva 2026). The two papers share their event
 data and their discipline. Both use the same validated universe of 201 Binance full-asset delisting
-events (stage H18.1b), and both fix a design and check its feasibility before any outcome is opened.
-They ask different questions. *Before the Backtest* asks whether a matched event study has enough
+events (stage H18.1b), and both fix their design before any outcome is opened. They differ in which
+feasibility they check. This paper gates the data and the representation; *Before the Backtest* also
+asks whether a design has enough statistical support to be run at all, a check this study did not run
+(§7). They ask different questions. *Before the Backtest* asks whether a matched event study has enough
 common support to be run at all, and stops one that does not. This paper asks whether point-in-time
 public context adds predictive information to a market baseline. An earlier market-only test on the
 same delisting target, H18.3, is listed in that paper's research registry, also as a pre-registered
@@ -91,8 +102,12 @@ results is reported there.
 ## 2. Research question and contributions
 
 **Question.** Does public context that was genuinely available at a historical decision time add
-incremental out-of-time predictive information beyond structured market data? The scientific object
-is the increment ΔPR-AUC = PR-AUC(M2) − PR-AUC(M0), not the absolute performance of either model.
+incremental out-of-time predictive information beyond structured market data? In this study the
+question takes a narrower operational form. Every context feature that survived the gates is common
+to all assets in a week, and in the linear primary model such a feature moves every asset's score in
+that week by the same amount. The comparison can therefore gain only by ranking weeks against each
+other, that is, by predicting *when* delisting announcements cluster, not *which* asset is delisted
+(§7). The scientific object is the increment ΔPR-AUC = PR-AUC(M2) − PR-AUC(M0), not the absolute performance of either model.
 
 **Contributions.** They are stated conservatively, and none is claimed as new (see §2.1):
 
@@ -104,13 +119,13 @@ is the increment ΔPR-AUC = PR-AUC(M2) − PR-AUC(M0), not the absolute performa
    (Glasserman and Lin 2023; Kelly et al. 2026).
 2. **A staged design** (source reconstruction → representation audit → pre-registration → outcome
    opening), with closed verdict lists, frozen bars and hash-chained freezes at each stage. It applies
-   the principle that a design is fixed before outcomes are examined (Rubin 2008; Journal of Behavioral and Experimental Finance n.d.).
+   the principle that a design is fixed before outcomes are examined (Rubin 2008; Registered Reports: Author Guidelines n.d.).
 3. **An empirical case study** in which additional public context, reconstructed strictly
    point-in-time, did not provide evidence of incremental out-of-time predictive value over a market
    baseline.
-4. **A documentation of the small effective sample of shared context.** Context that is identical
-   for every asset in a week is informed by the number of distinct weeks, not by the number of
-   asset-week rows.
+4. **A documentation of the small effective sample of shared context**, and of what it implies for
+   power. Context that is identical for every asset in a week is informed by the number of distinct
+   weeks and of non-overlapping label windows, not by the number of asset-week rows.
 
 ### 2.1 Related work
 
@@ -125,7 +140,7 @@ volatility over horizons of hours to days, not 365-day delisting:
   selected subset of coins, with low out-of-sample fit (Steinert and Herff 2018).
 - The closest delisting study builds Binance delisting models whose predictors include news counts
   and topics and social-media metrics (Yang and Kwon 2026). Related distress and dead-coin
-  prediction work uses market and activity variables (Będowska-Sójka et al. n.d.; Fantazzini 2022; Aldhahi and Alsamaani 2026).
+  prediction work uses market and activity variables (Będowska-Sójka et al. 2026; Fantazzini 2022; Aldhahi and Alsamaani 2026).
 
 **Look-ahead in text representations.** Language models trained on unrestricted corpora can embed
 information from after a document's date. This look-ahead bias has been assessed for LLM sentiment
@@ -138,9 +153,11 @@ as TF-IDF, before any feature is used.
 later revised data, is standard in real-time macroeconomics (Croushore and Stark 1999) and is what the
 ALFRED archive supports (Federal Reserve Bank of St. Louis n.d.).
 
-**Design discipline.** Fixing the design before outcomes (Rubin 2008; Journal of Behavioral and Experimental Finance n.d.) and accounting for selection across specifications (Bailey and López de Prado 2014)
-inform the pre-registration. Our previous paper applied an outcome-free feasibility stop to a related
-delisting event set (Ramos Silva 2026).
+**Design discipline.** Fixing the design before outcomes (Rubin 2008; Registered Reports: Author Guidelines n.d.) and accounting for selection across specifications (Bailey and López de Prado 2014)
+inform the pre-registration, as does the evidence that independent analysts given the same data and
+hypothesis disperse widely in their results (Menkveld et al. 2024). Survivorship and delisting bias
+are documented in (Shumway 1997) and (Ammann et al. 2022). Our previous paper applied an
+outcome-free feasibility stop to a related delisting event set (Ramos Silva 2026).
 
 ## 3. Why historical context is hard to reconstruct
 
@@ -151,8 +168,8 @@ Four failure modes motivated the design. Each was measured in H20.0 or H20.1 rat
   present on today's pages were absent at the decision time, and 96.4% of the pages were edited
   after it. Reading the revision current at *t* avoids this; reading today's page does not.
 - **Missing ≠ zero.** A source that was not reachable is not a source that reported nothing. The CFTC
-  press-release surface returned HTTP 429 for 2021–2026 in H20.0. Coding those years as "no CFTC
-  release" would have manufactured a regulatory lull.
+  press-release surface returned HTTP 429 for 2021–2026 in H20.0. Coding those years as “no CFTC
+  release” would have manufactured a regulatory lull.
 - **Coverage ≠ meaning.** A keyword tag can deliver high coverage and still not mean what its name
   says. The inherited GDELT crypto tag reached every sampled week, but only 0.679 of its positives
   were crypto articles when audited (H20.1).
@@ -281,7 +298,7 @@ is disclosed throughout, and no classifier was retuned.
 | R3 | DATA-GATE FAIL / UNTESTED | 1 | 0 | F22: semantic defect K6 |
 | R4 | PASS | 3 | 3 | none |
 
-![Figure 6. H20.1 feature survival by context layer. Of 25 features built, 18 were eligible; C3 lost every GDELT feature to the semantic audit.](paper/figures/figure6_feature_survival.png)
+![Figure 2. H20.1 feature survival by context layer. Of 25 features built, 18 were eligible; C3 lost every GDELT feature to the semantic audit.](paper/figures/figure2_feature_survival.png)
 
 **Verdict: PARTIAL PASS.**
 - **R4:** PASS.
@@ -298,15 +315,19 @@ The 18 eligible features are:
 The single C3 survivor is **generic English-Wikipedia crypto attention**: a count of crypto items on
 the Current-Events pages. It is not a systemic-crypto-state variable.
 
-![Figure 1. The Contextual Alpha research funnel. Each stage could fail independently; C4/C5 and the text representations dropped out before any outcome was opened.](paper/figures/figure1_research_funnel.png)
-
 ## 7. Pre-registered predictive design (H20.2)
 
 H20.2 froze the predictive experiment before any outcome was opened. It was hash-chained to the
 H20.1 freeze and amended once (Addendum 02), before outcomes, as follows:
-- it fixed the primary penalty a priori;
+- it replaced the v1 primary rule, which selected λ from {0.1, 1, 10, 100, 1000} by mean fold PR-AUC,
+  with a single a-priori λ = 10, and kept the v1 grid as an exploratory analysis;
 - it renamed the 2025 block;
 - it made the calibration criterion machine-readable.
+
+The amendment was made before any outcome was opened. Its effect is known only now, and is reported
+in §9 and Table 7. Under the v1 rule both M0 and M2 select λ = 1000, the development Δ is +0.0273 and
+the LCUV Δ is −0.0167. S4 fails under either rule, so the verdict under the v1 rule would also have
+been PRE-REGISTERED NULL.
 
 **Unit and decision time.** The unit is an asset-era × weekly landmark. The asset-era follows the
 inherited rule that a ticker starts a new era only after more than 365 days with no served route.
@@ -368,7 +389,22 @@ There is no class weighting and no recalibration. The λ grid and a LightGBM mod
 - **PROSPECTIVE_CONFIRMATION:** landmarks 2025-10-13 to 2026-09-28. It is the only block untouched by
   the programme and remains unopened until its outcomes mature.
 
-![Figure 2. Temporal design. Decision time is the end of each landmark Monday; the prospective block is unopened.](paper/figures/figure2_timeline.png)
+**What the comparison can detect.** Context is common to every asset in a week. In the linear primary
+model it cannot reorder assets within a week, so it can change a pooled PR-AUC only by ranking weeks,
+which amounts to predicting the time variation of the 365-day delisting rate. The information for
+that is small:
+- the out-of-fold evaluation spans 104 weeks;
+- each week's label looks 52 weeks ahead, so consecutive labels overlap almost entirely, and the
+  evaluation period holds about two non-overlapping label windows.
+
+The pre-registration recorded that low power made a null the likely outcome under modest effects. It
+neither quantified the power nor set a stop rule, and no statistical-feasibility gate of the kind the
+companion paper argues for was run. In our judgement such a gate, applied before the freeze, would
+have flagged this comparison as underpowered and pointed the effort at the exchange- and
+asset-specific layers, which are the ones that could reorder assets. A post-hoc yardstick is given in
+§8.3.
+
+![Figure 3. Temporal design. Decision time is the end of each landmark Monday; the prospective block is unopened.](paper/figures/figure3_timeline.png)
 
 **Metrics and inference.**
 - **Primary:** PR-AUC (average precision), because the positive class is rare and ROC-based
@@ -391,9 +427,11 @@ There is no class weighting and no recalibration. The λ grid and a LightGBM mod
 - **S2:** at least five of eight positive folds;
 - **S3:** a bootstrap lower bound above zero;
 - **S4:** a positive LCUV Δ;
-- **S5:** no severe calibration deterioration;
+- **S5:** no severe calibration deterioration on the LCUV block;
 - **S6:** a clean PIT audit;
-- **S7:** a result not driven by one era.
+- **S7:** a result not driven by one era: Δ > 0 in at least two of the three era blocks (the 2022
+  folds, the 2023 folds and LCUV), and a development Δ that stays positive when each fold is left out
+  in turn.
 
 The closed verdict list is INCREMENTAL CONTEXT SIGNAL SUPPORTED, PRE-REGISTERED NULL, NEGATIVE
 INCREMENTAL RESULT and DATA / DESIGN FAILURE.
@@ -439,57 +477,66 @@ evidence rests on those weeks rather than on the 78,227 development rows.
 
 ### 8.3 Primary result
 
-**Table 4. Development pooled out-of-fold results (L2 logistic, lambda = 10)**
+**Table 4. Development pooled out-of-fold results (L2 logistic, λ = 10)**
 
 | arm | role | PR-AUC | ROC-AUC | Brier | top-decile lift (within-week) | within-week PR-AUC | calibration slope |
 |---|---|---|---|---|---|---|---|
-| M0 market | primary | 0.23 | 0.767 | 0.0512 | 4.51 | 0.247 | 0.67 |
-| M2 market + context | primary | 0.2205 | 0.75 | 0.0521 | 4.6 | 0.244 | 0.52 |
-| M1 context only | secondary | 0.0674 | 0.54 | 0.0592 | 0.64 | 0.059 | 0.17 |
+| M0 market | primary | 0.2300 | 0.767 | 0.0512 | 4.51 | 0.247 | 0.67 |
+| M2 market + context | primary | 0.2205 | 0.750 | 0.0521 | 4.60 | 0.244 | 0.52 |
+| M1 context only | secondary | 0.0674 | 0.540 | 0.0592 | 0.64 | 0.059 | 0.17 |
 | M2_core market + CONTEXT_CORE | robustness | 0.2303 | 0.759 | 0.0522 | 4.61 | 0.245 | 0.58 |
-| M1_core CONTEXT_CORE only | robustness | 0.0675 | 0.541 | 0.0573 | 0.64 | 0.059 | 0.2 |
+| M1_core CONTEXT_CORE only | robustness | 0.0675 | 0.541 | 0.0573 | 0.64 | 0.059 | 0.20 |
 
-**Table 5. LOCKED_CONTEXT_UNSEEN_VALIDATION (2025) results, scored once (L2 logistic, lambda = 10)**
+**Table 5. LOCKED_CONTEXT_UNSEEN_VALIDATION (2025) results, scored once (L2 logistic, λ = 10)**
 
 | arm | role | PR-AUC | ROC-AUC | Brier | top-decile lift (within-week) | within-week PR-AUC | calibration slope |
 |---|---|---|---|---|---|---|---|
-| M0 market | primary | 0.327 | 0.809 | 0.0929 | 3.21 | 0.35 | 1.05 |
-| M2 market + context | primary | 0.3029 | 0.806 | 0.096 | 3.12 | 0.33 | 0.99 |
+| M0 market | primary | 0.3270 | 0.809 | 0.0929 | 3.21 | 0.350 | 1.05 |
+| M2 market + context | primary | 0.3029 | 0.806 | 0.0960 | 3.12 | 0.330 | 0.99 |
 | M1 context only | secondary | 0.1193 | 0.506 | 0.1073 | 0.87 | 0.118 | 0.34 |
-| M2_core market + CONTEXT_CORE | robustness | 0.3112 | 0.808 | 0.0972 | 3.1 | 0.337 | 1.01 |
-| M1_core CONTEXT_CORE only | robustness | 0.1212 | 0.51 | 0.1091 | 0.87 | 0.118 | 1.25 |
+| M2_core market + CONTEXT_CORE | robustness | 0.3112 | 0.808 | 0.0972 | 3.10 | 0.337 | 1.01 |
+| M1_core CONTEXT_CORE only | robustness | 0.1212 | 0.510 | 0.1091 | 0.87 | 0.118 | 1.25 |
 
-![Figure 3. Primary PR-AUC, market baseline (M0) versus market + context (M2), in development (pooled out-of-fold) and on the LCUV block.](paper/figures/figure3_primary_pr_auc.png)
+![Figure 4. Primary PR-AUC, market baseline (M0) versus market + context (M2), in development (pooled out-of-fold) and on the LCUV block. Levels are not comparable across the two blocks: the positive landmark rate is 5.82% in development and 11.79% on LCUV.](paper/figures/figure4_primary_pr_auc.png)
 
 **Development.**
 - Pooled out-of-fold PR-AUC was 0.2300 for M0 and 0.2205 for M2: **ΔPR-AUC = −0.0095**, a relative
   change of −4.1%.
 - Two of eight folds were positive.
 - The two-way cluster-bootstrap 95% interval was [−0.0621, +0.0405].
+- **Post-hoc yardstick (not pre-registered).** The interval's half-width implies a standard error of
+  about 0.026. At that precision an increment would need to be about +0.07 PR-AUC, roughly 30% of
+  M0's 0.2300, to be detected with 80% power at the 5% level. Smaller increments were unlikely to be
+  detected.
 
 **LCUV (scored once).** PR-AUC was 0.3270 for M0 and 0.3029 for M2: **ΔPR-AUC = −0.0240**, relative
-−7.4%. The informational interval was [−0.061, +0.001].
+−7.4%. An interval from a two-way bootstrap over asset-eras and calendar months (2,000 replicates)
+was [−0.061, +0.001], with 3.05% of replicates positive. It is informational only: the
+pre-registration assigned the confirmatory interval (S3) to development.
 
 **Secondary metrics.** ROC-AUC and Brier score moved in the same direction as PR-AUC. Calibration on
-the LCUV block did not deteriorate severely (Brier ratio 1.033 ≤ 1.05; slope excess −0.044 ≤ 0.20).
+the LCUV block did not deteriorate severely (Brier ratio 1.033 ≤ 1.05; slope excess −0.044 ≤ 0.20). In
+development, M2's calibration slope was lower than M0's (0.52 against 0.67). S5 does not assess this,
+because it is defined on LCUV; it is consistent with the added week-level features adding variance
+under weak shrinkage (§9).
 
-![Figure 4. Fold-level ΔPR-AUC (M2 − M0) for the eight development folds, with unique test events per fold.](paper/figures/figure4_fold_delta.png)
+![Figure 5. Fold-level ΔPR-AUC (M2 − M0) for the eight development folds, with unique test events per fold.](paper/figures/figure5_fold_delta.png)
 
-![Figure 5. Two-way cluster-bootstrap distribution of the development ΔPR-AUC (2,000 replicates); dashed lines mark the 95% interval.](paper/figures/figure5_bootstrap_delta.png)
+![Figure 6. Two-way cluster-bootstrap distribution of the development ΔPR-AUC (2,000 replicates); dashed lines mark the 95% interval.](paper/figures/figure6_bootstrap_delta.png)
 
 ### 8.4 Verdict
 
-**Table 6. Pre-registered criteria S1-S7 and the mechanical verdict**
+**Table 6. Pre-registered criteria S1–S7 and the mechanical verdict**
 
 | criterion | condition | observed | result |
 |---|---|---|---|
-| S1 | development pooled-OOF Delta > 0 | -0.0095 | FAIL |
-| S2 | >= 5 of 8 folds with Delta > 0 | 2 of 8 | FAIL |
-| S3 | two-way bootstrap 95% CI lower bound > 0 | [-0.0621, +0.0405] | FAIL |
-| S4 | LCUV Delta > 0 | -0.0240 | FAIL |
-| S5 | no severe calibration deterioration (Brier ratio <= 1.05; slope excess <= 0.20) | Brier ratio 1.033; slope excess -0.044 | PASS |
+| S1 | development pooled-OOF Δ > 0 | −0.0095 | FAIL |
+| S2 | ≥ 5 of 8 folds with Δ > 0 | 2 of 8 | FAIL |
+| S3 | two-way bootstrap 95% CI lower bound > 0 | [−0.0621, +0.0405] | FAIL |
+| S4 | LCUV Δ > 0 | −0.0240 | FAIL |
+| S5 | no severe calibration deterioration on LCUV (Brier ratio ≤ 1.05; slope excess ≤ 0.20) | Brier ratio 1.033; slope excess −0.044 | PASS |
 | S6 | PIT audit passes | all stages PASS | PASS |
-| S7 | >= 2 of 3 era blocks positive and leave-one-fold-out Delta > 0 | 1 of 3 eras positive; min LOFO Delta -0.0143 | FAIL |
+| S7 | Δ > 0 in ≥ 2 of 3 era blocks (2022 folds, 2023 folds, LCUV) and leave-one-fold-out Δ > 0 | 1 of 3 era blocks positive; min leave-one-fold-out Δ −0.0143 | FAIL |
 | verdict | closed list, applied mechanically | PRE-REGISTERED NULL |  |
 
 S5 and S6 passed. S1, S2, S3, S4 and S7 failed. No DATA / DESIGN FAILURE condition held: the PIT,
@@ -499,35 +546,64 @@ verdict is **PRE-REGISTERED NULL**.
 
 ## 9. Robustness and exploratory results
 
-**Table 7. Robustness and exploratory results (cannot change the verdict)**
+**Table 7. Primary, robustness and exploratory results (only the primary determines the verdict)**
 
-| analysis | status | development Delta | LCUV Delta | note |
-|---|---|---|---|---|
-| CONTEXT_CORE (classifier-free), primary lambda | robustness (secondary) | 0.0003 | -0.0158 | two-way CI [-0.042, +0.045]; 3 of 8 folds positive |
-| logistic, fold-selected lambda | EXPLORATORY | 0.0273 | -0.0167 | M2 configuration: 1000.0 |
-| LightGBM, a-priori default | EXPLORATORY | 0.0285 | -0.008 | M2 configuration: {'num_leaves': 7, 'n_estimators': 200} |
-| LightGBM, fold-selected | EXPLORATORY | 0.0271 | -0.003 | M2 configuration: {'num_leaves': 7, 'n_estimators': 200} |
+| analysis | status | development Δ, pooled OOF | development Δ, mean of folds | LCUV Δ | note |
+|---|---|---|---|---|---|
+| primary: logistic, λ = 10 (A02) | primary | −0.0095 | −0.0055 | −0.0240 | verdict: PRE-REGISTERED NULL |
+| CONTEXT_CORE (classifier-free), λ = 10 | robustness | +0.0003 | −0.0039 | −0.0158 | two-way CI [−0.042, +0.045]; 3 of 8 folds positive |
+| logistic, fold-selected λ (the v1 primary rule) | exploratory | +0.0273 | +0.0003 | −0.0167 | λ = 1000 selected for both M0 and M2; verdict under the v1 rule: PRE-REGISTERED NULL (S4 fails) |
+| LightGBM, a-priori configuration | exploratory | +0.0285 | +0.0116 | −0.0080 | 7 leaves, 200 trees for every arm; M0 pooled PR-AUC 0.174 |
+| LightGBM, fold-selected | exploratory | +0.0271 | +0.0107 | −0.0030 | selected: M0 15 leaves, 200 trees; M2 7 leaves, 200 trees |
 
 **Classifier-free context (CONTEXT_CORE, secondary).** Replacing the expanded set with the 10
 features that use no agent-audited classifier gave:
-- a development Δ of +0.0003, with a two-way interval of [−0.042, +0.045];
+- a development Δ of +0.0003 pooled (−0.0039 as a mean of folds), with a two-way interval of
+  [−0.042, +0.045];
 - an LCUV Δ of −0.0158.
 
-The null pattern persists in the classifier-free robustness specification. This shows that the pattern is robust to removing those classifiers; it does not show that the classifiers had no influence on the expanded-set result.
+The null pattern persists in the classifier-free robustness specification. This shows that the
+pattern is robust to removing those classifiers; it does not show that the classifiers had no
+influence on the expanded-set result.
 
-**Exploratory tuning (labelled exploratory; cannot change the verdict).** More flexible or
-fold-selected models showed apparent development gains that did not persist into the locked block:
+**Penalty path (read from the frozen exploratory run; no refit).**
 
-| model | development Δ | LCUV Δ |
-|---|---|---|
-| logistic, fold-selected λ | +0.027 | −0.017 |
-| LightGBM, a-priori configuration | +0.029 | −0.008 |
-| LightGBM, fold-selected | +0.027 | −0.003 |
+**Table 8. Development Δ along the frozen λ grid (logistic; read from the frozen exploratory run, no refit; pooled values exist only for λ = 10 and the selected λ)**
 
-More flexible or selected specifications produced apparent development improvements that did not
-persist in the locked context-unseen block. Each fold-selected configuration was chosen on the same
-folds that score it, so the pattern is consistent with selection optimism, which the a-priori
-primary penalty was frozen to avoid. It does not, by itself, identify overfitting.
+| λ | M0 PR-AUC, mean of folds | M2 PR-AUC, mean of folds | Δ, mean of folds | Δ, pooled OOF |
+|---|---|---|---|---|
+| 0.1 | 0.2242 | 0.2195 | −0.0047 |  |
+| 1 | 0.2246 | 0.2199 | −0.0048 |  |
+| 10 (primary) | 0.2283 | 0.2228 | −0.0055 | −0.0095 |
+| 100 | 0.2467 | 0.2411 | −0.0056 |  |
+| 1000 | 0.2793 | 0.2796 | +0.0003 | +0.0273 |
+
+The development Δ depends on the penalty:
+- The primary λ = 10 is far from the baseline's own best. M0's mean-of-folds PR-AUC rises by about
+  22% from λ = 10 to λ = 1000, the edge of the frozen grid, and the optimum may lie beyond it.
+- Along the grid, the mean-of-folds Δ is negative up to λ = 100 and +0.0003 at λ = 1000.
+- At λ = 1000 the pooled out-of-fold Δ is +0.0273, while the mean-of-folds Δ is +0.0003. A gain that
+  appears only when the eight folds are pooled comes from aligning score levels across quarters, not
+  from ranking within a quarter. That is the week-level channel described in §7.
+- The LCUV Δ is negative at both penalties for which it was computed: −0.0240 at λ = 10 and −0.0167
+  at λ = 1000.
+
+The development sign of Δ is therefore not robust to the penalty, and the locked-block sign is
+negative under every specification reported. The verdict does not depend on the penalty, because S4
+fails under both the A02 rule and the v1 rule.
+
+**Flexible models (exploratory; cannot change the verdict).** LightGBM behaves differently from the
+logistic model. Its development gain is +0.0285 pooled and +0.0116 as a mean of folds, so part of it
+is ranking within folds, which a nonlinear model can obtain by letting week-level context interact
+with asset-level features. Two qualifications apply:
+- The a-priori LightGBM baseline is weak. Its M0 reaches a pooled development PR-AUC of 0.174,
+  against 0.2300 for the logistic M0, so the gain is measured from a lower starting point.
+- The gain did not carry into the locked block: the LCUV Δ is −0.0080 for the a-priori
+  configuration and −0.0030 for the fold-selected one.
+
+Fold-selected configurations were chosen on the folds that score them, so their development values
+carry selection optimism. The LightGBM selection also differs between arms (15 leaves for M0, 7 for
+M2).
 
 **Context-only arms.** Context-only models (M1, M1_core) showed little discrimination: development
 ROC-AUC 0.540 and 0.541. This is consistent with context ranking weeks rather than assets.
@@ -545,10 +621,9 @@ hypotheses, not mechanisms.
    liquidity, volatility and route structure, which respond to the same conditions.
 2. **Target mismatch.** Macro and regulatory context can move market-wide risk without
    discriminating *which* asset will be fully delisted within a year.
-3. **Cross-sectional limitation.** Context is identical for every asset at a given week. In a linear
-   model it adds the same shift to every asset's score in that week, so it cannot by itself reorder
-   assets within a week. The context-only
-   arms' near-chance ROC-AUC is consistent with this.
+3. **Cross-sectional limitation.** Context is identical for every asset at a given week, so in the
+   linear primary model it can rank weeks but not assets (§7). The context-only arms' near-chance
+   ROC-AUC is consistent with this.
 4. **Horizon mismatch.** Short-lived public events may be weak predictors of an asset-specific
    decision up to 365 days later.
 5. **Representation limitation.** The context most plausibly relevant to an asset's delisting,
@@ -557,7 +632,8 @@ hypotheses, not mechanisms.
    could behave differently.
 
 The exploratory pattern is itself informative for practice. Tuned and more flexible models produced
-development gains of about +0.03 that reversed sign on the locked block. In a study without a frozen
+pooled development gains of about +0.03 that reversed sign on the locked block; for the logistic
+model the gain appeared only when folds were pooled (§9). In a study without a frozen
 a-priori primary and a locked block, that pattern could have been reported as a context effect.
 
 ## 11. Limitations
@@ -569,11 +645,19 @@ a-priori primary and a locked block, that pattern could have been reported as a 
   - The C3 representation is thin: generic English-Wikipedia crypto attention.
 - **Scope of the surviving context.** C2 is US-only. C1–C3 inherit H20.0's archive and language
   conditions.
-- **Low power for a week-level signal.** The out-of-fold evaluation spans 104 weeks and the LCUV block
-  40, with 110 and 86 unique events. A modest true effect would be hard to detect.
+- **Low power, quantified only post hoc.** The comparison ranks weeks (§7). The out-of-fold
+  evaluation spans 104 weeks and the LCUV block 40, with 110 and 86 unique events, and the evaluation
+  period holds about two non-overlapping 365-day label windows. Only increments of roughly +0.07
+  PR-AUC would have been detected reliably (§8.3). No statistical-feasibility gate was run before the
+  freeze.
+- **Penalty dependence.** The development sign of Δ changes along the frozen λ grid (§9). The verdict
+  does not.
 - **Agent-produced semantic audit.** Eight of the 18 context features depend on classifiers audited
   by the AI research agent. The null pattern persists in the classifier-free robustness specification.
 - **The LCUV block** is context-unseen, not programme-untouched. Prospective confirmation is pending.
+- **Verifiability of the freeze order.** That each freeze preceded the outcome is attested by the
+  author's own version history and by the hashes in the freeze files. No third-party timestamp, such
+  as a registry deposit, exists for H20.0–H20.3.
 - **Market substrate approximations.** Route state is reconstructed from daily candles; the frozen
   fallback addressed window gaps. Two events (IDRT, VAI) have no candles and two others (SKY, USDS)
   attach to no era under the inherited era rule; the rebuilt target agreed with the inherited label
@@ -585,13 +669,13 @@ a-priori primary and a locked block, that pattern could have been reported as a 
 
 1. Separate document-time from transform-time point-in-time validity. Classify every transform before
    use; treat models trained on later corpora as non-PIT by default.
-2. Gate context sources before modelling. Let a layer fail as "untested" rather than fill it with
+2. Gate context sources before modelling. Let a layer fail as “untested” rather than fill it with
    current versions or zeros.
 3. Report the effective sample of shared context: distinct decision times and unique events, not
    asset-time rows.
 4. Freeze an a-priori primary specification and a locked evaluation block; treat tuned gains as
    exploratory until they survive the block.
-5. Report nulls with their scope. "This representation did not show incremental value here" is a
+5. Report nulls with their scope. “This representation did not show incremental value here” is a
    result that a broader claim must not overwrite, and it is not evidence that no effect exists.
 
 ## 13. Conclusion
@@ -602,34 +686,40 @@ beyond the structured market baseline. The pre-registered verdict is PRE-REGISTE
 an absence of evidence of incremental value, not evidence that context has no effect: the point
 estimates were negative and the development interval included zero. The finding is bounded by what
 survived the gates. Exchange-specific and asset-specific context could not be reconstructed
-point-in-time here and remain untested. Prospective confirmation is pending.
+point-in-time here and remain untested. The comparison could detect only large increments, and its
+development sign depends on the penalty. Prospective confirmation is pending.
+
+## Use of AI tools
+
+The research was carried out with an AI coding agent (Claude, Anthropic) working in the author's
+repository. The agent wrote and ran the collection, feature, audit and model code for H20.0–H20.3,
+produced the semantic-audit labels for the H20.1 classifiers (§6), drafted the pre-registration
+documents and this manuscript, and ran the claim audit that checks every number in the text against
+the frozen artefacts. The author set the research question and each stage's brief and constraints,
+authorised each freeze and the single opening of the outcome, decided what to publish, and is
+responsible for the content. No language model was used to construct any feature (§6).
 
 ## Data and code availability
 
-All stages are reproducible from the Contextual Alpha project directory. It contains:
-- frozen plans, pre-registrations and freeze files with SHA-256 hashes;
-- collection, build, audit and model scripts;
-- tests;
-- the evidence tables behind every number.
+The public package is the `contextual-alpha/` directory of the repository that also holds the
+companion paper (Ramos Silva 2026). It contains:
+- the frozen plans, pre-registrations and freeze files with their SHA-256 hashes;
+- the collection, build, audit and model scripts, and the tests;
+- the evidence tables behind every number, the claim ledger and its audit.
 
-Frozen commits: H20.0 `a14c347`, H20.1 `e21c264`, H20.2 with Addendum 02 `9932e20`, H20.3 `180def4`.
-Raw source content is not redistributed. Paper tables and figures are regenerated by
-`paper/scripts/build_paper_assets.py`.
+A reader can verify from it that every frozen file matches its recorded hash, and that every number
+in this paper matches its frozen source. A reader cannot verify from it:
+- **the raw corpora**, which are not redistributed; the retrieval scripts document how to obtain them;
+- **the inherited H18 inputs** (the event universe and the market bars), which belong to the
+  research repository;
+- **the order of events.** The freezes were committed in the author's research repository (H20.0
+  `a14c347`, H20.1 `e21c264`, H20.2 with Addendum 02 `9932e20`, H20.3 `180def4`), whose history is
+  not public.
+
+The scripts document and audit the procedure; they do not run end to end from the public package
+alone. Paper tables and figures are regenerated by `paper/scripts/build_paper_assets.py`.
 
 ## References
-
-The reference list is `paper/references.bib`.
-- Eleven entries are reused unchanged from the author's previous paper in the same repository, which
-  is itself cited as (Ramos Silva 2026).
-- Fourteen entries were added in a verification pass. Each was read at the level recorded in
-  `paper/REFERENCE_VERIFICATION.md`.
-- Remaining gaps are recorded in `paper/REFERENCE_GAPS.md`.
-
-Related work on cryptocurrency delisting and distress prediction includes (Yang and Kwon 2026),
-(Będowska-Sójka et al. n.d.), (Fantazzini 2022) and (Aldhahi and Alsamaani 2026). Survivorship and
-delisting bias are covered in (Shumway 1997) and (Ammann et al. 2022). Registered
-reports and dispersion across analysts are covered in (Journal of Behavioral and Experimental Finance n.d.) and
-(Menkveld et al. 2024).
 
 Rendered from `paper/references.bib`, the source of truth. Each entry carries the access level recorded for it in `paper/REFERENCE_VERIFICATION.md`; no metadata was inferred.
 
@@ -645,14 +735,14 @@ Rendered from `paper/references.bib`, the source of truth. Each entry carries th
 - **Bailey, D. H. and López de Prado, M.** (2014). *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality*. The Journal of Portfolio Management 40(5), 94–107.  
   *Accessed at abstract and SSRN-record level (SSRN 2460551). Corrects a reported Sharpe ratio for the number of trials, skewness and kurtosis. Establishes that the count of strategy variants tried is a required input to any performance claim. Cited here as prior work that already owns the "a spectacular backtest is a candidate artefact" message at the model-selection layer.*
 
-- (n.d.). *Registered Reports: Author Guidelines*. Journal of Behavioral and Experimental Finance.  
+- *Registered Reports: Author Guidelines* (n.d.). Journal of Behavioral and Experimental Finance.  
   *Accessed at guidelines-document level. The clearest finance-journal instance of the registered-report format, in which methods and planned analyses are pre-registered and reviewed before the research is conducted, stated as a remedy for publication bias and questionable research practices. Year and editor not recorded by the source consulted and not supplied here.*
 
 - **Binance** (n.d.). *Binance Delisting Guidelines & Frequently Asked Questions*. https://www.binance.com/en/support/faq/detail/e5a9718ccb794acda1c48db5c71753e4.  
   *Official documentation, accessed 2026-10-19. The page states it was published 2022-12-19 and updated 2026-06-10. This is the CURRENT version, not a historical one; it does not establish the criteria applied in earlier years.*
 
-- **Będowska-Sójka, B., Wójcik, P. and Pele, D. T.** (n.d.). *Early warning systems for cryptocurrency markets: Predicting `zombie' assets using machine learning*. The North American Journal of Economics and Finance 81. DOI: 10.1016/j.najef.2025.102543.  
-  *Accessed at abstract, SSRN record and RePEc metadata level; the publisher returned HTTP 403. Working paper: SSRN 4942031, August 2024. Reports approximately 84 percent out-of-time balanced accuracy at a 28-day horizon.*
+- **Będowska-Sójka, B., Wójcik, P. and Pele, D. T.** (2026). *Early warning systems for cryptocurrency markets: Predicting `zombie' assets using machine learning*. The North American Journal of Economics and Finance 81. DOI: 10.1016/j.najef.2025.102543.  
+  *Accessed at abstract, SSRN record and RePEc metadata level; the publisher returned HTTP 403. Working paper: SSRN 4942031, August 2024. Reports approximately 84 percent out-of-time balanced accuracy at a 28-day horizon. Year added 2026-11-02 from the Crossref record of the DOI (issued and published-print 2026-01, volume 81, article 102543); the entry was otherwise reused unchanged.*
 
 - **Croushore, D. and Stark, T.** (1999). *A Real-Time Data Set for Macroeconomists*. Federal Reserve Bank of Philadelphia, Research Department.  
   *Full text read (working paper). Abstract and Section I. A later journal version is listed by EconPapers; its metadata were not read and it is not cited.*
@@ -747,16 +837,16 @@ Rendered from `paper/references.bib`, the source of truth. Each entry carries th
 
 **Table A2. Fold-level development results (primary model)**
 
-| fold | test era | test events | test rows | PR-AUC M0 | PR-AUC M2 | Delta M2-M0 | Delta M2_core-M0 |
+| fold | test era | test events | test rows | PR-AUC M0 | PR-AUC M2 | Δ (M2 − M0) | Δ (M2_core − M0) |
 |---|---|---|---|---|---|---|---|
-| 1 | 2022 | 31 | 4575 | 0.3794 | 0.3675 | -0.0119 | 0.0003 |
-| 2 | 2022 | 27 | 4778 | 0.3608 | 0.3507 | -0.0101 | -0.0134 |
-| 3 | 2022 | 27 | 4830 | 0.2305 | 0.2283 | -0.0022 | -0.0048 |
-| 4 | 2022 | 24 | 4792 | 0.1538 | 0.1423 | -0.0115 | -0.0124 |
-| 5 | 2023 | 22 | 4713 | 0.2034 | 0.1973 | -0.0061 | -0.005 |
-| 6 | 2023 | 20 | 4666 | 0.1351 | 0.1359 | 0.0009 | 0.0057 |
-| 7 | 2023 | 27 | 4707 | 0.1614 | 0.1689 | 0.0074 | 0.0064 |
-| 8 | 2023 | 35 | 4711 | 0.2017 | 0.1911 | -0.0106 | -0.0082 |
+| 1 | 2022 | 31 | 4575 | 0.3794 | 0.3675 | −0.0119 | +0.0003 |
+| 2 | 2022 | 27 | 4778 | 0.3608 | 0.3507 | −0.0101 | −0.0134 |
+| 3 | 2022 | 27 | 4830 | 0.2305 | 0.2283 | −0.0022 | −0.0048 |
+| 4 | 2022 | 24 | 4792 | 0.1538 | 0.1423 | −0.0115 | −0.0124 |
+| 5 | 2023 | 22 | 4713 | 0.2034 | 0.1973 | −0.0061 | −0.0050 |
+| 6 | 2023 | 20 | 4666 | 0.1351 | 0.1359 | +0.0009 | +0.0057 |
+| 7 | 2023 | 27 | 4707 | 0.1614 | 0.1689 | +0.0074 | +0.0064 |
+| 8 | 2023 | 35 | 4711 | 0.2017 | 0.1911 | −0.0106 | −0.0082 |
 
 ## Appendix C. Data sources
 

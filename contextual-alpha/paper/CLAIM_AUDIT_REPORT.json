@@ -1,6 +1,6 @@
 {
- "ledger_rows": 119,
- "supported": 119,
+ "ledger_rows": 142,
+ "supported": 142,
  "failures": [],
  "uncovered_numeric_tokens": [],
  "forbidden_phrases": [],
@@ -25,10 +25,6 @@
   },
   {
    "phrase": "prove",
-   "line": "More flexible or selected specifications produced apparent development improvements that did not"
-  },
-  {
-   "phrase": "prove",
    "line": "and audited as it was, did not improve out-of-time predictive performance for this target beyond"
   },
   {
@@ -41,10 +37,10 @@
   }
  ],
  "claim_types": {
-  "EMPIRICAL_PROJECT": 85,
-  "EXPLORATORY": 8,
-  "INTERPRETATION": 3,
-  "LIMITATION": 3,
+  "EMPIRICAL_PROJECT": 96,
+  "EXPLORATORY": 16,
+  "INTERPRETATION": 4,
+  "LIMITATION": 6,
   "METHODOLOGICAL_LITERATURE": 20
  },
  "PASS": true

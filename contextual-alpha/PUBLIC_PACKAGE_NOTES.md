@@ -9,7 +9,7 @@ Start with `paper.pdf` (or `paper.md`), then `H20_3_EXECUTION_REPORT.md` and `H2
 
 ## Where this comes from
 
-This directory is an export of `Contextual Alpha/` from the research repository at commit `79647ed`
+This directory is an export of `Contextual Alpha/` from the research repository at commit `f335e79`
 (`git archive` at `4eb65f4`, then the files changed since), with one edit, listed below. It is a
 companion to *Before the Backtest*, the rest of this repository: same research programme and the
 same 201-event delisting universe, but a separate study with its own question and verdict. Neither

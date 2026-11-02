@@ -60,8 +60,8 @@ R = [
     ("C027", "9", "CONTEXT_CORE two-way CI upper +0.045", "quantitative", f"json:{B}:robustness_M2core_vs_M0/two_way/ci95/1", 1, 0.045, 5e-4, "+0.045", "robustness (secondary)", ""),
     ("C028", "9", "CONTEXT_CORE LCUV Delta -0.0158", "quantitative", f"json:{L}:delta_pr_auc_M2core_M0", 1, -0.0158, 5e-5, "−0.0158", "robustness (secondary)", ""),
     ("C029", "9", "selected-lambda logistic dev Delta +0.027", "quantitative", f"json:{E}:logistic_selected_lambda/delta_dev_M2_M0", 1, 0.027, 5e-4, "+0.027", "EXPLORATORY", ""),
-    ("C030", "9", "selected-lambda logistic LCUV Delta -0.017", "quantitative", f"json:{E}:logistic_selected_lambda/delta_lcuv_M2_M0", 1, -0.017, 5e-4, "−0.017", "EXPLORATORY", ""),
-    ("C031", "9", "LightGBM a-priori dev Delta +0.029", "quantitative", f"json:{E}:lightgbm_default/delta_dev_M2_M0", 1, 0.029, 5e-4, "+0.029", "EXPLORATORY", ""),
+    ("C030", "7;9", "selected-lambda logistic LCUV Delta -0.0167", "quantitative", f"json:{E}:logistic_selected_lambda/delta_lcuv_M2_M0", 1, -0.0167, 5e-5, "−0.0167", "EXPLORATORY", ""),
+    ("C031", "9", "LightGBM a-priori dev Delta +0.0285 pooled", "quantitative", f"json:{E}:lightgbm_default/delta_dev_M2_M0", 1, 0.0285, 5e-5, "+0.0285", "EXPLORATORY", ""),
     ("C032", "9", "LightGBM a-priori LCUV Delta -0.008", "quantitative", f"json:{E}:lightgbm_default/delta_lcuv_M2_M0", 1, -0.008, 5e-4, "−0.008", "EXPLORATORY", ""),
     ("C033", "9", "LightGBM selected dev Delta +0.027", "quantitative", f"json:{E}:lightgbm_selected/delta_dev_M2_M0", 1, 0.027, 5e-4, "+0.027", "EXPLORATORY", ""),
     ("C034", "9", "LightGBM selected LCUV Delta -0.003", "quantitative", f"json:{E}:lightgbm_selected/delta_lcuv_M2_M0", 1, -0.003, 5e-4, "−0.003", "EXPLORATORY", ""),
@@ -128,7 +128,7 @@ R += [
     ("C092", "Abstract;10;13", "both point estimates were negative; the development interval included zero", "EMPIRICAL_PROJECT", "neg2", None, True, None, "point estimates were negative", "confirmatory (H20.3)", "pass 2 added (N02, N07, N10)"),
     ("C093", "13", "absence of evidence of incremental value, not evidence that context has no effect", "INTERPRETATION", "ci0", None, True, None, "not evidence that context has no effect", "interpretation", "pass 2 added (N10)"),
     ("C094", "9", "the null pattern persists in the classifier-free robustness specification", "EMPIRICAL_PROJECT", f"json:{L}:delta_pr_auc_M2core_M0", 1, -0.0158, 5e-5, "The null pattern persists in the classifier-free robustness specification", "robustness (secondary)", "pass 2 SOFTENED from 'The primary null is therefore not produced by the agent-audited classifiers' (N04)"),
-    ("C095", "9", "selected specifications' development gains did not persist in the locked block; consistent with selection optimism, does not identify overfitting", "EXPLORATORY", f"json:{E}:logistic_selected_lambda/delta_lcuv_M2_M0", 1, -0.017, 5e-4, "does not, by itself, identify overfitting", "EXPLORATORY", "pass 2 SOFTENED from 'That is the optimism ...' (N05)"),
+    ("C095", "9", "selected specifications' development gains did not persist in the locked block; consistent with selection optimism, does not identify overfitting", "EXPLORATORY", f"json:{E}:logistic_selected_lambda/delta_lcuv_M2_M0", 1, -0.017, 5e-4, "carry selection optimism", "EXPLORATORY", "revision 1: rewritten after the referee report; pass 2 SOFTENED from 'That is the optimism ...' (N05)"),
     ("C096", "10", "the study did not support the incremental-context hypothesis", "EMPIRICAL_PROJECT", f"json:{V}:verdict", None, "PRE-REGISTERED NULL", None, "did not support the incremental-context hypothesis", "confirmatory (H20.3)", "pass 2 SOFTENED from 'carried no incremental out-of-time information' (N07)"),
     ("C097", "10", "a linear model adds the same shift to every asset's score in a week", "INTERPRETATION", "", None, None, None, "", "interpretation", "pass 2 reworded (N08): context is constant within a week by construction (P1.8)"),
     ("C098", "12", "a scoped null is not evidence that no effect exists", "LIMITATION", "", None, None, None, "not evidence that no effect exists", "limitation", "pass 2 (N09)"),
@@ -150,9 +150,33 @@ R += [
     ("C114", "7", "correlation within asset and period biases conventional standard errors", "METHODOLOGICAL_LITERATURE", "verified:petersen2006standard", None, True, None, "", "citation", "Gap 8"),
     ("C115", "2", "no contribution is claimed as new", "LIMITATION", "", None, None, None, "none is claimed as new", "limitation", "Gap 11 decision"),
     ("C116", "2.1", "fixing design before outcomes; registered reports; selection across specifications; previous paper", "METHODOLOGICAL_LITERATURE", "text:paper/references.bib:jbef_registered_reports", None, None, None, "", "citation", "reused entries (rubin2008design, jbef_registered_reports, bailey2014deflated, ramossilva2026beforebacktest)"),
-    ("C117", "References", "eleven reused entries; fourteen added in the verification pass", "EMPIRICAL_PROJECT", "bibcount", 1, 26, 0, "Fourteen entries were added", "bibliography", "11 reused + 1 previous paper + 14 added = 26"),
+    ("C117", "References", "eleven reused entries; fourteen added in the verification pass", "EMPIRICAL_PROJECT", "bibcount", 1, 26, 0, "", "bibliography", "11 reused + 1 previous paper + 14 added = 26"),
     ("C118", "1", "same validated universe of 201 full-delisting events as the companion paper", "quantitative", f"json:{T}:events_in_table", 1, 201, 0, "201", "design (H18.1b)", "Before the Backtest v1.0.0 §3 reports the same 201 validated events (H18.1b)"),
     ("C119", "1", "H18.3 market-only test listed in the companion paper's registry as a pre-registered null", "citation", "text:paper/references.bib:ramossilva2026beforebacktest", None, None, None, "", "citation", "Before the Backtest v1.0.0 research registry row H18.3: PRE-REGISTERED NULL"),
+    # ---- revision 1 (referee report REFEREE_REPORT_V1.md): power, penalty path, amendment, calibration, LCUV interval
+    ("C120", "Abstract;7;9", "v1 / fold-selected lambda: pooled development Delta +0.0273", "quantitative", f"json:{E}:logistic_selected_lambda/delta_dev_M2_M0", 1, 0.0273, 5e-5, "+0.0273", "EXPLORATORY", "the v1 primary rule; reported because A02 replaced it before outcomes"),
+    ("C121", "7", "v1 grid {0.1, 1, 10, 100, 1000}; both arms select 1000", "methodological", f"json:{E}:logistic_selected_lambda/M2/selected", 1, 1000, 0, "100;1000", "design (H20.2 v1)", "M0 also selects 1000; grid from H20_2_MODEL_SPEC.json"),
+    ("C122", "7", "verdict under the v1 rule would also be PRE-REGISTERED NULL (S4 fails)", "INTERPRETATION", f"json:{E}:logistic_selected_lambda/delta_lcuv_M2_M0", 1, -0.0167, 5e-5, "would also have\nbeen PRE-REGISTERED NULL", "interpretation", "S4 requires LCUV Delta > 0"),
+    ("C123", "8.3", "post-hoc standard error about 0.026 from the CI half-width", "quantitative", "se_ci", 1, 0.026, 5e-4, "0.026", "post hoc", "(hi - lo) / (2 x 1.96)"),
+    ("C124", "Abstract;8.3;11", "post-hoc 80% power detectable increment about +0.07", "quantitative", "mde80", 1, 0.07, 5e-3, "+0.07;80%", "post hoc", "2.8 x SE"),
+    ("C125", "8.3", "detectable increment about 30% of M0 PR-AUC", "quantitative", "mde80rel", 100, 30, 2, "30%", "post hoc", "2.8 x SE / M0 pooled PR-AUC"),
+    ("C126", "7;Abstract;11", "evaluation period holds about two non-overlapping 365-day label windows", "methodological", f"json:{T}:effective_units/DEVELOPMENT/weeks", None, None, None, "two non-overlapping", "design", "104 out-of-fold weeks / 52-week label horizon = 2"),
+    ("C127", "8.3", "LCUV informational interval: 3.05% of replicates positive", "quantitative", f"json:{L}:info_interval_two_way_asset_era_x_month/share_positive", 100, 3.05, 0.005, "3.05%", "informational", "two-way asset-era x month bootstrap, 2,000 replicates"),
+    ("C128", "8.3", "development calibration slope M2 0.52", "quantitative", f"json:{D}:pooled_oof/M2/calibration/slope", 1, 0.52, 5e-3, "0.52", "confirmatory (H20.3)", "S5 is defined on LCUV only"),
+    ("C129", "8.3", "development calibration slope M0 0.67", "quantitative", f"json:{D}:pooled_oof/M0/calibration/slope", 1, 0.67, 5e-3, "0.67", "confirmatory (H20.3)", ""),
+    ("C130", "8.3", "development positive landmark rate 5.82%", "quantitative", f"json:{T}:effective_units/DEVELOPMENT/base_rate", 100, 5.82, 0.005, "5.82%", "design", "Figure 4 caption"),
+    ("C131", "8.3", "LCUV positive landmark rate 11.79%", "quantitative", f"json:{T}:effective_units/LOCKED_CONTEXT_UNSEEN_VALIDATION/base_rate", 100, 11.79, 0.006, "11.79%", "design", "Figure 4 caption"),
+    ("C132", "9", "CONTEXT_CORE development Delta as a mean of folds -0.0039", "quantitative", "foldmean:delta_M2core_M0", 1, -0.0039, 5e-5, "−0.0039", "robustness (secondary)", ""),
+    ("C133", "9", "M0 mean-of-folds PR-AUC rises about 22% from lambda 10 to 1000", "quantitative", f"ratio:json:{E}:logistic_selected_lambda/M0/mean_fold_pr_auc_by_lambda/1000.0|json:{E}:logistic_selected_lambda/M0/mean_fold_pr_auc_by_lambda/10.0", 100, 22, 1, "22%", "EXPLORATORY", "Table 8"),
+    ("C134", "9", "mean-of-folds Delta at lambda 1000 is +0.0003", "quantitative", f"diff:json:{E}:logistic_selected_lambda/M2/mean_fold_pr_auc_by_lambda/1000.0|json:{E}:logistic_selected_lambda/M0/mean_fold_pr_auc_by_lambda/1000.0", 1, 0.0003, 5e-5, "+0.0003", "EXPLORATORY", "Table 8"),
+    ("C135", "9", "LightGBM a-priori development Delta +0.0116 as a mean of folds", "quantitative", f"diff:json:{E}:lightgbm_default/M2/mean_fold_pr_auc|json:{E}:lightgbm_default/M0/mean_fold_pr_auc", 1, 0.0116, 5e-5, "+0.0116", "EXPLORATORY", ""),
+    ("C136", "9", "LightGBM a-priori M0 pooled development PR-AUC 0.174", "quantitative", f"json:{E}:lightgbm_default/M0/dev_pooled_oof_pr_auc", 1, 0.174, 5e-4, "0.174", "EXPLORATORY", ""),
+    ("C137", "9", "LightGBM a-priori LCUV Delta -0.0080", "quantitative", f"json:{E}:lightgbm_default/delta_lcuv_M2_M0", 1, -0.0080, 5e-5, "−0.0080", "EXPLORATORY", ""),
+    ("C138", "9", "LightGBM fold-selected LCUV Delta -0.0030", "quantitative", f"json:{E}:lightgbm_selected/delta_lcuv_M2_M0", 1, -0.0030, 5e-5, "−0.0030", "EXPLORATORY", ""),
+    ("C139", "9", "LightGBM selection differs between arms (M0 15 leaves, M2 7 leaves)", "quantitative", f"json:{E}:lightgbm_selected/M0/config/num_leaves", 1, 15, 0, "15 leaves for M0", "EXPLORATORY", "M2 selects 7 leaves"),
+    ("C140", "7;11", "no statistical-feasibility gate was run; the pre-registration did not quantify power", "LIMITATION", "text:H20_2_PREREG.md:Low effective power for context", None, None, None, "no statistical-feasibility gate", "limitation", "the prereg names low power without a number or a stop rule"),
+    ("C141", "11", "no third-party timestamp for the freezes", "LIMITATION", "", None, None, None, "No third-party timestamp", "limitation", ""),
+    ("C142", "Use of AI tools", "an AI coding agent executed H20.0-H20.3 and drafted the manuscript; semantic-audit labels agent-produced", "LIMITATION", "text:H20_1_EXECUTION_DEVIATIONS.md:produced by the AI research agent", None, None, None, "AI coding agent", "disclosure", ""),
 ]
 TYPE_MAP = {"quantitative": "EMPIRICAL_PROJECT", "verdict": "EMPIRICAL_PROJECT", "methodological": "EMPIRICAL_PROJECT",
             "citation": "METHODOLOGICAL_LITERATURE", "interpretation": "INTERPRETATION", "scope": "LIMITATION"}
@@ -164,7 +188,7 @@ FORBIDDEN = [r"untouched holdout", r"external validation", r"fully prospective",
              r"(?<!Contextual )\balpha\b", r"trading strateg", r"\bP&L\b", r"\bproved\b", r"null (hypothesis )?is true",
              r"context is useless", r"all relevant information", r"has no predictive information", r"added no incremental",
              r"carried no incremental", r"not produced by"]
-FORBID_ALLOWED_LINES = [r"is \*not\* an untouched holdout"]
+FORBID_ALLOWED_LINES = [r"is \*not\* an untouched holdout", r"`contextual-alpha/`"]
 
 
 def resolve(ptr: str):
@@ -182,6 +206,21 @@ def resolve(ptr: str):
         lv = json.loads((CA / L).read_text(encoding="utf-8"))["delta_pr_auc_M2_M0"]
         b = json.loads((CA / B).read_text(encoding="utf-8"))["primary_M2_vs_M0"]["two_way"]["ci95"]
         return d < 0 and lv < 0 and b[0] < 0 < b[1]
+    if ptr.startswith(("diff:", "ratio:")):
+        kind, rest = ptr.split(":", 1)
+        a, b = (resolve(x) for x in rest.split("|"))
+        return a - b if kind == "diff" else a / b - 1
+    if ptr.startswith("foldmean:"):
+        folds = json.loads((CA / D).read_text(encoding="utf-8"))["folds"]
+        key = ptr.split(":", 1)[1]
+        return sum(f[key] for f in folds) / len(folds)
+    if ptr in ("se_ci", "mde80", "mde80rel"):  # post-hoc yardstick from the frozen development interval
+        lo, hi = json.loads((CA / B).read_text(encoding="utf-8"))["primary_M2_vs_M0"]["two_way"]["ci95"]
+        se = (hi - lo) / (2 * 1.96)
+        if ptr == "se_ci":
+            return se
+        m0 = json.loads((CA / D).read_text(encoding="utf-8"))["pooled_oof"]["M0"]["pr_auc"]
+        return 2.8 * se if ptr == "mde80" else 2.8 * se / m0
     if ptr == "bibcount":
         return len(re.findall(r"^@\w+\{", (PAPER / "references.bib").read_text(encoding="utf-8"), re.M))
     if ptr.startswith("verified:"):  # key present in the bib and VERIFIED_* in REFERENCE_VERIFICATION.md

@@ -55,12 +55,28 @@ def csv_in(name: str) -> pd.DataFrame:
     return pd.read_csv(p)
 
 
-def save_table(df: pd.DataFrame, stem: str, caption: str) -> None:
+MINUS = "\u2212"
+
+
+def cell(v, dec: int | None = None, signed: bool = False) -> str:
+    """Markdown cell: fixed decimals where given, and a true minus sign, as in the manuscript text."""
+    if isinstance(v, float) and np.isnan(v):
+        return ""
+    if dec is not None and isinstance(v, (int, float, np.floating)) and not isinstance(v, bool):
+        s = f"{v:+.{dec}f}" if signed else f"{v:.{dec}f}"
+    else:
+        s = str(v)
+    return MINUS + s[1:] if s.startswith("-") else s
+
+
+def save_table(df: pd.DataFrame, stem: str, caption: str, fmt: dict | None = None) -> None:
+    """CSV keeps raw values; the Markdown copy prints fixed decimals per column (fmt: col -> (dec, signed))."""
     df.to_csv(TAB / f"{stem}.csv", index=False, lineterminator="\n")
     cols = list(df.columns)
+    fmt = fmt or {}
     md = [f"**{caption}**", "", "| " + " | ".join(cols) + " |", "|" + "|".join("---" for _ in cols) + "|"]
     for r in df.itertuples(index=False):
-        md.append("| " + " | ".join("" if (isinstance(v, float) and np.isnan(v)) else str(v) for v in r) + " |")
+        md.append("| " + " | ".join(cell(v, *fmt.get(c, (None, False))) for c, v in zip(cols, r)) + " |")
     (TAB / f"{stem}.md").write_text("\n".join(md) + "\n", encoding="utf-8", newline="\n")
 
 
@@ -130,41 +146,90 @@ def tables() -> dict:
                          "within-week PR-AUC": round(m["within_week_pr_auc"], 3), "calibration slope": round(m["calibration"]["slope"], 2)})
         return pd.DataFrame(rows)
 
+    arm_fmt = {"PR-AUC": (4, False), "ROC-AUC": (3, False), "Brier": (4, False), "top-decile lift (within-week)": (2, False),
+               "within-week PR-AUC": (3, False), "calibration slope": (2, False)}
+
     save_table(arm_rows(dev["pooled_oof"]), "table4_development_results",
-               "Table 4. Development pooled out-of-fold results (L2 logistic, lambda = 10)")
+               "Table 4. Development pooled out-of-fold results (L2 logistic, \u03bb = 10)", arm_fmt)
     folds = pd.DataFrame([{"fold": f["fold"], "test era": f["era"], "test events": f["units_test"]["unique_positive_events"],
                            "test rows": f["units_test"]["rows"], "PR-AUC M0": round(f["arms"]["M0"]["pr_auc"], 4),
-                           "PR-AUC M2": round(f["arms"]["M2"]["pr_auc"], 4), "Delta M2-M0": round(f["delta_M2_M0"], 4),
-                           "Delta M2_core-M0": round(f["delta_M2core_M0"], 4)} for f in dev["folds"]])
-    save_table(folds, "tableA2_fold_results", "Table A2. Fold-level development results (primary model)")
+                           "PR-AUC M2": round(f["arms"]["M2"]["pr_auc"], 4), "\u0394 (M2 \u2212 M0)": round(f["delta_M2_M0"], 4),
+                           "\u0394 (M2_core \u2212 M0)": round(f["delta_M2core_M0"], 4)} for f in dev["folds"]])
+    save_table(folds, "tableA2_fold_results", "Table A2. Fold-level development results (primary model)",
+               {"PR-AUC M0": (4, False), "PR-AUC M2": (4, False), "\u0394 (M2 \u2212 M0)": (4, True),
+                "\u0394 (M2_core \u2212 M0)": (4, True)})
     save_table(arm_rows(lc["metrics"]), "table5_lcuv_results",
-               "Table 5. LOCKED_CONTEXT_UNSEEN_VALIDATION (2025) results, scored once (L2 logistic, lambda = 10)")
+               "Table 5. LOCKED_CONTEXT_UNSEEN_VALIDATION (2025) results, scored once (L2 logistic, \u03bb = 10)", arm_fmt)
 
     vd = load("H20_3_VERDICT.json")
-    desc = {"S1": "development pooled-OOF Delta > 0", "S2": ">= 5 of 8 folds with Delta > 0", "S3": "two-way bootstrap 95% CI lower bound > 0",
-            "S4": "LCUV Delta > 0", "S5": "no severe calibration deterioration (Brier ratio <= 1.05; slope excess <= 0.20)",
-            "S6": "PIT audit passes", "S7": ">= 2 of 3 era blocks positive and leave-one-fold-out Delta > 0"}
+    desc = {"S1": "development pooled-OOF \u0394 > 0", "S2": "\u2265 5 of 8 folds with \u0394 > 0",
+            "S3": "two-way bootstrap 95% CI lower bound > 0", "S4": "LCUV \u0394 > 0",
+            "S5": "no severe calibration deterioration on LCUV (Brier ratio \u2264 1.05; slope excess \u2264 0.20)",
+            "S6": "PIT audit passes",
+            "S7": "\u0394 > 0 in \u2265 2 of 3 era blocks (2022 folds, 2023 folds, LCUV) and leave-one-fold-out \u0394 > 0"}
     c = vd["criteria"]
     val = {"S1": f4(c["S1"]["value"]), "S2": f"{c['S2']['value']} of 8", "S3": f"[{c['S3']['value'][0]:+.4f}, {c['S3']['value'][1]:+.4f}]",
            "S4": f4(c["S4"]["value"]), "S5": f"Brier ratio {c['S5']['value']['brier_ratio']:.3f}; slope excess {c['S5']['value']['slope_excess']:+.3f}",
-           "S6": "all stages PASS", "S7": f"{c['S7']['value']['positive_era_blocks']} of 3 eras positive; min LOFO Delta {c['S7']['value']['lofo_min_delta']:+.4f}"}
+           "S6": "all stages PASS", "S7": f"{c['S7']['value']['positive_era_blocks']} of 3 era blocks positive; min leave-one-fold-out \u0394 {c['S7']['value']['lofo_min_delta']:+.4f}"}
+    val = {k: v.replace("-0", MINUS + "0") for k, v in val.items()}
     t6 = pd.DataFrame([{"criterion": k, "condition": desc[k], "observed": val[k], "result": "PASS" if c[k]["PASS"] else "FAIL"} for k in desc])
     t6.loc[len(t6)] = {"criterion": "verdict", "condition": "closed list, applied mechanically", "observed": vd["verdict"], "result": ""}
-    save_table(t6, "table6_verdict", "Table 6. Pre-registered criteria S1-S7 and the mechanical verdict")
+    save_table(t6, "table6_verdict", "Table 6. Pre-registered criteria S1\u2013S7 and the mechanical verdict")
 
     ex = load("H20_3_EXPLORATORY_RESULTS.json")
-    t7 = [{"analysis": "CONTEXT_CORE (classifier-free), primary lambda", "status": "robustness (secondary)",
-           "development Delta": round(dev["delta_pr_auc_M2core_M0"], 4), "LCUV Delta": round(lc["delta_pr_auc_M2core_M0"], 4),
-           "note": f"two-way CI [{bs['robustness_M2core_vs_M0']['two_way']['ci95'][0]:+.3f}, {bs['robustness_M2core_vs_M0']['two_way']['ci95'][1]:+.3f}]; {dev['positive_folds_M2core_M0']} of 8 folds positive"}]
-    names2 = {"logistic_selected_lambda": "logistic, fold-selected lambda", "lightgbm_default": "LightGBM, a-priori default",
-              "lightgbm_selected": "LightGBM, fold-selected"}
-    for k, n in names2.items():
-        r = ex[k]
-        sel = r["M2"].get("selected", r["M2"].get("config"))
-        t7.append({"analysis": n, "status": "EXPLORATORY", "development Delta": round(r["delta_dev_M2_M0"], 4),
-                   "LCUV Delta": round(r["delta_lcuv_M2_M0"], 4), "note": f"M2 configuration: {sel}"})
+    fold_mean = lambda key: float(np.mean([f[key] for f in dev["folds"]]))  # noqa: E731
+    lsl, lgd, lgs = ex["logistic_selected_lambda"], ex["lightgbm_default"], ex["lightgbm_selected"]
+
+    def lgb_cfg(c: dict) -> str:
+        return f"{c['num_leaves']} leaves, {c['n_estimators']} trees"
+
+    def lgb_sel_mean(arm: str) -> float:
+        sel = lgs[arm]["config"]
+        return next(x["mean"] for x in lgs[arm]["mean_fold_pr_auc_by_config"] if x["config"] == sel)
+
+    def lam_mean(arm: str) -> float:
+        return lsl[arm]["mean_fold_pr_auc_by_lambda"][str(lsl[arm]["selected"])]
+
+    ci_core = bs["robustness_M2core_vs_M0"]["two_way"]["ci95"]
+    t7 = [
+        {"analysis": "primary: logistic, \u03bb = 10 (A02)", "status": "primary",
+         "development \u0394, pooled OOF": dev["delta_pr_auc_M2_M0"], "development \u0394, mean of folds": fold_mean("delta_M2_M0"),
+         "LCUV \u0394": lc["delta_pr_auc_M2_M0"], "note": "verdict: PRE-REGISTERED NULL"},
+        {"analysis": "CONTEXT_CORE (classifier-free), \u03bb = 10", "status": "robustness",
+         "development \u0394, pooled OOF": dev["delta_pr_auc_M2core_M0"], "development \u0394, mean of folds": fold_mean("delta_M2core_M0"),
+         "LCUV \u0394": lc["delta_pr_auc_M2core_M0"],
+         "note": f"two-way CI [{cell(ci_core[0], 3, True)}, {cell(ci_core[1], 3, True)}]; {dev['positive_folds_M2core_M0']} of 8 folds positive"},
+        {"analysis": "logistic, fold-selected \u03bb (the v1 primary rule)", "status": "exploratory",
+         "development \u0394, pooled OOF": lsl["delta_dev_M2_M0"],
+         "development \u0394, mean of folds": lam_mean("M2") - lam_mean("M0"),
+         "LCUV \u0394": lsl["delta_lcuv_M2_M0"],
+         "note": f"\u03bb = {lsl['M0']['selected']:g} selected for both M0 and M2; verdict under the v1 rule: PRE-REGISTERED NULL (S4 fails)"},
+        {"analysis": "LightGBM, a-priori configuration", "status": "exploratory",
+         "development \u0394, pooled OOF": lgd["delta_dev_M2_M0"],
+         "development \u0394, mean of folds": lgd["M2"]["mean_fold_pr_auc"] - lgd["M0"]["mean_fold_pr_auc"],
+         "LCUV \u0394": lgd["delta_lcuv_M2_M0"],
+         "note": f"{lgb_cfg(lgd['M0']['config'])} for every arm; M0 pooled PR-AUC {lgd['M0']['dev_pooled_oof_pr_auc']:.3f}"},
+        {"analysis": "LightGBM, fold-selected", "status": "exploratory",
+         "development \u0394, pooled OOF": lgs["delta_dev_M2_M0"],
+         "development \u0394, mean of folds": lgb_sel_mean("M2") - lgb_sel_mean("M0"),
+         "LCUV \u0394": lgs["delta_lcuv_M2_M0"],
+         "note": f"selected: M0 {lgb_cfg(lgs['M0']['config'])}; M2 {lgb_cfg(lgs['M2']['config'])}"},
+    ]
+    dfmt = {"development \u0394, pooled OOF": (4, True), "development \u0394, mean of folds": (4, True), "LCUV \u0394": (4, True)}
     save_table(pd.DataFrame(t7), "table7_robustness_exploratory",
-               "Table 7. Robustness and exploratory results (cannot change the verdict)")
+               "Table 7. Primary, robustness and exploratory results (only the primary determines the verdict)", dfmt)
+
+    grid = lsl["M0"]["mean_fold_pr_auc_by_lambda"]
+    pooled = {10.0: dev["delta_pr_auc_M2_M0"], float(lsl["M0"]["selected"]): lsl["delta_dev_M2_M0"]}
+    t8 = [{"\u03bb": f"{float(k):g}" + (" (primary)" if float(k) == 10.0 else ""),
+           "M0 PR-AUC, mean of folds": grid[k], "M2 PR-AUC, mean of folds": lsl["M2"]["mean_fold_pr_auc_by_lambda"][k],
+           "\u0394, mean of folds": lsl["M2"]["mean_fold_pr_auc_by_lambda"][k] - grid[k],
+           "\u0394, pooled OOF": pooled.get(float(k), float("nan"))} for k in grid]
+    save_table(pd.DataFrame(t8), "table8_penalty_path",
+               "Table 8. Development \u0394 along the frozen \u03bb grid (logistic; read from the frozen exploratory run, no refit; "
+               "pooled values exist only for \u03bb = 10 and the selected \u03bb)",
+               {"M0 PR-AUC, mean of folds": (4, False), "M2 PR-AUC, mean of folds": (4, False), "\u0394, mean of folds": (4, True),
+                "\u0394, pooled OOF": (4, True)})
     return {"dev": dev, "lc": lc, "bs": bs, "vd": vd, "g0": g0, "g1": g1, "sp": sp, "ta": ta, "ex": ex, "elig": elig}
 
 
@@ -223,7 +288,7 @@ def fig_timeline(d: dict) -> None:
     ax.grid(axis="y", visible=False)
     ax.spines["left"].set_visible(False)
     ax.set_xlabel("landmark week (decision time t = landmark Monday + 1 day, 00:00 UTC)")
-    savefig(fig, "figure2_timeline")
+    savefig(fig, "figure3_timeline")
 
 
 def fig_primary(d: dict) -> None:
@@ -246,7 +311,7 @@ def fig_primary(d: dict) -> None:
     ax.legend(loc="upper left", fontsize=7.5)
     for i, (m0, m2) in enumerate(vals.values()):
         ax.text(i, max(m0, m2) + 0.035, f"Delta = {m2 - m0:+.4f}", ha="center", fontsize=7.5, color=INK2)
-    savefig(fig, "figure3_primary_pr_auc")
+    savefig(fig, "figure4_primary_pr_auc")
 
 
 def fig_folds(d: dict) -> None:
@@ -265,7 +330,7 @@ def fig_folds(d: dict) -> None:
     ax.set_ylim(-0.019, 0.011)
     ax.grid(axis="x", visible=False)
     ax.set_xlabel(f"development fold (test quarter); positive folds: {d['dev']['positive_folds_M2_M0']} of 8")
-    savefig(fig, "figure4_fold_delta")
+    savefig(fig, "figure5_fold_delta")
 
 
 def fig_bootstrap(d: dict) -> None:
@@ -307,7 +372,7 @@ def fig_bootstrap(d: dict) -> None:
     ax.set_xlabel("bootstrap Delta PR-AUC (M2 - M0), development pooled OOF")
     ax.set_ylabel("replicates")
     ax.grid(axis="x", visible=False)
-    savefig(fig, "figure5_bootstrap_delta")
+    savefig(fig, "figure6_bootstrap_delta")
     d["bootstrap_recomputed_ci"] = ci
 
 
@@ -335,7 +400,7 @@ def fig_survival(d: dict) -> None:
     ax.set_xlabel("H20.1 features built (25), by outcome of the representation gate")
     ax.grid(axis="y", visible=False)
     ax.legend(ncol=4, fontsize=7, loc="upper center", bbox_to_anchor=(0.5, -0.32))
-    savefig(fig, "figure6_feature_survival")
+    savefig(fig, "figure2_feature_survival")
 
 
 def main() -> int:

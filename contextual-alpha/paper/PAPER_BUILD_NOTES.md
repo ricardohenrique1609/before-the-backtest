@@ -28,7 +28,7 @@ From the repository root, with the project venv:
    - It reads only frozen artefacts and records the sha256 of every input and output.
    - It refits, rescores and tunes nothing.
    - The one recomputation is the 2,000-replicate two-way bootstrap distribution drawn in
-     Figure 5. The H20.3 run stored only its summary, so the distribution is regenerated with the
+     Figure 6. The H20.3 run stored only its summary, so the distribution is regenerated with the
      frozen seed (20261103) and procedure from the frozen out-of-fold predictions. The script refuses
      to draw the figure unless the recomputed 95% interval equals the frozen one; it does, to
      machine precision.
@@ -88,9 +88,9 @@ number or verdict changed.
 | stage | commit | role here |
 |---|---|---|
 | H20.0 | `a14c347` | data gate (Table 1, §3, §5) |
-| H20.1 | `e21c264` | representation gate (Table 2, A1, Figure 6) |
-| H20.2 + A02 | `9932e20` | design (Table 3, §7, Figure 2) |
-| H20.3 | `180def4` | results (Tables 4–7, A2, Figures 3–5) |
+| H20.1 | `e21c264` | representation gate (Table 2, A1, Figure 2) |
+| H20.2 + A02 | `9932e20` | design (Table 3, §7, Figure 3) |
+| H20.3 | `180def4` | results (Tables 4–8, A2, Figures 4–6) |
 
 No frozen experiment file was modified to build the paper. All paper outputs live under
 `Contextual Alpha/paper/`.
@@ -116,3 +116,22 @@ old→new in `MANUSCRIPT_CHANGES_PASS2.json`: null-language, literature and refe
 - No H20.4, no new hypothesis, no opening of PROSPECTIVE_CONFIRMATION.
 - The human re-annotation of the H20.1 semantic audit has not been done, and is disclosed as a
   limitation.
+
+## Revision 1 (2026-11-02), after `REFEREE_REPORT_V1.md`
+
+Every referee point is answered in `AUTHOR_RESPONSE_V1.md`. In short:
+- **Text.** Scope in the subtitle and abstract; the week-level mechanism and the post-hoc yardstick
+  (§2, §7, §8.3); the A02 amendment and the verdict under the v1 rule (§7); the penalty path and
+  the pooled versus mean-of-folds split (§9); a "Use of AI tools" section; an availability
+  statement that matches the public package; the production notes left the References section.
+- **Tables.** Table 7 gains the primary row, a mean-of-folds column and the v1-rule verdict; new
+  Table 8 (penalty path). Both are read from the frozen exploratory artefact; nothing was refitted.
+  Markdown tables now print fixed decimals and λ, Δ and true minus signs; the CSVs keep raw values.
+- **Figures.** Renumbered in order of appearance (funnel to §1). Every PNG is byte-identical to its
+  earlier file under the new name.
+- **Bibliography.** `bedowska2025zombie` gained `year = {2026}` from the Crossref record of its DOI
+  (issued and published-print January 2026, volume 81). It is otherwise the entry reused from the
+  previous paper. Entries without an author now lead with their title, in the text and in the list.
+- **Claim audit.** 142 ledger rows, all supported. Rows C120–C142 cover the revision; C030, C031,
+  C095 and C117 were updated to the new wording.
+- No result, number, verdict or frozen file changed.

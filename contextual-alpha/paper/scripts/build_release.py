@@ -71,10 +71,10 @@ def cite_labels(refs, entries: list[dict]) -> dict[str, str]:
     labels = {}
     for e in entries:
         author = e.get("author", "")
-        if author.startswith("{") or not author:
-            venue = e.get("howpublished", "")
-            venue = "" if venue.startswith("http") else venue
-            who = refs.clean(author or e.get("journal", "") or venue or e.get("title", ""))
+        if author.startswith("{"):  # corporate author
+            who = refs.clean(author)
+        elif not author:  # no author recorded: the title stands in for it, as in author-year styles
+            who = refs.clean(e.get("title", ""))
         else:
             names = [refs.clean(x.strip()) for x in author.split(" and ")]
             others = "others" in names
@@ -108,7 +108,12 @@ def reference_list(refs, entries: list[dict]) -> list[str]:
              "access level recorded for it in `paper/REFERENCE_VERIFICATION.md`; no metadata was "
              "inferred.", ""]
     for e in sorted(entries, key=refs.sort_key):
-        lines += [f"- {refs.render_entry(e)}", ""]
+        line = refs.render_entry(e)
+        if not e.get("author"):  # lead with the title, which is what the in-text label shows
+            title = f"*{refs.clean(e.get('title', '')).rstrip('.')}*."
+            line = line.replace(" " + title, "", 1)
+            line = title[:-1] + " " + line
+        lines += [f"- {line}", ""]
     return lines
 
 
@@ -181,6 +186,7 @@ def build_tex(rel, base, meta: dict, paper_md: str) -> str:
     # the converter sizes columns to 93% of the line but ignores the gaps between them, which
     # pushes the widest (scriptsize) tables into the margin; tighter gaps keep them inside it
     tex = tex.replace("\\scriptsize\n\\setlength{\\tabcolsep}{4pt}", "\\scriptsize\n\\setlength{\\tabcolsep}{1.5pt}")
+    tex = tex.replace("\\footnotesize\n\\setlength{\\tabcolsep}{4pt}", "\\footnotesize\n\\setlength{\\tabcolsep}{2pt}")
     # justified narrow cells stretch their words apart; table cells are set ragged-right
     tex = re.sub(r"(?m)^(\\begin\{(?:tabular|longtable)\}\{)(.*)\}$",
                  lambda m: m.group(1) + m.group(2).replace(

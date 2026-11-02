@@ -1,9 +1,9 @@
-**Table 4. Development pooled out-of-fold results (L2 logistic, lambda = 10)**
+**Table 4. Development pooled out-of-fold results (L2 logistic, λ = 10)**
 
 | arm | role | PR-AUC | ROC-AUC | Brier | top-decile lift (within-week) | within-week PR-AUC | calibration slope |
 |---|---|---|---|---|---|---|---|
-| M0 market | primary | 0.23 | 0.767 | 0.0512 | 4.51 | 0.247 | 0.67 |
-| M2 market + context | primary | 0.2205 | 0.75 | 0.0521 | 4.6 | 0.244 | 0.52 |
-| M1 context only | secondary | 0.0674 | 0.54 | 0.0592 | 0.64 | 0.059 | 0.17 |
+| M0 market | primary | 0.2300 | 0.767 | 0.0512 | 4.51 | 0.247 | 0.67 |
+| M2 market + context | primary | 0.2205 | 0.750 | 0.0521 | 4.60 | 0.244 | 0.52 |
+| M1 context only | secondary | 0.0674 | 0.540 | 0.0592 | 0.64 | 0.059 | 0.17 |
 | M2_core market + CONTEXT_CORE | robustness | 0.2303 | 0.759 | 0.0522 | 4.61 | 0.245 | 0.58 |
-| M1_core CONTEXT_CORE only | robustness | 0.0675 | 0.541 | 0.0573 | 0.64 | 0.059 | 0.2 |
+| M1_core CONTEXT_CORE only | robustness | 0.0675 | 0.541 | 0.0573 | 0.64 | 0.059 | 0.20 |
