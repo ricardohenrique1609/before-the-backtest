@@ -12,7 +12,8 @@ process, and say so.
 > **Also in this repository: `contextual-alpha/`.** A separate working-paper draft, *Beyond Market
 > Data: Does Point-in-Time Public Context Add Incremental Predictive Signal?*, with its full
 > H20.0–H20.3 evidence trail. Verdict: pre-registered null. Not peer-reviewed; prospective
-> confirmation pending; no licence chosen yet. Read `contextual-alpha/PUBLIC_PACKAGE_NOTES.md` first.
+> confirmation pending. Same licence split (MIT / CC BY 4.0 / CC0), scoped by the licence files in
+> `contextual-alpha/`. Read `contextual-alpha/PUBLIC_PACKAGE_NOTES.md` first.
 
 ---
 
@@ -155,6 +156,9 @@ Three components, three licences. Boundaries are explicit because they differ.
 | **code** | **MIT** | `scripts/` here and in the repository; `LICENSE` |
 | **manuscript, figures, tables** | **CC BY 4.0** | `paper.md`, `paper.tex`, `paper.pdf`, `figures/`, `tables/`, the release documentation; `LICENSE-manuscript` |
 | **derived evidence artefacts** | **CC0 1.0** | the nine files in `evidence/`; `LICENSE-evidence` |
+
+`contextual-alpha/` uses the same three licences, scoped by its own `LICENSE`, `LICENSE-manuscript`
+and `LICENSE-evidence`.
 
 > **The CC0 dedication applies only to project-created derived artefacts and does not grant rights
 > over the underlying exchange, regulatory, market-data, or publication sources.**

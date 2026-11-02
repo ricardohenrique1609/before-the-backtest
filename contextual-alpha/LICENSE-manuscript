@@ -1,0 +1,28 @@
+# Manuscript, figures, tables and documentation — CC BY 4.0
+
+Copyright (c) 2026 the author.
+
+**Covered by this licence (within `contextual-alpha/`):** `paper/manuscript.md`,
+`paper/manuscript_src.md`, `paper/references.bib`, everything in `paper/figures/` and
+`paper/tables/`, and every Markdown
+document (`*.md`): the plans, pre-registrations and addenda, reports, deviation records, definitions,
+`docs/`, the paper's build, reference and verification notes, and this directory's `README.md` and
+`PUBLIC_PACKAGE_NOTES.md`.
+
+**Not covered:** the code (MIT, see `LICENSE`) and the derived data artefacts (CC0 1.0, see
+`LICENSE-evidence`).
+
+Licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+- Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+- Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to share and adapt this material for any purpose, including commercially, provided you
+give appropriate credit, link to the licence, and indicate if changes were made.
+
+## Third-party material
+
+Quotations from, and descriptions of, published academic work are used under normal scholarly
+citation practice and remain the property of their copyright holders. `paper/references.bib` and
+`paper/REFERENCE_VERIFICATION.md` record how each entry was accessed. **No third-party publication is
+redistributed here.**

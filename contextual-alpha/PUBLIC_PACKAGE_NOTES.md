@@ -42,6 +42,13 @@ checkable.
 
 ## Licence
 
-**No licence has been chosen for this directory yet.** The licences at the repository root
-(`LICENSE`, `LICENSE-manuscript`, `LICENSE-evidence`) are scoped to *Before the Backtest* and do not
-extend to `contextual-alpha/`. Until the author decides, default copyright applies here.
+The same three-part split as *Before the Backtest*, with its own scoped files in this directory:
+
+| component | licence | file |
+|---|---|---|
+| code: `scripts/`, `tests/`, `paper/scripts/` | **MIT** | `LICENSE` |
+| manuscript, figures, tables, bibliography, Markdown documentation | **CC BY 4.0** | `LICENSE-manuscript` |
+| project-created data files (JSON, CSV, hashes) | **CC0 1.0** | `LICENSE-evidence` |
+
+The CC0 dedication does not extend to the third-party excerpts in the semantic-audit files described
+above.

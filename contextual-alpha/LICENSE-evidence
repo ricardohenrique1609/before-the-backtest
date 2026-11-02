@@ -1,0 +1,34 @@
+# Derived data artefacts — CC0 1.0
+
+**Covered by this dedication (within `contextual-alpha/`):** the project-created data files, that is
+every `*.json`, `*.csv`, `*.sha256` and `*.txt` file outside `scripts/`, `tests/`, `paper/scripts/`
+and `paper/tables/` (the paper's tables are under CC BY 4.0 with the manuscript).
+This includes `evidence/`, `manifests/`, `registries/`, the freeze, specification, gate, audit,
+result and verdict files at the top level, and `paper/CLAIM_LEDGER.csv`,
+`paper/CLAIM_AUDIT_REPORT.json`, `paper/PAPER_DATA_MANIFEST.json` and
+`paper/MANUSCRIPT_CHANGES_PASS2.json`. They are counts, coverage rates, feature values, predictions,
+metrics, verdicts, hashes and audit records computed by this project.
+
+To the extent possible under law, the author has waived all copyright and related or neighbouring
+rights to these derived artefacts, dedicating them to the public domain under CC0 1.0 Universal.
+
+- Human-readable summary: https://creativecommons.org/publicdomain/zero/1.0/
+- Full legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+## What this dedication does NOT cover
+
+> **The CC0 dedication applies only to project-created derived artefacts and does not grant rights
+> over the underlying exchange, regulatory, news, encyclopaedia, market-data or publication
+> sources.**
+
+Concretely, it confers no rights over:
+
+- the cryptocurrency venue's market data, its announcement catalogue, or any document it published;
+- the **third-party excerpts** in the `text` column of `evidence/H20_1_SEMANTIC_AUDIT_SHEET.csv` and
+  in the evidence spans of `evidence/H20_1_SEMANTIC_AUDIT_LABELS.csv`: titles and abstracts of US
+  government documents, GDELT record metadata, and Wikipedia snippets (which remain under CC BY-SA
+  4.0). The project's own labels and notes in those files are covered;
+- any academic publication cited in `paper/references.bib`.
+
+**No raw corpus from any of those sources is included.** `PUBLIC_PACKAGE_NOTES.md` says what is
+excluded, and `../DATA_RELEASE_POLICY.md` sets the policy.
